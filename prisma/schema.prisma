@@ -1,0 +1,87 @@
+// Prisma layout aligned with Peppercorn (Prisma 7, client in src/lib/generated, driver adapter).
+
+generator client {
+  provider   = "prisma-client"
+  output     = "../src/lib/generated"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Unified API attempt tracking for rate limiting (request guard)
+model ApiAttempt {
+  id        String   @id @default(uuid()) @db.Uuid
+  endpoint  String   @db.VarChar(255)
+  method    String   @db.VarChar(10)
+  email     String?  @db.VarChar(255)
+  ipAddress String   @map("ip_address") @db.VarChar(45)
+  userAgent String?  @map("user_agent")
+  success   Boolean  @default(false)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([endpoint], map: "idx_api_attempts_endpoint")
+  @@index([endpoint, ipAddress], map: "idx_api_attempts_endpoint_ip")
+  @@index([endpoint, createdAt], map: "idx_api_attempts_endpoint_created_at")
+  @@index([ipAddress, createdAt], map: "idx_api_attempts_ip_created_at")
+  @@map("api_attempts")
+}
+
+// Nonce tracking for replay protection (request guard)
+model ApiRequestNonce {
+  id        String   @id @default(uuid()) @db.Uuid
+  endpoint  String   @db.VarChar(255)
+  nonce     String   @db.VarChar(128)
+  createdAt DateTime @default(now()) @map("created_at")
+  expiresAt DateTime @map("expires_at")
+
+  @@unique([endpoint, nonce], map: "uq_api_request_nonces_endpoint_nonce")
+  @@index([expiresAt], map: "idx_api_request_nonces_expires_at")
+  @@index([endpoint, createdAt], map: "idx_api_request_nonces_endpoint_created_at")
+  @@map("api_request_nonces")
+}
+
+model PaymentTransaction {
+  id               String   @id @default(uuid()) @db.Uuid
+  orderReference   String   @unique @map("order_reference") @db.VarChar(100)
+  transactionId    String   @map("transaction_id") @db.VarChar(100)
+  paymentStatus    String   @map("payment_status") @db.VarChar(50)
+  amount           String?  @db.VarChar(32)
+  currency         String?  @db.VarChar(10)
+  reconciliationId String?  @map("reconciliation_id") @db.VarChar(100)
+  customerEmail    String?  @map("customer_email") @db.VarChar(255)
+  gatewayResponse  Json?    @map("gateway_response")
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  // Relationship to order once it's created
+  order           Order?
+
+  @@index([transactionId], map: "idx_payment_transactions_transaction_id")
+  @@index([paymentStatus], map: "idx_payment_transactions_payment_status")
+  @@map("payment_transactions")
+}
+
+// BC sales orders with payment tracking
+model Order {
+  id                    String   @id @default(uuid()) @db.Uuid
+  orderNo               String   @unique @map("order_no") @db.VarChar(100)
+  externalDocumentNo    String   @map("external_document_no") @db.VarChar(100)
+  customerNo            String   @map("customer_no") @db.VarChar(100)
+  dateType              String   @map("date_type") @db.VarChar(20)
+  orderSource           String?  @map("order_source") @db.VarChar(50)
+
+  // Payment tracking
+  paymentTransactionId  String?  @unique @map("payment_transaction_id") @db.Uuid
+  paymentTransaction    PaymentTransaction? @relation(fields: [paymentTransactionId], references: [id])
+
+  // Metadata
+  createdAt             DateTime @default(now()) @map("created_at")
+  updatedAt             DateTime @updatedAt @map("updated_at")
+
+  @@index([customerNo], map: "idx_orders_customer_no")
+  @@index([orderNo], map: "idx_orders_order_no")
+  @@index([dateType], map: "idx_orders_date_type")
+  @@map("orders")
+}
