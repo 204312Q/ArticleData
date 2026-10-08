@@ -2,7 +2,7 @@ import type { PostItemData, PostImageAsset, PostContentBlock } from 'src/lib/pos
 
 const ARTICLE_IMAGES = {
   tcm: [
-    { src: '/banners/Confinement_Menu_Banner.avif', alt: 'Confinement meal spread' },
+    { src: '/banners/Confinement_Menu_Banner.png', alt: 'Confinement meal spread' },
     { src: '/assets/background/confinement_group_shot.avif', alt: 'Confinement support team' },
   ],
   meals: [
@@ -77,7 +77,7 @@ export const mockPosts: PostItemData[] = [
     slug: 'exploring-the-role-of-tcm-in-confinement',
     title: 'Exploring the Role of TCM (Traditional Chinese Medicine) in Confinement',
     excerpt:
-      'Adapted from the previous Chilli Padi blog, this piece looks at how TCM is often used alongside rest, warm meals, and guided recovery during the confinement period.',
+      'Hey there! Are you curious to know how Traditional Chinese Medicine (TCM) can play a significant role in the confinement period? Well, you\'ve come to the right place! In this article, we\'ll delve into the world of TCM and explore its benefits, challenges, and tradeoffs when it comes to postnatal care and recovery.',
     category: 'Recovery',
     tags: ['confinement food', 'confinement period', 'mental health', 'postpartum recovery'],
     coverUrl: ARTICLE_IMAGES.tcm[0].src,
@@ -85,9 +85,9 @@ export const mockPosts: PostItemData[] = [
     reference:
       'https://chillipadiconfinement.com/blogs/confinement-tips/exploring-the-role-of-tcm-traditional-chinese-medicine-in-confinement',
     blocks: [
-      heading('Why TCM still appears in modern confinement planning'),
+      heading('Traditional Chinese Medicine and Confinement: A Perfect Pairing?'),
       paragraph(
-        'This article is based on the earlier site content about how Traditional Chinese Medicine is commonly layered into confinement support. The main idea is not that TCM replaces medical care, but that some families value it as a complementary approach for warmth, rest, circulation, and routine.'
+        ' Whether you\'re a new mom or someone interested in the wonders of TCM, this article will provide you with valuable insights and tips to strike the perfect balance between tradition and modernity. So, grab a cuppa and let\'s get started!'
       ),
       callout(
         'A practical lens',
@@ -95,14 +95,49 @@ export const mockPosts: PostItemData[] = [
       ),
       gallery(ARTICLE_IMAGES.tcm, 'Images from the current project used to support the TCM recovery theme.'),
       paragraph(
-        'In practical terms, the article connects TCM with familiar confinement habits such as warming foods, herbal broths, postnatal massage, and a slower recovery rhythm. That framing matches what many mothers are actually looking for: support that feels structured without becoming overwhelming.'
+        'Confinement, deeply rooted in traditional cultures, encompasses various practices aimed at facilitating postpartum recovery. TCM, with its centuries-old wisdom and natural approaches, aligns harmoniously with the principles of confinement. Let\'s explore how TCM complements confinement practices:'
       ),
+      list([
+        '1. **Restoring Qi (Life Energy)**: TCM believes that childbirth depletes a mother\'s Qi. Through the use of acupuncture, herbal remedies, and dietary adjustments, TCM aims to replenish and restore the body\'s vital energy, fostering overall well-being.',
+        '2. **Enhancing Blood Circulation**: Blood circulation plays a crucial role in the healing process after childbirth. TCM methods such as postnatal massages and herbal baths can help improve blood flow, reduce swelling, and relieve pain, aiding in a faster recovery.',
+        '3. **Balancing Hormones**: TCM recognizes the importance of hormone balance during the confinement period. Herbal medicines and dietary recommendations are tailored to regulate hormone levels, reducing the chances of postpartum mood swings and other related issues',
+      ]),
       quote(
         'The strongest confinement plan respects tradition without turning recovery into a rulebook.'
       ),
+      heading('Nurturing the Body and Mind'),
+      paragraph(
+        'Aside from physical recovery, TCM also emphasizes the importance of nurturing the mind and emotional well-being during confinement. Here\'s how TCM can lend a helping hand'
+      ),
+      list([
+        '1. **Restoring Balance**: TCM views the body as an interconnected system, and childbirth disrupts this delicate balance. TCM treatments, such as acupuncture and herbal remedies, aim to restore harmony, promote healing, and enhance overall well-being.',
+        '2. **Nourishing the Body**: TCM recognizes the importance of proper nutrition and the use of specific herbs and tonics to replenish vital energy and support postpartum recovery. These nourishing practices can help address fatigue, boost immunity, and promote healthy milk production.',
+        '3. **Emotional Support**: The postpartum period can bring about a whirlwind of emotions. TCM offers various techniques, including herbal remedies and mind-body practices like meditation and qigong, to support emotional well-being and reduce stress and anxiety.',
+      ]),
       paragraph(
         'The key takeaway is balance. A thoughtful confinement plan can respect tradition while still making space for informed decisions, personal comfort, and advice from qualified practitioners when needed.'
       ),
+      heading('Challenges and Tradeoffs In Incorporating TCM'),
+      list([
+        '1. **Limited Scientific Evidence:** While TCM has a rich historical background, the scientific evidence supporting its effectiveness in postpartum recovery is still evolving. It\'s important to approach TCM as a complementary approach, supplementing it with evidence-based practices and consulting healthcare professionals to make informed decisions. ',
+        '2. **Individual Variations:** Every person is unique, and what works for one may not work for another. TCM treatments are highly personalized, taking into account individual characteristics, symptoms, and medical history. It\'s crucial to consult with a qualified TCM practitioner who can tailor treatments to your specific needs. ',
+        '3. **Safety Considerations:** TCM encompasses a vast array of herbal remedies, and some herbs may have potential interactions with medications or specific health conditions. Open communication with your healthcare provider and a qualified TCM practitioner is vital to ensure a safe and effective experience.',
+      ]),
+      heading('FAQs about TCM in Confinement'),
+      
+      list([
+        '**Q: Can I use TCM alongside Western medicine during confinement?**',
+        'A: Yes, many women find that combining TCM with Western medicine can provide comprehensive care. However, it\'s important to inform both your healthcare provider and TCM practitioner about all treatments you are receiving to avoid any potential interactions.',
+        '**Q: Are there any specific TCM practices to avoid during confinement?**',
+        'A: Certain TCM practices, such as intense detoxification methods or certain herbal remedies, may not be suitable during the postpartum period. It\'s important to work with a qualified TCM practitioner who specializes in postpartum care to create a tailored treatment plan that aligns with your specific needs.',
+        '**Q: Can TCM help with postpartum depression?**',
+        'A: TCM takes a holistic approach to address emotional well-being, including postpartum depression. Herbal remedies, acupuncture, and mind-body practices prescribed by a qualified TCM practitioner can provide support and complement other forms of treatment.',
+      ]),
+
+      heading('Conclusion'),
+      paragraph('Incorporating Traditional Chinese Medicine (TCM) into the practice of confinement offers a potential path to holistic postpartum recovery. It emphasises restoring balance, nourishing the body, and supporting emotional well-being.'),
+      paragraph('However, it\'s important to balance the benefits with the tradeoffs and challenges associated with TCM, such as limited scientific evidence and individual variations. By making informed decisions, consulting qualified practitioners, and maintaining open communication with healthcare providers, you can navigate the world of TCM in confinement with confidence.'),
+      paragraph('Remember, every journey is unique, and finding the right balance is key to your well-being. Wishing you a fulfilling and rejuvenating postpartum experience!')
     ],
   },
   {

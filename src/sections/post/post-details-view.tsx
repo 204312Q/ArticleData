@@ -27,7 +27,9 @@ const categoryChipSx = {
 function renderBlock(block: PostContentBlock, index: number) {
   if (block.type === 'heading') {
     return (
-      <Typography key={`heading-${index}`} variant="h4" sx={{ mt: 1, color: 'text.primary' }}>
+      <Typography key={`heading-${index}`} variant="h4" sx={{ mt: 1, color:'#68727D' , fontWeight: 650 
+        ,textTransform: 'uppercase'
+      }}>
         {block.text}
       </Typography>
     );
@@ -82,15 +84,36 @@ function renderBlock(block: PostContentBlock, index: number) {
 
   if (block.type === 'list') {
     return (
-      <Box key={`list-${index}`} component="ul" sx={{ m: 0, pl: 3, color: 'text.secondary', display: 'grid', gap: 1.25 }}>
-        {block.items.map((item) => (
-          <Box key={item} component="li" sx={{ lineHeight: 1.8 }}>
-            {item}
-          </Box>
-        ))}
-      </Box>
+        <Box
+            key={`list-${index}`}
+            component="ul"
+            sx={{ m: 0, pl: 3, color: 'text.secondary', display: 'grid', gap: 1.25 }}
+        >
+            {block.items.map((item) => {
+                const match = item.match(/^(.*?)(?:\*\*)(.*?)(?:\*\*)(.*)$/);
+
+                return (
+                    <Box key={item} component="li" sx={{ lineHeight: 1.8 }}>
+                        {match ? (
+                            <>
+                                {match[1]}
+                                <Typography
+                                component="span"
+                                sx={{ fontWeight: 700, color: '#68727D' }}
+                                >
+                                {match[2]}
+                                </Typography>
+                                {match[3]}
+                            </>
+                        ) : (
+                            item
+                        )}
+                    </Box>
+                );
+            })}
+        </Box>
     );
-  }
+}
 
   if (block.type === 'image') {
     return (
