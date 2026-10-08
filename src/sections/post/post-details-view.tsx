@@ -27,8 +27,7 @@ const categoryChipSx = {
 function renderBlock(block: PostContentBlock, index: number) {
   if (block.type === 'heading') {
     return (
-      <Typography key={`heading-${index}`} variant="h4" sx={{ mt: 1, color:'#68727D' , fontWeight: 650 
-        ,textTransform: 'uppercase'
+      <Typography key={`heading-${index}`} variant="h4" sx={{ mt: 1, color:'#68727D' , fontWeight: 800 
       }}>
         {block.text}
       </Typography>
@@ -115,11 +114,33 @@ function renderBlock(block: PostContentBlock, index: number) {
     );
 }
 
+if (block.type === 'pinkHeading') {
+  return (
+    <Typography
+      key={`pink-heading-${index}`}
+      variant="h4"
+      sx={{
+        mt: 1,
+        fontSize: '1.6rem',
+        fontWeight: 700,
+        color: '#F07A9A',
+        letterSpacing: '0.09em',
+        lineHeight: 1.2,
+        textTransform: 'uppercase',
+      }}
+    >
+      {block.text}
+    </Typography>
+  );
+}
+
   if (block.type === 'image') {
     return (
       <Box key={`image-${index}`}>
         <Box sx={{ position: 'relative', aspectRatio: '16 / 9', borderRadius: 4, overflow: 'hidden' }}>
-          <Image fill alt={block.image.alt} src={block.image.src} style={{ objectFit: 'cover' }} />
+          <Image fill alt={block.image.alt} src={block.image.src} style={{ objectFit: 'cover' ,
+            objectPosition: block.image.objectPosition ?? 'center',
+           }} />
         </Box>
 
         {!!block.caption && (

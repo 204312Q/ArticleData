@@ -9,12 +9,14 @@ export type PostCategory =
 export type PostImageAsset = {
   src: string;
   alt: string;
+  objectPosition?: string;
 };
 
 export type PostContentBlock =
   | { type: 'paragraph'; text: string }
   | { type: 'heading'; text: string }
   | { type: 'quote'; text: string }
+  | { type: 'pinkHeading'; text: string }
   | { type: 'callout'; title: string; text: string }
   | { type: 'list'; items: string[] }
   | { type: 'image'; image: PostImageAsset; caption?: string }

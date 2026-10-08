@@ -1,4 +1,5 @@
 import type { PostItemData, PostImageAsset, PostContentBlock } from 'src/lib/post/types';
+import { it } from 'zod/v4/locales';
 
 const ARTICLE_IMAGES = {
   tcm: [
@@ -153,10 +154,191 @@ export const mockPosts: PostItemData[] = [
     reference:
       'https://chillipadiconfinement.com/blogs/confinement-tips/5-tasty-chinese-confinement-meals-to-boost-your-energy',
     blocks: [
-      paragraph(
-        'The reference article highlights that confinement meals need to do two jobs at once: support recovery and remain enjoyable enough to eat day after day. Energy-building dishes work best when they combine warmth, protein, broth, and ingredients that feel familiar rather than overly heavy.'
+      paragraph('Giving birth is a beautiful and transformative experience, but it can also be exhausting and challenging for new mothers. Your body goes through a lot during pregnancy and childbirth, and it needs time to recover and heal. One way to support your postpartum recovery is by eating nutritious and healing meals, especially during the confinement period.'
       ),
-      image(ARTICLE_IMAGES.meals[1], 'A familiar dish can make confinement meals feel comforting instead of clinical.'),
+      paragraph('Chinese confinement meals are a popular tradition that has been passed down from generation to generation. These meals are designed to nourish the body and promote healing, and they are packed with essential nutrients that can help boost your energy levels'
+      ),
+      paragraph('In this article, we\'ve put together a list of 5 delicious Chinese confinement meals that are perfect for new mothers who need an energy boost.'
+      ),
+      heading('Top 5 Chinese Confinement Meals To Boost Your Energy'),
+      
+      image(
+        {
+          src: '/dishes/OneDrive_1_9-24-2026/IMG_0170_Chicken Soup.jpg',
+          alt: 'Confinement dish',
+          objectPosition: 'center 70%',
+        },
+      ),
+      {type:'pinkHeading',
+         text:'Black Chicken Ginseng Soup',
+      },
+      paragraph(
+        'Black Chicken Ginseng Soup is rich in essential nutrients, including protein, vitamins, and minerals, that can help to boost energy levels, promote healing, and nourish the body. It is particularly beneficial for confinement mothers as it helps to replenish lost nutrients during childbirth and breastfeeding.'
+      ),
+
+      list([ 
+        '**Ingredients:**',
+        '**•** 1 whole black chicken (around 1.2kg)',
+        '**•** 30g ginseng root',
+        '**•** 10 red dates',
+        '**•** 5g wolfberries',
+        '**•** 5g dried longan',
+        '**•** 3 slices of ginger',
+        '**•** 2 cloves of garlic',
+        '**•** 2 tbsp rice wine',
+        '**•** 10 cups of water'
+      ]),
+
+      list([
+        '**Preparation:**',
+        '1. Soak the ginseng root in cold water for 30 minutes to an hour. This will help to soften the root and make it easier to handle.',
+        '2. Rinse the black chicken and remove any excess fat. Then, blanch the chicken in boiling water for 5 minutes to remove any impurities.',
+        '3. Rinse the red dates, wolfberries, and dried longan in cold water.',
+        '4. Peel and slice the ginger and garlic.'
+      ]),
+
+      list([
+        '**Cooking Method:**',
+        '1. In a large pot, add the blanched chicken, soaked ginseng root, red dates, wolfberries, dried longan, ginger, and garlic.',
+        '2. Pour in 10 cups of water and bring the pot to a boil over high heat.',
+        '3. Once the water is boiling, reduce the heat to low and simmer the soup for 2 to 3 hours, until the chicken is tender and the soup is flavorful.',
+        '4. Halfway through cooking, add 2 tbsp of rice wine to the pot to enhance the flavor of the soup.',
+        '5. Once the soup is done, turn off the heat and let it cool slightly.',
+        '6. Strain the soup and discard the solids.',
+        '7. Serve the soup hot with some steamed rice or on its own.'
+      ]),
+
+      list([
+        '**Q: Can I use a regular chicken instead of a black chicken?**',
+        'A: While you can use a regular chicken to make this soup, a black chicken is preferred as it has a richer and more intense flavor.',
+        '**Q: How long can I keep the soup in the fridge?**',
+        'A: You can keep the soup in the fridge for up to 3 days. To reheat, simply bring the soup to a boil over low heat.',
+      ]),
+
+      {type:'pinkHeading', text: 'Black Bean Pork Ribs Soup'},
+
+      paragraph('A nourishing and flavourful dish, this soup is rich in protein, vitamins, and minerals, making it an excellent choice for new moms who need to replenish their bodies after childbirth.'
+      ),
+
+      list([
+        '**Ingredients:**',
+        '**•** 500g pork ribs',
+        '**•** 1 cup dried black beans',
+        '**•** 2-3 slices of ginger',
+        '**•** 1 tablespoon Shaoxing wine',
+        '**•** 1 tablespoon soy sauce',
+        '**•** 1 teaspoon salt',
+        '**•** 8 cups water',
+        '**•** Optional: 2-3 dried red dates, 2-3 dried shiitake mushrooms'
+      ]),
+
+      list([
+        '**Directions:**',
+        '**1.** Soak the black beans in water for at least 2 hours or overnight. Drain and set aside.',
+        '**2.** In a large pot, blanch the pork ribs in boiling water for 3-5 minutes to remove any impurities. Rinse and set aside.',
+        '**3.** In the same pot, sauté the ginger until fragrant. Add the pork ribs and stir-fry until lightly browned.',
+        '**4.** Add the black beans, Shaoxing wine, soy sauce, salt, and water to the pot. Bring to a boil, then reduce heat and simmer for 2-3 hours, or until the pork ribs are tender and the beans are soft.',
+        '**5.** Optional: Add dried red dates and shiitake mushrooms during the last 30 minutes of cooking.',
+        '**6.** Serve hot and enjoy!'
+      ]),
+
+      list([
+        '**Tips and Tricks:**',
+        '**•** Soaking the black beans in advance helps them cook faster and more evenly.',
+        '**•** Blanching the pork ribs before cooking removes any impurities and improves the flavor of the soup.',
+        '**•** Adding dried red dates and shiitake mushrooms can enhance the flavor and nutritional value of the soup.',
+        '**•** Adjust the salt and soy sauce to taste.'
+      ]),
+
+      {type:'pinkHeading', 
+      text: 'Steamed Threadfin with Black Fungus and Ginger'
+     },
+
+     paragraph('Steamed threadfin with black fungus and ginger is a popular dish for confinement mothers because of its health benefits. Here are some of the benefits of this nutritious dish:'
+      ),
+
+      list([
+        '1. **Rich in protein** - Threadfin is a good source of protein, which is essential for muscle repair and growth',
+        '2. **Boosts immunity** - Black fungus contains beta-glucans, a type of carbohydrate that can boost the immune system and fight off infections.',
+        '3. **Anti-inflammatory** - Ginger has anti-inflammatory properties that can help reduce inflammation and swelling, making it an ideal ingredient for postpartum recovery.',
+        '4. **Helps with digestion** - Sesame oil is high in antioxidants and can help promote healthy digestion.'
+      ]),
+
+      list([
+        '**Ingredients:**',
+        '**•** 1 medium-sized threadfin (about 500g)',
+        '**•** 20g black fungus',
+        '**•** 20g ginger, julienned',
+        '**•** 2 tablespoons light soy sauce',
+        '**•** 1 tablespoon sesame oil',
+        '**•** 1 tablespoon Shaoxing wine',
+        '**•** 1 teaspoon sugar',
+        '**•** 1 tablespoon vegetable oil',
+        '**•** 2 stalks scallions, chopped',
+        '**•** 1 red chili, sliced (optional)'
+      ]),
+
+      list([
+        '**Instructions:**',
+        '1. Soak the black fungus in water for 30 minutes or until softened. Drain and cut into smaller pieces.',
+        '2. Clean the threadfin and pat dry with paper towels. Make 3-4 shallow cuts on each side of the fish.',
+        '3. In a bowl, mix together the light soy sauce, sesame oil, Shaoxing wine, and sugar. Set aside.',
+        '4. In a wok or frying pan, heat the vegetable oil over medium heat. Add the ginger and stir-fry for 1-2 minutes until fragrant.',
+        '5. Add the black fungus and stir-fry for another 2-3 minutes.',
+        '6. Pour the soy sauce mixture into the wok and bring to a boil.',
+        '7. Place the threadfin on a heatproof plate and pour the ginger and black fungus mixture over it.',
+        '8. Steam the fish over high heat for 10-12 minutes or until fully cooked.',
+        '9. Garnish with chopped scallions and sliced red chili (optional).'
+      ]),
+
+      {type:'pinkHeading', 
+      'text': 'Stir-Fried Kai Lan with Pork Kidney'
+     },
+      paragraph('Pork kidney is a good source of protein, vitamin B12, and iron, all of which are important for postpartum recovery. Kai lan is also packed with vitamins A, C, and K, as well as calcium and fiber.'
+      ),
+      
+      list([
+        '**Ingredients:**',
+        '**•** 500g kai lan (Chinese broccoli)',
+        '**•** 2 cloves of garlic, chopped',
+        '**•** 1 tablespoon of ginger, grated',
+        '**•** 1 tablespoon of light soy sauce',
+        '**•** 1 teaspoon of sesame oil',
+        '**•** 1 tablespoon of vegetable oil',
+        '**•** Salt and pepper to taste'
+      ]),
+
+      list([
+        '**Instructions:**',
+        '1. Preparing the pork kidney: Rinse the pork kidney thoroughly under running water and cut into thin slices. Soak the slices in cold water for 30 minutes to remove any impurities and excess blood. Drain and pat dry with a paper towel.',
+        '2. Preparing the kai lan: Wash the kai lan thoroughly under running water and chop into bite-sized pieces, separating the leaves from the stems.',
+        '3. In a wok or frying pan, heat up the vegetable oil over high heat. Add the garlic and ginger and stir-fry for 30 seconds until fragrant.',
+        '4. Add the pork kidney slices and stir-fry for 3-4 minutes until they turn golden brown.',
+        '5. Add the kai lan stems and continue to stir-fry for another 2-3 minutes until they are tender.',
+        '6. Finally, add the kai lan leaves, light soy sauce, and sesame oil, and stir-fry for another 1-2 minutes until the leaves are wilted but still bright green.',
+        '7. Season with salt and pepper to taste and serve hot.'
+      ]),
+
+      list([
+        '**Q: Can I use other types of meat instead of pork kidney?**',
+        'A: Yes, you can use chicken or beef if you prefer. However, pork kidney is a traditional ingredient in this dish and is particularly beneficial for postpartum recovery.',
+        '**Q: Can I substitute kai lan with other vegetables?**',
+        'A: Yes, you can use other leafy greens such as bok choy or choy sum if kai lan is not available.',
+      ]),
+
+      {type: 'pinkHeading', text: 'Dang Gui Herbal Chicken Soup'},
+      paragraph('Dang Gui, also known as Chinese Angelica Root, is a popular herb used in traditional Chinese medicine. It\'s known for its ability to promote blood circulation, regulate menstruation, and nourish the blood.'
+      ),
+      paragraph('When combined with other nourishing ingredients such as dried longan, goji berries, and red dates, Dang Gui Herbal Chicken Soup becomes a powerful dish that aids in postpartum recovery. The soup is believed to:'
+      ),
+
+      list([
+        '**•** Help with blood circulation and promote healing',
+        '**•** Nourish the blood and boost energy levels',
+        '**•** Aid in digestion and relieve constipation',
+        '**•** Improve the immune system and fight against infections',
+      ]),
+
       heading('What makes a confinement menu feel sustainable'),
       list([
         'Reliable warmth and broth-based dishes',
@@ -164,6 +346,7 @@ export const mockPosts: PostItemData[] = [
         'Rotation that avoids repetition fatigue',
         'Meals that still feel enjoyable on low-appetite days',
       ]),
+
       paragraph(
         'Chinese confinement menus often rotate soups, braised dishes, ginger-forward recipes, and nutrient-dense staples so that mothers get variety without losing the recovery focus. That variety matters because appetite changes quickly in the postpartum weeks.'
       ),
