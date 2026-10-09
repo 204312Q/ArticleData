@@ -72,6 +72,7 @@ const gallery = (images: readonly PostImageAsset[], caption?: string): PostConte
   caption,
 });
 
+
 export const mockPosts: PostItemData[] = [
   {
     id: 'post-1',
@@ -325,6 +326,11 @@ export const mockPosts: PostItemData[] = [
         '**Q: Can I substitute kai lan with other vegetables?**',
         'A: Yes, you can use other leafy greens such as bok choy or choy sum if kai lan is not available.',
       ]),
+      
+      callout(
+        'Menu planning principle',
+        'For a meal programme, the real value is not one hero dish. It is the consistency of receiving balanced, comforting meals that reduce planning stress while still keeping taste and texture interesting.'
+      ),
 
       {type: 'pinkHeading', text: 'Dang Gui Herbal Chicken Soup'},
       paragraph('Dang Gui, also known as Chinese Angelica Root, is a popular herb used in traditional Chinese medicine. It\'s known for its ability to promote blood circulation, regulate menstruation, and nourish the blood.'
@@ -339,21 +345,44 @@ export const mockPosts: PostItemData[] = [
         '**•** Improve the immune system and fight against infections',
       ]),
 
-      heading('What makes a confinement menu feel sustainable'),
       list([
-        'Reliable warmth and broth-based dishes',
-        'Enough protein to support recovery and energy',
-        'Rotation that avoids repetition fatigue',
-        'Meals that still feel enjoyable on low-appetite days',
+        '**Ingredients**',
+        '  **•** 1 whole chicken (about 1k g)',
+          '**•** 50g Dang Gui (Chinese Angelica Root)' ,
+          '**•** 20g Dried Longan', 
+          '**•** 10g Goji Berries' ,
+          '**•** 20g Red Dates' ,
+          '**•** 2 slices of ginger' ,
+          '**•** 10 cups of water',
+          '**•** Salt to taste',
       ]),
 
-      paragraph(
-        'Chinese confinement menus often rotate soups, braised dishes, ginger-forward recipes, and nutrient-dense staples so that mothers get variety without losing the recovery focus. That variety matters because appetite changes quickly in the postpartum weeks.'
+      list([
+        '**Instructions**',
+        '1. Rinse the chicken and remove any excess fat or organs. Place it in a pot of boiling water for 5 minutes to remove any impurities. Remove and set aside.',
+        '2. Rinse all the herbs and dried fruits.',
+        '3. In a clean pot, add 10 cups of water and bring it to a boil.',
+        '4. Add the chicken, Dang Gui, dried longan, goji berries, red dates, and ginger to the pot.',
+        '5. Bring the soup to a boil again, then reduce the heat to low and let it simmer for 2 hours.',
+        '6. Add salt to taste and serve hot.',
+      ]),
+
+      paragraph ('There you have it! These 5 Chinese confinement meals offer a delicious and nutritious way to support your postpartum recovery journey. Incorporate them into your diet, along with plenty of rest and relaxation, and you\'ll be on your way to feeling energised and healthy in no time.'
       ),
-      callout(
-        'Menu planning principle',
-        'For a meal programme, the real value is not one hero dish. It is the consistency of receiving balanced, comforting meals that reduce planning stress while still keeping taste and texture interesting.'
-      ),
+
+      heading('FAQS FOR CHINESE CONFINEMENT MEALS'),
+      
+      list([
+        '**Are these confinement meals suitable for everyone?**',
+        'While these meals are traditionally eaten by new mothers during their postpartum period, they can be enjoyed by anyone looking to improve their health and wellbeing. ',
+        '**Can I eat these meals if I am not of Chinese descent**?',
+        'Yes, these meals can be enjoyed by people of all ethnic backgrounds. They are simply traditional Chinese dishes that have been used for centuries to promote postpartum recovery and general health.',
+        '**Can I make substitutions or changes to the recipes?**',
+        'Absolutely! These recipes can be adapted to suit your personal preferences or dietary restrictions. For example, you can substitute pork for chicken, or use a different type of fish.',
+        '**How long should I continue to eat these confinement meals?**',
+        'The length of the postpartum confinement period varies among cultures and individuals. It is typically recommended to continue to eat these meals for at least the first month after childbirth, but it is important to consult with your healthcare provider for guidance on the appropriate length of time for your specific situation.'
+      ]),
+      
     ],
   },
   {
