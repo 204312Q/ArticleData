@@ -20,7 +20,9 @@ export type PostContentBlock =
   | { type: 'callout'; title: string; text: string }
   | { type: 'list'; items: string[] }
   | { type: 'image'; image: PostImageAsset; caption?: string }
+  | { type: 'table'; rows: {birth: string; avoid: string; eat: string;}[];}
   | { type: 'gallery'; images: PostImageAsset[]; caption?: string };
+   
 
 export type PostItemData = {
   id: string;

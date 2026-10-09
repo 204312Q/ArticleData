@@ -1,16 +1,24 @@
 import type { PostItemData, PostContentBlock } from 'src/lib/post';
-
+import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Link from '@mui/material/Link';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
+
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
+
 
 // ----------------------------------------------------------------------
 
@@ -25,6 +33,52 @@ const categoryChipSx = {
 } as const;
 
 function renderBlock(block: PostContentBlock, index: number) {
+    if (block.type === 'table') {
+    return (
+      <TableContainer
+        key={`table-${index}`}
+        sx={{
+          width: '100%',
+          overflowX: 'auto',
+          border: '1px solid #e0e0e0',
+          borderRadius: 0,
+          backgroundColor: 'transparent',
+        }}
+      >
+        <Table sx={{ minWidth: 700 }}>
+          <TableHead>
+            <TableRow>
+              <TableCell align="center" sx={{ fontWeight: 700 }}>
+                Birth
+              </TableCell>
+              <TableCell align="center" sx={{ fontWeight: 700 }}>
+                Food to Avoid
+              </TableCell>
+              <TableCell align="center" sx={{ fontWeight: 700 }}>
+                Food to Eat
+              </TableCell>
+            </TableRow>
+          </TableHead>
+
+          <TableBody>
+            {block.rows.map((row, rowIndex) => (
+              <TableRow key={`${row.birth}-${rowIndex}`}>
+                <TableCell align="center">
+                  {row.birth}
+                </TableCell>
+                <TableCell align="center">
+                  {row.avoid}
+                </TableCell>
+                <TableCell align="center">
+                  {row.eat}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    );
+  }
   if (block.type === 'heading') {
     return (
       <Typography key={`heading-${index}`} variant="h4" sx={{ mt: 1, color:'#68727D' , fontWeight: 800 
@@ -37,7 +91,18 @@ function renderBlock(block: PostContentBlock, index: number) {
   if (block.type === 'paragraph') {
     return (
       <Typography key={`paragraph-${index}`} color="text.secondary" sx={{ lineHeight: 1.95 }}>
+        <ReactMarkdown
+        components={{
+          p: ({ children }) => <>{children}</>,
+          strong: ({ children }) => (
+            <Box component="strong" sx={{ fontWeight: 700, fontSize: '18px', color: '#68727D' }}>
+              {children}
+            </Box>
+          )
+        }}
+      >
         {block.text}
+      </ReactMarkdown>
       </Typography>
     );
   }
@@ -92,13 +157,13 @@ function renderBlock(block: PostContentBlock, index: number) {
                 const match = item.match(/^(.*?)(?:\*\*)(.*?)(?:\*\*)(.*)$/);
 
                 return (
-                    <Box key={item} component="li" sx={{ lineHeight: 1.8 }}>
+                    <Box key={item} component="li" sx={{ lineHeight: 2.0 }}>
                         {match ? (
                             <>
                                 {match[1]}
                                 <Typography
                                 component="span"
-                                sx={{ fontWeight: 700, color: '#68727D' }}
+                                sx={{ fontWeight: 800, color: '#68727D' }}
                                 >
                                 {match[2]}
                                 </Typography>
@@ -246,3 +311,4 @@ export function PostDetailsView({ post }: PostDetailsViewProps) {
     </Box>
   );
 }
+
