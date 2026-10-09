@@ -46,6 +46,16 @@ const ARTICLE_IMAGES = {
     { src: '/banners/Confinement_Banner_3.jpg', alt: 'Warm recovery drink banner' },
     { src: '/addons/Addon_ThermalWare.webp', alt: 'Thermal ware for warm drinks' },
   ],
+  anxiety: [
+    { src: '/banners/Anxiety.png', alt: 'Overcoming Anxiety and Stress'}
+  ],
+  postpartum: [
+  { src: '/banners/Postpartum_Expectations_Versus_Reality.png' , alt: 'Post Partum Expectations Vs Reality' }
+  ],
+  weightLoss: [
+    { src: '/banners/Weight_Loss.png' , alt: 'Tips to Lose Weight Safely'},
+    { src: '/banners/safe_exercise.png' , alt: 'Safe Exercises'},
+  ],
 } as const;
 
 const paragraph = (text: string): PostContentBlock => ({ type: 'paragraph', text });
@@ -890,6 +900,149 @@ export const mockPosts: PostItemData[] = [
       
     ],
   },
+   {
+    id: 'post-10',
+    slug:'overcoming-anxiety-and-stress-during-confinement-for-mothers',
+    title: 'Overcoming Anxiety and Stress During Confinement For Mothers',
+    excerpt: 'Being a mother is a full-time job that can be challenging even in the best of times. However, when confinement is added to the mix, things can become even more difficult.',
+    category: 'Recovery',
+    tags: ['confinement',  'confinement period', 'postpartum recovery', 'mental health'],
+    coverUrl: ARTICLE_IMAGES.anxiety[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: 'https://chillipadiconfinement.com/blogs/confinement-tips/overcoming-anxiety-and-stress-during-confinement-for-mothers',
+    blocks: [
+      paragraph('Confinement mothers may feel isolated, stressed, and anxious due to the lack of social interaction and the additional responsibilities of taking care of their children and household.'),
+      paragraph('However, don\'t worry, because there are plenty of things you can do to overcome anxiety and stress during confinement.'),
+      heading('Create a Routine'),
+      paragraph('Establishing a daily routine can help confinement mothers feel more in control of their day-to-day activities. Set regular times for waking up, eating meals, and engaging in activities with children. This can help reduce stress and anxiety by providing a sense of structure and predictability.'),
+      heading('Take Breaks'),
+      paragraph('It\'s important for mothers to take regular breaks throughout the day, even if it\'s just for a few minutes. This can help relieve stress and prevent burnout. Taking a few deep breaths, going for a walk, or reading a book can all help provide a much-needed break from the demands of motherhood.'),
+      heading('Connect With Others'),
+      paragraph('Although physical distancing measures may limit opportunities for social interaction, it\'s still important to connect with others. Video calls, social media, and online support groups can all provide a sense of community and connection during confinement.'),
+      heading('Practice Self-Care'),
+      paragraph('Taking care of oneself is essential for managing anxiety and stress. This can include activities such as meditation, yoga, or taking a hot bath. Make time for activities that bring joy and relaxation, even if it\'s just for a few minutes each day.'),
+      heading('Set Realistic Expectations'),
+      paragraph('It\'s important to set realistic expectations for oneself during confinement. Recognise that it\'s okay to have bad days and that perfection is not attainable. Accepting imperfection can help reduce stress and anxiety by relieving pressure to constantly perform at a high level.'),
+      heading('Exercise'),
+      paragraph('Exercise is a great way to reduce stress and anxiety. It releases endorphins, which are natural mood-boosters, and can help improve sleep quality. Find an exercise routine that works for you, whether it\'s yoga, running, or simply taking a brisk walk outside.'),
+      heading('Practice Mindfulness'),
+      paragraph('Mindfulness is the practice of being present in the moment and focusing on your thoughts, feelings, and surroundings without judgment. Mindfulness meditation can help reduce stress and anxiety by promoting relaxation and inner peace.'),
+      paragraph('There are many apps available that offer guided mindfulness meditations, or you can simply sit quietly and focus on your breath for a few minutes each day.'),
+      heading('Prioritise Sleep'),
+      paragraph('Getting enough sleep is essential for managing stress and anxiety. Set a regular bedtime routine and stick to it as much as possible. Avoid using electronic devices in bed and create a calm and comfortable sleeping environment.'),
+      heading('Reduce Exposure to News and Social Media'),
+      paragraph('News and social media can be a source of stress and anxiety, especially during times of crisis. Limit your exposure to news and social media, and make sure to fact-check any information before sharing it with others.'),
+      heading('Connect with Nature'),
+      paragraph('Spending time in nature can help reduce stress and anxiety. Whether it\'s taking a walk in the park, gardening, or simply sitting outside and enjoying the fresh air, being in nature can help promote relaxation and a sense of well-being.'),
+      heading('Practice Gratitude'),
+      paragraph('Gratitude is the practice of focusing on the positive things in your life and expressing appreciation for them. Keeping a gratitude journal or simply taking a few minutes each day to reflect on the things you are thankful for can help shift your focus away from stress and anxiety and toward positive emotions.'),
+      paragraph('Being a mother can be both thrilling and anxiety-inducing for women. However, it doesn\'t have to be a daunting experience. By implementing some of the strategies we\'ve discussed, you can help alleviate stress and anxiety.'),
+      paragraph('Remember, taking care of your mental health is just as important as taking care of your physical health, so make sure to prioritise it. Stay strong, mamas!'),
+    ],
+  },
 
+   {
+    id: 'post-10',
+    slug:'post-partum-expectations-versus-reality',
+    title: 'Post Partum Expectations Versus Reality',
+    excerpt: 'The postpartum period can be both exciting and overwhelming for new parents. Before the arrival of the baby, many parents have expectations of what their life will be like after the birth.',
+    category: 'Comparison',
+    tags: ['confinement', 'confinement period', 'postpartum recovery'],
+    coverUrl: ARTICLE_IMAGES.postpartum[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: 'https://chillipadiconfinement.com/blogs/confinement-tips/post-partum-expectations-versus-reality',
+    blocks: [
+      paragraph('However, the reality of the postpartum period can often be very different from what they expected. From sleepless nights to unexpected physical and emotional changes, the postpartum period can be a challenging time.'),
+      paragraph('In this topic, we\'ll explore some common postpartum expectations versus reality and offer tips on how to navigate this period as a new parent'),
+      paragraph('**Expectation: Many parents believe that they will immediately bond with their baby when they see them for the first time.**'),
+      paragraph('**Reality:** Bonding takes time. It\'s a process that happens over the first few weeks and months of being a parent. Sometimes, new parents might not feel an instant bond, and that\'s okay!'),
+      paragraph('Attachment is a two-way street, and it takes time for both you and your baby to get to know each other. Skin-to-skin contact right after birth is great for bonding, but if you miss out on that, it doesn\'t mean your relationship with your baby is doomed. Just give it time, and focus on making your baby feel safe, loved, and cared for.'),
+      paragraph('Attachment happens naturally over time, and it\'s different for everyone. So don\'t stress if you don\'t feel an instant connection with your baby. It will come!'),
+      paragraph('**Expectation: Once I deliver my baby, my body will go back to its pre-pregnancy state, and I will feel like myself again.**'),
+      paragraph('**Reality:** After giving birth, many women are surprised by how their body looks and feels. It\'s normal for your belly to still look swollen, and you may need to wear loose clothing or maternity clothes for a while.'),
+      paragraph('You might also have swollen hands, legs, and feet from the fluids given to you during labor. It takes time for your body to heal and go back to its normal state, so don\'t expect to fit into your pre-pregnancy clothes right away.'),
+      paragraph('Postpartum bleeding, or lochia, is also common and can last up to four weeks. You\'ll need to wear large pads or diapers during this time, and make sure not to overexert yourself to prevent excessive bleeding. It\'s also normal to experience soreness in your body, including your breasts as your milk comes in.'),
+      paragraph('Talk to your healthcare provider if you\'re experiencing a lot of pain, and they can recommend ways to help you feel more comfortable.'),
+      paragraph('Remember that you just did something incredible by giving birth to a new life, so be patient with yourself and give your body time to recover.'),
+      paragraph('**Expectation: I can handle being tired since I\'m already used to it. Plus, when the baby naps, I\'ll catch some z\'s too!**'),
+      paragraph('**Reality:** Let\'s face it, every parent expects to be tired after their baby is born. But being a new parent can take exhaustion to a whole new level.'),
+      paragraph('On average, new parents get less than 6 hours of sleep each night, and it\'s usually interrupted by frequent wake-ups. This lack of sleep can cause problems such as marital stress, anxiety, breastfeeding issues, postpartum depression, illness, car accidents, and even overweight babies and mothers.'),
+      paragraph('In the first few months, you may have to prioritize and let some things slide, like leaving the house untidy or ordering takeout instead of cooking. It\'s important to avoid burnout, which can negatively affect your parenting.'),
+      paragraph('Many parents feel pressured to do everything perfectly, which can lead to exhaustion and mistakes. Don\'t fall into this trap!'),
+      paragraph('Seek help if you feel overwhelmed or exhausted, and don\'t wait until you reach your breaking point. Reach out to health and child services professionals and be honest about how you feel. The more parents ask for help, the more normalized it will become.'),
+      paragraph('**Expectation: We got this! Me and my partner are responsible adults who can handle anything that comes our way, and we don\'t need any extra help.**'),
+      paragraph('**Reality:** In the past, people used to raise children together as a community, with grandmas, aunties, cousins, and other relatives taking turns to care for the baby.'),
+      paragraph('But now, many modern parents feel like they have to do it all alone, which can be overwhelming and lead to exhaustion.'),
+      paragraph('Research has shown that it\'s important to remember your identity as an individual and balance your own needs with those of your child. It\'s impossible to do everything perfectly all the time, so it\'s okay to prioritize and make time for self-care.'),
+      paragraph('Your baby\'s needs are simpler than you might think: they need to eat, sleep, and calm their crying. Try to plan some time for yourself and your partner, even if it\'s just a stay-at-home date.'),
+      paragraph('By taking care of yourself, you\'ll be better equipped to take care of your baby.'),
+      
+      heading('Conclusion'),
+      paragraph('It\'s totally normal to have high expectations for the postpartum period, but let\'s be real, the reality can be a whole lot different. Don\'t beat yourself up if things don\'t go as planned, new parenthood is a challenging time for everyone.'),
+      paragraph('So cut yourself some slack, moms and dads, and remember that you can handle whatever comes your way!'),
 
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57.
+        }
+      ),
+    ],
+  },
+
+   {
+    id: 'post-11',
+    slug:'tips-to-lose-weight-safely-during-confinement',
+    title: 'Tips to Lose Weight Safely During Confinement',
+    excerpt: 'Pregnancy and childbirth are beautiful experiences that come with their own set of challenges. One such challenge is postpartum weight gain. The pressure to lose weight quickly can be overwhelming, but it is essential to do it safely and in a way that does not affect the mother\'s health or her ability to care for her newborn.',
+    category: 'Weight',
+    tags: ['confinement', 'confinement period', 'healthy eating', 'weight loss'],
+    coverUrl: ARTICLE_IMAGES.weightLoss[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: 'https://chillipadiconfinement.com/blogs/confinement-tips/tips-to-lose-weight-safely-during-confinement',
+    blocks:[
+      heading('BALANCING NUTRIENT INTAKE WHILE LOSING WEIGHT'),
+      paragraph('When trying to lose weight during confinement, it is important to balance your nutrient intake. Focus on consuming whole, nutrient-dense food that provide your body with necessary vitamins and minerals. Incorporate a variety of fruits and vegetables into your meals to increase fiber intake.'),
+      paragraph('It\'s essential to stay hydrated by drinking plenty of water throughout the day as dehydration can slow down metabolism. Avoid extreme calorie restriction or crash diets as they can be harmful to your health, and it\'s difficult to maintain them in the long run.'),
+      paragraph('**a. Choosing the Right Food for a Confinement Diet**'),
+      paragraph('Choosing the right food for a confinement diet will keep you feeling full and satisfied while still providing your body with the nutrients it needs. Whole food like fruits, vegetables, lean proteins, and whole grains should be prioritized over processed and packaged snacks. It\'s also important to avoid sugary drinks and opt for water or unsweetened tea as your main beverage.'),
+      paragraph('In addition to choosing nutrient-dense food, paying attention to portion sizes and practicing mindful eating can prevent overeating and support healthy weight loss.'),
+      paragraph('Remember that portion control and mindful eating habits are also key when trying to lose weight. By focusing on a balanced nutrient intake, you can achieve safe weight loss during this challenging time.'),
+
+      heading('SAFE EXERCISE FOR POSTPARTUM MOTHERS'),
+      image(
+        {
+          src: ARTICLE_IMAGES.weightLoss[1].src,
+          alt: 'Safety Exercises',
+          objectPosition: 'center 75%'
+        },
+      ),
+      paragraph('When it comes to losing weight safely during confinement, it\'s important to consider safe exercise routines for postpartum mothers. After giving birth, new mothers need to be careful when starting an exercise routine and should opt for low-impact exercises such as walking, yoga, and swimming.'),
+      paragraph('Pelvic floor exercises can also be helpful in strengthening the muscles around the bladder, uterus, and rectum.'),
+      paragraph('Additionally, make sure you stay hydrated and get enough rest to support your weight loss efforts and overall health during confinement.'),
+      paragraph("**a. Low-Impact Exercise for Safe and Effective Weight Loss**"),
+      paragraph('Postpartum mothers who are looking to lose weight safely during confinement can benefit from low-impact exercises such as walking, swimming, and yoga.'),
+      paragraph('These exercises not only help in promoting weight loss, but also improve cardiovascular health, muscle tone, and flexibility.'),
+      paragraph('Low-impact exercises are gentle on the joints and reduce the risk of injury or strain. They can be done at home or in a gym with proper guidance from a certified trainer.'),
+      paragraph('**b. Incorporating Pelvic Floor Exercises for Faster Recovery**'),
+      paragraph('Incorporating pelvic floor exercises into their exercise routine can aid in faster recovery and prevent complications such as urinary incontinence. These exercises involve contracting and relaxing the muscles of the pelvic floor, which can improve overall fitness and well-being.'),
+      paragraph('To ensure safety and effectiveness, it\'s important to start slowly and gradually increase the intensity of these exercises over time.'),
+      paragraph('With these tips in mind, losing weight safely during confinement is achievable for new moms who want to prioritize their health and well-being.'),
+      paragraph('**Conclusion**'),
+      paragraph('In conclusion, safe weight loss during confinement requires a balanced approach that prioritizes your health and recovery. It is important to understand the confinement diet and its benefits, choose the right food, and balance nutrient intake while losing weight.'),
+      paragraph('Safe exercise, such as low-impact exercise and pelvic floor exercises, should also be incorporated into your routine.'),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57.
+        }
+      ),
+
+    ],
+  },
 ];

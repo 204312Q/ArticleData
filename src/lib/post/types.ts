@@ -10,6 +10,8 @@ export type PostImageAsset = {
   src: string;
   alt: string;
   objectPosition?: string;
+  maxWidth?: number;
+  displayHeight?: number;
 };
 
 export type PostContentBlock =

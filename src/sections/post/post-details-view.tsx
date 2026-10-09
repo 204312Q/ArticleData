@@ -1,6 +1,7 @@
 import type { PostItemData, PostContentBlock } from 'src/lib/post';
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
+import NextLink from 'next/link';
 
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
@@ -81,7 +82,7 @@ function renderBlock(block: PostContentBlock, index: number) {
   }
   if (block.type === 'heading') {
     return (
-      <Typography key={`heading-${index}`} variant="h4" sx={{ mt: 1, color:'#68727D' , fontWeight: 800 
+      <Typography key={`heading-${index}`} variant="h5" sx={{ mt: 1, color:'#68727D' , fontWeight: 800
       }}>
         {block.text}
       </Typography>
@@ -199,23 +200,73 @@ if (block.type === 'pinkHeading') {
   );
 }
 
-  if (block.type === 'image') {
-    return (
-      <Box key={`image-${index}`}>
-        <Box sx={{ position: 'relative', aspectRatio: '16 / 9', borderRadius: 4, overflow: 'hidden' }}>
-          <Image fill alt={block.image.alt} src={block.image.src} style={{ objectFit: 'cover' ,
-            objectPosition: block.image.objectPosition ?? 'center',
-           }} />
-        </Box>
 
-        {!!block.caption && (
-          <Typography color="text.secondary" sx={{ mt: 1.25, fontSize: '0.9rem' }}>
-            {block.caption}
-          </Typography>
-        )}
+if (block.type === 'image') {
+  const isBanner = block.image.src === '/banners/banner.png';
+
+  return (
+    <Box
+      key={`image-${index}`}
+      sx={{
+        width: '100%',
+        maxWidth: isBanner ? 650 : '100%',
+        mx: 'auto',
+      }}
+    >
+      <Box
+        sx={{
+          position: 'relative',
+          ...(isBanner
+            ? { width: '100%', aspectRatio: 'auto' }
+            : {
+                aspectRatio: '16 / 9',
+                borderRadius: 4,
+                overflow: 'hidden',
+              }),
+        }}
+      >
+        {isBanner && (
+          <NextLink
+          href="https://www.chillipadiconfinement.com/product"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+          position: 'absolute',
+          inset: 0,
+          zIndex: 2,
+        }}
+      />
+     )}
+        <Image
+          fill={!isBanner}
+          src={block.image.src}
+          alt={block.image.alt}
+          width={isBanner ? 650 : undefined}
+          height={isBanner ? 57 : undefined}
+          style={{
+            ...(isBanner
+              ? {
+                  position: 'static',
+                  display: 'block',
+                  width: '100%',
+                  height: 'auto',
+                }
+              : {
+                  objectFit: 'cover',
+                  objectPosition: block.image.objectPosition ?? 'center',
+                }),
+          }}
+        />
       </Box>
-    );
-  }
+
+      {!block.caption && (
+        <Typography color="text.secondary" sx={{ mt: 1.25, fontSize: '0.9rem' }}>
+          {block.caption}
+        </Typography>
+      )}
+    </Box>
+  );
+}
 
   return (
     <Box key={`gallery-${index}`}>
@@ -259,8 +310,16 @@ export function PostDetailsView({ post }: PostDetailsViewProps) {
           Back to Articles
         </Link>
 
-        <Typography variant="h2" sx={{ color: 'primary.main', mb: 2 }}>
-          {post.title}
+        <Typography variant="h2"
+        sx={{
+        color: 'primary.main',
+        mb: 2,
+        whiteSpace: 'normal',
+        overflowWrap: 'anywhere',
+        width:'100%',
+        maxWidth: '800px',
+        textAlign: 'center',
+        }}>{post.title}
         </Typography>
 
         <Typography
@@ -295,6 +354,7 @@ export function PostDetailsView({ post }: PostDetailsViewProps) {
             <Typography variant="overline" sx={{ color: 'text.secondary' }}>
               Reference
             </Typography>
+            
 
             <Link
               href={post.reference}
@@ -311,4 +371,3 @@ export function PostDetailsView({ post }: PostDetailsViewProps) {
     </Box>
   );
 }
-
