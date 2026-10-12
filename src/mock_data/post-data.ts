@@ -55,7 +55,16 @@ const ARTICLE_IMAGES = {
   weightLoss: [
     { src: '/banners/Weight_Loss.png' , alt: 'Tips to Lose Weight Safely'},
     { src: '/banners/safe_exercise.png' , alt: 'Safe Exercises'},
+    { src: '/banners/massage.png' , alt: 'PostNatal Massage'},
   ],
+  babysleep: [
+    { src: '/banners/baby_sleep_tips.png' , alt: 'Establishing Healthy Sleep Patterns for Your Little One'},
+  ],
+  swelling: [
+    { src: '/banners/Soothe_Swell_Pregnancy.png' , alt: 'Soothe Swelling During Pregnancy'}
+  ]
+
+
 } as const;
 
 const paragraph = (text: string): PostContentBlock => ({ type: 'paragraph', text });
@@ -942,7 +951,7 @@ export const mockPosts: PostItemData[] = [
   },
 
    {
-    id: 'post-10',
+    id: 'post-11',
     slug:'post-partum-expectations-versus-reality',
     title: 'Post Partum Expectations Versus Reality',
     excerpt: 'The postpartum period can be both exciting and overwhelming for new parents. Before the arrival of the baby, many parents have expectations of what their life will be like after the birth.',
@@ -993,7 +1002,7 @@ export const mockPosts: PostItemData[] = [
   },
 
    {
-    id: 'post-11',
+    id: 'post-12',
     slug:'tips-to-lose-weight-safely-during-confinement',
     title: 'Tips to Lose Weight Safely During Confinement',
     excerpt: 'Pregnancy and childbirth are beautiful experiences that come with their own set of challenges. One such challenge is postpartum weight gain. The pressure to lose weight quickly can be overwhelming, but it is essential to do it safely and in a way that does not affect the mother\'s health or her ability to care for her newborn.',
@@ -1016,7 +1025,7 @@ export const mockPosts: PostItemData[] = [
         {
           src: ARTICLE_IMAGES.weightLoss[1].src,
           alt: 'Safety Exercises',
-          objectPosition: 'center 75%'
+          objectPosition: 'center 30%',
         },
       ),
       paragraph('When it comes to losing weight safely during confinement, it\'s important to consider safe exercise routines for postpartum mothers. After giving birth, new mothers need to be careful when starting an exercise routine and should opt for low-impact exercises such as walking, yoga, and swimming.'),
@@ -1039,10 +1048,162 @@ export const mockPosts: PostItemData[] = [
           src: '/banners/banner.png',
           alt: 'https://www.chillipadiconfinement.com/product',
           maxWidth: 650,
-          displayHeight: 57.
+          displayHeight: 57,
+        }
+      ),
+    ],
+  },
+
+  {
+    id: 'post-13',
+    slug:'what-is-a-postnatal-massage-and-how-does-it-benefit-mothers',
+    title: 'What is a Postnatal Massage and How Does It Benefit Mothers?',
+    excerpt: 'While much attention is often given to pregnancy care during the nine months leading up to childbirth, the importance of postpartum care cannot be overlooked. The postpartum period, which begins immediately after the baby is born, is a critical time when a new mother undergoes numerous physical and emotional changes. A postnatal massage can be instrumental in aiding recovery and boosting a mother\’s confidence as she navigates the demands of caring for a newborn.',
+    category: 'Massage',
+    tags: ['confinement', 'confinement period', 'weight loss', 'postpartum recovery'],
+    coverUrl: ARTICLE_IMAGES.weightLoss[2].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: 'https://chillipadiconfinement.com/blogs/confinement-tips/what-is-a-postnatal-massage-and-how-does-it-benefit-mothers',
+    blocks: [
+      paragraph('**What is a Postnatal Massage?**'),
+      paragraph('A postnatal massage is a therapeutic practice designed to support new mothers during the recovery period after childbirth. This massage can be initiated anytime between the fifth day and three months post-delivery for mothers who had a normal delivery. In cases where a caesarean section was performed, it is advisable to wait until the incision has properly healed—typically about 2 to 4 weeks after delivery—before commencing with the postnatal massage. However, even before the incision heals, new mothers can still benefit from massages on other parts of the body to alleviate aches and pains and relieve water retention, all without disturbing the fresh wound on the abdomen.'),
+
+      paragraph('**Benefits of Postnatal Massage**'),
+
+      list([
+        '1. **Relief from Neck and Shoulder Pain:** The constant carrying and breastfeeding of the baby can strain the neck and shoulders, leading to discomfort. Postnatal massage helps to relieve this pain, allowing mothers to care for their newborns more comfortably.',
+        '2. **Helps to Restore the Uterus to Its Original State:** Postnatal massage can aid in the natural process of shrinking the uterus back to its original state, promoting faster recovery.',
+        '3. **Reduction of Excess Fluids:** During pregnancy, the body tends to retain excess fluids. Postnatal massage helps in the elimination of these fluids, reducing water retention and contributing to overall comfort.',
+        '4. **Weight Loss Support:** Regular postnatal massage can assist in weight loss by stimulating the body\’s metabolism and encouraging the breakdown of fat.',
+        '5. **Improved Blood Circulation:** Enhanced blood circulation is one of the key benefits of postnatal massage. This not only helps in faster healing but also boosts energy levels, which is crucial for new mothers who need to be at their best for their baby.'
+      ]),
+
+      image ({
+        src: '/banners/PostNatal_Massage.png',
+        alt: 'Massage',
+        objectPosition: 'center 30%'
+      }),
+
+      paragraph('In conclusion, while the journey of motherhood is rewarding, it comes with its challenges, especially during the postpartum period. Incorporating postnatal massage into a new mother’s routine can significantly ease the physical and emotional strains, promoting a quicker recovery and enabling mothers to fully enjoy their new role with confidence.'),
+      paragraph('For a relaxing confinement experience, choose our 28-Day Dual Meal X BMB package, which features freshly cooked confinement meals delivered to your doorstep along with postnatal massage sessions. We are currently offering a sale on this package, so don’t miss out. Find out more here.'),
+      
+    ],
+  },
+
+   {
+    id: 'post-14',
+    slug:'baby-sleep-tips-establishing-healthy-sleep-patterns-for-your-little-one',
+    title: 'Baby Sleep Tips: Establishing Healthy Sleep Patterns for Your Little One',
+    excerpt: 'Before we dive into the tips and tricks, let\'s take a moment to appreciate why sleep is so crucial for your baby\'s well-being. Sleep plays a vital role in their growth and development, both physically and mentally. It helps consolidate their memories, supports brain development, and enhances their immune system. Plus, let\'s not forget that a well-rested baby equals a happier and more alert baby during the day. So, ensuring your little munchkin gets enough quality sleep is a top priority.',
+    category: 'Sleep',
+    tags: ['confinement', 'confinement period', 'mental health', 'postpartum recovery'],
+    coverUrl: ARTICLE_IMAGES.babysleep[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: ['https://pmc.ncbi.nlm.nih.gov/articles/PMC6587181/','https://www.verywellfamily.com/the-ferber-method-dr-ferbers-sleep-book-2634262' , 'https://chillipadiconfinement.com/blogs/confinement-tips/baby-sleep-tips-establishing-healthy-sleep-patterns-for-your-little-one' ],
+    blocks: [
+      heading('The Magic of Sleep Cycles and Circadian Rhythms'),
+      paragraph('Did you know that infants have shorter sleep cycles than adults? Understanding these cycles and their impact on your little one\'s sleep patterns is crucial. Infants go through active sleep (REM) and quiet sleep (non-REM) phases, with REM sleep playing a significant role in brain development.'),
+      paragraph('Additionally, babies\' sleep is influenced by their circadian rhythms, the internal clocks that regulate their sleep-wake cycles. By aligning your baby\'s routine with their natural rhythms, you can encourage healthier sleep patterns.'),
+
+      heading('The Role of Melatonin in Baby Sleep'),
+      paragraph('Ever wondered why your baby seems more active at night? Well, it\'s all about melatonin—the hormone responsible for regulating sleep. In infants, melatonin production takes time to develop fully. This means their sleep patterns might be initially erratic. However, there are strategies you can implement to support melatonin production and gradually establish a more consistent sleep routine. '),
+
+      heading('Creating a Soothing Sleep Environment'),
+      paragraph('Imagine trying to doze off in a noisy, brightly lit room with uncomfortable bedding. Not very appealing, right? Well, the same goes for your baby. Creating a sleep-friendly environment is key to encouraging healthy sleep patterns. Here are a few tips to set the stage for a peaceful slumber:'),
+      
+      paragraph('**Soft Lighting and White Noise**'),
+      paragraph('Dim the lights in the evening to signal to your baby that it\'s bedtime. Consider using a nightlight or a dimmer switch to create a calm ambiance. Additionally, white noise machines or apps can work wonders in drowning out disruptive sounds and providing a soothing background hum for your little one.'),
+      
+      paragraph('**Comfortable Bedding**'),
+      paragraph('Investing in a good-quality crib mattress and breathable bedding is essential. Opt for materials that promote airflow and regulate temperature, helping your baby stay cosy without overheating. Remember, comfort is key!'),
+
+      paragraph('**Room Temperature**'),
+      paragraph('Maintaining a comfortable room temperature is crucial for your baby\'s sleep. Aim for a mild and consistent temperature, around 20-22°C, to ensure they neither feel too hot nor too cold. Dress them in appropriate clothing for the current season and use lightweight blankets if needed.'),
+
+      heading('Establishing a Bedtime Routine'),
+      paragraph('Humans are creatures of habit, and babies are no exception. Implementing a consistent bedtime routine can work wonders in preparing your little one for a restful night\'s sleep. Let\'s explore some elements to incorporate into their pre-bedtime ritual:'),
+
+      paragraph('**Calming Activities**'),
+      paragraph('Engage in relaxing activities such as reading a bedtime story, gentle baby massage, or singing lullabies. These calming interactions help signal to your baby that it\'s time to wind down and get ready for sleep.'),
+
+      paragraph('**Bath Time**'),
+      paragraph('A warm bath before bed can work like magic in soothing your baby\'s tired body. The water\'s gentle touch and the rhythmic nature of bathing create a serene atmosphere, preparing them for slumber.'),
+
+      paragraph('**Dimmed Lights**'),
+      paragraph('As mentioned earlier, dimming the lights helps set a tranquil mood. During the bedtime routine, gradually reduce the intensity of the lighting to create a soothing environment that encourages sleep.'),
+
+      heading('Navigating the World of Sleep Training Methods'),
+      paragraph('**The Ferber Method**'),
+      paragraph('Developed by Dr. Richard Ferber, this method involves gradually increasing the time between parental check-ins during nighttime awakenings. The goal is to teach your baby to self-soothe and fall back to sleep independently.'),
+      paragraph('**The Gentle Sleep Training Approach**'),
+      paragraph('For parents who prefer a gentler approach, techniques like the "pick-up, put-down" method or the "bedtime fading" method can be effective. These methods involve offering comfort and reassurance to your baby without leaving them to cry for extended periods.'),
+      heading('Managing Sleep Regression and Developmental Milestons'),
+      paragraph('Just when you think you\'ve cracked the code and established a perfect sleep routine, bam! Sleep regression hits, leaving you scratching your sleep-deprived head. But fret not, it\'s a normal part of your baby\'s development. Here are a few tips to navigate this challenging phase:'),
+      paragraph('**Stick to the Routine**'),
+      paragraph('During sleep regressions, it\'s crucial to stay consistent with your baby\'s sleep routine. While their sleep patterns may temporarily be disrupted, following the established bedtime routine will help them adjust more smoothly.'),
+      paragraph('**Offer Comfort and Reassurance**'),
+      paragraph('Sleep regressions can be tough on both babies and parents. Providing extra comfort, such as extra cuddles or a reassuring voice, can help ease your little one through this phase.'),
+      heading('Conclusion'),
+      paragraph('From creating a soothing sleep environment to implementing a consistent bedtime routine and navigating sleep regressions, you now have a toolkit of strategies to help your little one snooze soundly. Remember, every baby is unique, so feel free to experiment and adjust these tips to suit your baby\'s needs. May sweet dreams and peaceful slumber be your new companions on this beautiful journey of parenthood!'),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
         }
       ),
 
     ],
   },
-];
+
+   {
+    id: 'post-15',
+    slug:'10-tips-to-soothe-swelling-during-pregnancy',
+    title: '10 Tricks to Soothe Swelling During Pregnancy',
+    excerpt: 'Swelling, also known as edema, is a common occurrence during pregnancy. It\'s mainly caused by your body\'s natural response to increased blood volume and hormonal changes. As your body retains more fluids, the extra fluid can accumulate in your tissues, resulting in swelling. Here are some factors that contribute to swelling during pregnancy:',
+    category: 'Pregnancy',
+    tags: ['beauty and skincare', 'pregnancy'],
+    coverUrl: ARTICLE_IMAGES.swelling[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/10-tips-to-soothe-swelling-during-pregnancy', 'https://americanpregnancy.org/pregnancy-health/swelling-during-pregnancy/' , 'https://www.acog.org/womens-health/faqs/prenatal-nutrition' , 'https://www.nhs.uk/conditions/pregnancy-and-baby/swollen-ankles-feet-pregnant/'],
+    blocks: [
+      heading('The Causes of Swelling During Pregnancy: Understanding the Bloat'),
+      paragraph('**Increased Blood Volume: More Fluids, More Swelling**'),
+      paragraph('During pregnancy, your blood volume increases significantly to support your growing baby. This increased blood volume helps transport nutrients and oxygen to both you and your baby but can also lead to fluid retention, causing swelling in your legs, feet, and hands.'),
+      paragraph('**Hormonal Changes: The Culprits Behind the Bloat**'),
+      paragraph('Hormones play a significant role in pregnancy, but they can also contribute to swelling. Hormonal changes, particularly an increase in progesterone, can cause your blood vessels to relax and expand, making it easier for fluid to seep into surrounding tissues.'),
+      paragraph('**Pressure from the Uterus: Squeezing the Fluids**'),
+      paragraph('As your baby grows, your uterus expands and puts pressure on your pelvic veins, slowing down the blood flow from your legs and feet back to your heart. This sluggish circulation can lead to fluid buildup and swelling in the lower extremities.'),
+      paragraph('**Gravity at Play: The Pull of Swelling**'),
+      paragraph('Gravity is not your best friend when it comes to swelling. When you stand or sit for prolonged periods, gravity can make it harder for your body to return fluids to your heart. This can result in swelling, especially in your lower legs and feet.'),
+      paragraph('Now that we\'ve explored the causes, let\'s dive into some expert tips to help you find relief from swelling during pregnancy.'),
+
+      heading('Tips to Reduce Swelling During Pregnancy'),
+      paragraph('**Stay Hydrated: Guzzle that Water!**'),
+      paragraph('First things first, hydration is key! Staying hydrated actually helps flush out excess fluids, reducing the risk of swelling. Aim for a minimum of eight glasses of water a day. If plain water doesn\'t tickle your taste buds, infuse it with a splash of lemon or cucumber for a refreshing twist.'),
+      paragraph('**Kick Up Those Feet: Elevate and Relax**'),
+      paragraph('When it comes to battling the swelling monster, elevation is your secret weapon. Kick off those shoes, put your feet up, and let gravity do its magic. Elevating your feet above heart level helps improve circulation and decrease fluid retention.'),
+      paragraph('**Compression Socks: Fashion Meets Function**'),
+      paragraph('Whoever said compression socks were only for grandmas clearly hasn\'t experienced the magic they work during pregnancy. These babies are a game-changer! Compression socks gently squeeze your legs, promoting blood flow and reducing swelling. Plus, they come in all sorts of funky patterns, so you can rock those legs in style!'),
+      paragraph('**Move It, Mama: Get Your Blood Pumping**'),
+      paragraph('Exercise might be the last thing on your mind when you\'re feeling bloated, but trust me, it\'s worth it! Gentle exercise, like prenatal yoga or walking, gets your blood flowing, reducing fluid buildup in your extremities. Additionally, regular exercise helps maintain a healthy weight, which can minimise swelling. '),
+      paragraph('**Embrace a Low-Sodium Lifestyle**'),
+      paragraph('We all love a little flavour in our lives, but excessive salt intake can be a sneaky culprit behind swelling. High levels of sodium lead to water retention, exacerbating bloating. Opt for low-sodium alternatives or experiment with flavorful herbs and spices to season your meals.'),
+      paragraph('**Choose Nutrient-Packed Foods**'),
+      paragraph('Eating a balanced diet is not only crucial for your baby\'s development but can also help combat swelling. Incorporate foods rich in potassium, such as bananas, spinach, and avocados, as they help regulate fluid balance in your body. Additionally, indulge in foods high in vitamin C, like oranges and strawberries, which aid collagen production and support blood vessel health.'),
+      paragraph('**Stay Cool: Beat the Heat**'),
+      paragraph('Hot weather can be a swelling catalyst, so beat the heat to keep the bloat at bay. Seek refuge in air-conditioned spaces, take cool showers, and wear loose, breathable clothing. Embrace your inner fashionista with flowy dresses and comfy sandals. '),
+      paragraph('**Sleep Like a Baby: Snooze Soundly**'),
+      paragraph('As an expecting mama, a good night\'s sleep is pure gold. But did you know it can also help alleviate swelling? When you\'re well-rested, your body functions more efficiently, including fluid regulation. Invest in a supportive pillow, create a calming bedtime routine, and bid farewell to sleepless nights and swollen ankles.'),
+      paragraph('**Reduce Sweet Temptations**'),
+      paragraph('Sugar might be your pregnancy craving kryptonite, but it can exacerbate inflammation and fluid retention. Opt for healthier alternatives like fresh fruit or natural sweeteners.'),
+      paragraph('**Seek Expert Advice**'),
+      paragraph('Remember, every pregnancy is unique, and what works for one mama might not work for another. If you\'re concerned about swelling, always reach out to your trusted OB-GYN for personalised guidance. They can evaluate your specific situation, offer tailored recommendations, and ensure a smooth and healthy pregnancy journey.'),
+
+    ],
+  },
+
+]
+

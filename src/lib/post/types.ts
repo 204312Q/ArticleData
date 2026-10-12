@@ -35,7 +35,7 @@ export type PostItemData = {
   tags: string[];
   coverUrl: string;
   createdAt: string;
-  reference?: string;
+  reference?: string | string[];
   blocks: PostContentBlock[];
 };
 

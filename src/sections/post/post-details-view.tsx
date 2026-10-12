@@ -341,33 +341,44 @@ export function PostDetailsView({ post }: PostDetailsViewProps) {
           {post.blocks.map((block, index) => renderBlock(block, index))}
         </Box>
 
-        {!!post.reference && (
-          <Box
-            sx={{
-              mt: 5,
-              p: 3,
-              borderRadius: 3,
-              bgcolor: 'rgba(15, 23, 42, 0.03)',
-              border: '1px solid rgba(15, 23, 42, 0.08)',
-            }}
-          >
-            <Typography variant="overline" sx={{ color: 'text.secondary' }}>
-              Reference
-            </Typography>
-            
+        
+{post.reference && (
+  <Box
+    sx={{
+      mt: 5,
+      p: 3,
+      borderRadius: 3,
+      bgcolor: 'rgba(15, 23, 42, 0.03)',
+      border: '1px solid rgba(15, 23, 42, 0.08)',
+    }}
+  >
+    <Typography variant="overline" sx={{ color: 'text.secondary' }}>
+      References
+    </Typography>
 
-            <Link
-              href={post.reference}
-              target="_blank"
-              rel="noreferrer"
-              underline="hover"
-              sx={{ display: 'block', mt: 0.5, wordBreak: 'break-word' }}
-            >
-              {post.reference}
-            </Link>
-          </Box>
-        )}
-      </Container>
+    {(Array.isArray(post.reference)
+      ? post.reference
+      : [post.reference]
+    ).map((url, index) => (
+      <Link
+        key={url}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        underline="hover"
+        sx={{
+          display: 'block',
+          mt: 0.5,
+          wordBreak: 'break-word',
+        }}
+      >
+       {url} 
+       </Link> 
+       ))}
+  </Box> 
+ )}
+ </Container>
     </Box>
   );
+
 }
