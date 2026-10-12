@@ -80,14 +80,35 @@ function renderBlock(block: PostContentBlock, index: number) {
       </TableContainer>
     );
   }
-  if (block.type === 'heading') {
-    return (
-      <Typography key={`heading-${index}`} variant="h5" sx={{ mt: 1, color:'#68727D' , fontWeight: 800
-      }}>
-        {block.text}
-      </Typography>
-    );
-  }
+  
+if (block.type === 'heading') {
+  const headingSize = {
+    small: 'h6',
+    medium: 'h4',
+    large: 'h3',
+  } as const;
+
+  return (
+    <Typography
+      key={`heading-${index}`}
+      variant={headingSize[block.size ?? 'medium']}
+      sx={{
+        mt: 1,
+        color: '#68727D',
+        fontWeight: 700,
+        letterSpacing: '1.5px',
+        textTransform: block.uppercase ? 'uppercase' : 'none',
+        ...(block.size === 'large' && {
+          fontSize: { xs: '1rem', md: '2rem' },
+          lineHeight: 1.2,
+        }),
+      }}
+    >
+      {block.text}
+    </Typography>
+  );
+}
+
 
   if (block.type === 'paragraph') {
     return (
@@ -147,38 +168,58 @@ function renderBlock(block: PostContentBlock, index: number) {
     );
   }
 
-  if (block.type === 'list') {
-    return (
-        <Box
-            key={`list-${index}`}
-            component="ul"
-            sx={{ m: 0, pl: 3, color: 'text.secondary', display: 'grid', gap: 1.25 }}
-        >
-            {block.items.map((item) => {
-                const match = item.match(/^(.*?)(?:\*\*)(.*?)(?:\*\*)(.*)$/);
 
-                return (
-                    <Box key={item} component="li" sx={{ lineHeight: 2.0 }}>
-                        {match ? (
-                            <>
-                                {match[1]}
-                                <Typography
-                                component="span"
-                                sx={{ fontWeight: 800, color: '#68727D' }}
-                                >
-                                {match[2]}
-                                </Typography>
-                                {match[3]}
-                            </>
-                        ) : (
-                            item
-                        )}
-                    </Box>
-                );
-            })}
-        </Box>
-    );
+if (block.type === 'list') {
+  const listStyle = block.style ?? 'bullet';
+
+  return (
+    <Box
+      key={`list-${index}`}
+      component={listStyle === 'number' ? 'ol' : 'ul'}
+      sx={{
+        m: 0,
+        pl: listStyle === 'none' ? 0 : 5,
+        color: 'text.secondary',
+        display: 'grid',
+        gap: 1.25,
+        listStyleType:
+          listStyle === 'number'
+            ? 'decimal'
+            : listStyle === 'bullet'
+              ? 'disc'
+              : 'none',
+      }}
+    >
+      {block.items.map((item, itemIndex) => {
+        const match = item.match(/^(.*?)(\*\*)(.*?)(\*\*)(.*)$/);
+
+        return (
+          <Box
+            key={itemIndex}
+            component="li"
+            sx={{ lineHeight: 2.0 }}
+          >
+            {match ? (
+              <>
+                {match[1]}
+                <Typography
+                  component="span"
+                  sx={{ fontWeight: 800, color: '#68727D' }}
+                >
+                  {match[3]}
+                </Typography>
+                {match[5]}
+              </>
+            ) : (
+              item
+            )}
+          </Box>
+        );
+      })}
+    </Box>
+  );
 }
+
 
 if (block.type === 'pinkHeading') {
   return (

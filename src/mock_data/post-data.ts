@@ -50,7 +50,8 @@ const ARTICLE_IMAGES = {
     { src: '/banners/Anxiety.png', alt: 'Overcoming Anxiety and Stress'}
   ],
   postpartum: [
-  { src: '/banners/Postpartum_Expectations_Versus_Reality.png' , alt: 'Post Partum Expectations Vs Reality' }
+  { src: '/banners/Postpartum_Expectations_Versus_Reality.png' , 
+    alt: 'Post Partum Expectations Vs Reality' }
   ],
   weightLoss: [
     { src: '/banners/Weight_Loss.png' , alt: 'Tips to Lose Weight Safely'},
@@ -58,10 +59,26 @@ const ARTICLE_IMAGES = {
     { src: '/banners/massage.png' , alt: 'PostNatal Massage'},
   ],
   babysleep: [
-    { src: '/banners/baby_sleep_tips.png' , alt: 'Establishing Healthy Sleep Patterns for Your Little One'},
+    { src: '/banners/baby_sleep_tips.png' , 
+      alt: 'Establishing Healthy Sleep Patterns for Your Little One'},
   ],
   swelling: [
-    { src: '/banners/Soothe_Swell_Pregnancy.png' , alt: 'Soothe Swelling During Pregnancy'}
+    { src: '/banners/Soothe_Swell_Pregnancy.png' , 
+      alt: 'Soothe Swelling During Pregnancy'}
+  ],
+  stretchMarks: [
+    { src: '/banners/Stretch_Marks.png' , 
+      alt: 'Effective Prevention Tips for Stretch Marks'}
+  ],
+  depression: [
+    { src: '/banners/Postpartum_Depression.png' ,
+      alt: 'Overcoming Postpartum Depression'
+    }
+  ],
+  essentials: [
+    { src: '/banners/essentials_needed.png',
+      alt: '10 Must Have Essentials for Expectant Moms'
+    }
   ]
 
 
@@ -79,7 +96,16 @@ const callout = (title: string, text: string): PostContentBlock => ({
   text,
 });
 
-const list = (items: string[]): PostContentBlock => ({ type: 'list', items });
+
+const list = (
+  items: string[],
+  style: 'bullet' | 'number' | 'none' = 'bullet'
+): PostContentBlock => ({
+  type: 'list',
+  items,
+  style,
+});
+
 
 const table = (
   rows: {
@@ -133,10 +159,10 @@ export const mockPosts: PostItemData[] = [
         'Confinement, deeply rooted in traditional cultures, encompasses various practices aimed at facilitating postpartum recovery. TCM, with its centuries-old wisdom and natural approaches, aligns harmoniously with the principles of confinement. Let\'s explore how TCM complements confinement practices:'
       ),
       list([
-        '1. **Restoring Qi (Life Energy)**: TCM believes that childbirth depletes a mother\'s Qi. Through the use of acupuncture, herbal remedies, and dietary adjustments, TCM aims to replenish and restore the body\'s vital energy, fostering overall well-being.',
-        '2. **Enhancing Blood Circulation**: Blood circulation plays a crucial role in the healing process after childbirth. TCM methods such as postnatal massages and herbal baths can help improve blood flow, reduce swelling, and relieve pain, aiding in a faster recovery.',
-        '3. **Balancing Hormones**: TCM recognizes the importance of hormone balance during the confinement period. Herbal medicines and dietary recommendations are tailored to regulate hormone levels, reducing the chances of postpartum mood swings and other related issues',
-      ]),
+        ' **Restoring Qi (Life Energy)**: TCM believes that childbirth depletes a mother\'s Qi. Through the use of acupuncture, herbal remedies, and dietary adjustments, TCM aims to replenish and restore the body\'s vital energy, fostering overall well-being.',
+        ' **Enhancing Blood Circulation**: Blood circulation plays a crucial role in the healing process after childbirth. TCM methods such as postnatal massages and herbal baths can help improve blood flow, reduce swelling, and relieve pain, aiding in a faster recovery.',
+        ' **Balancing Hormones**: TCM recognizes the importance of hormone balance during the confinement period. Herbal medicines and dietary recommendations are tailored to regulate hormone levels, reducing the chances of postpartum mood swings and other related issues',
+      ], 'number' ),
       quote(
         'The strongest confinement plan respects tradition without turning recovery into a rulebook.'
       ),
@@ -145,19 +171,19 @@ export const mockPosts: PostItemData[] = [
         'Aside from physical recovery, TCM also emphasizes the importance of nurturing the mind and emotional well-being during confinement. Here\'s how TCM can lend a helping hand'
       ),
       list([
-        '1. **Restoring Balance**: TCM views the body as an interconnected system, and childbirth disrupts this delicate balance. TCM treatments, such as acupuncture and herbal remedies, aim to restore harmony, promote healing, and enhance overall well-being.',
-        '2. **Nourishing the Body**: TCM recognizes the importance of proper nutrition and the use of specific herbs and tonics to replenish vital energy and support postpartum recovery. These nourishing practices can help address fatigue, boost immunity, and promote healthy milk production.',
-        '3. **Emotional Support**: The postpartum period can bring about a whirlwind of emotions. TCM offers various techniques, including herbal remedies and mind-body practices like meditation and qigong, to support emotional well-being and reduce stress and anxiety.',
-      ]),
+        ' **Restoring Balance**: TCM views the body as an interconnected system, and childbirth disrupts this delicate balance. TCM treatments, such as acupuncture and herbal remedies, aim to restore harmony, promote healing, and enhance overall well-being.',
+        ' **Nourishing the Body**: TCM recognizes the importance of proper nutrition and the use of specific herbs and tonics to replenish vital energy and support postpartum recovery. These nourishing practices can help address fatigue, boost immunity, and promote healthy milk production.',
+        ' **Emotional Support**: The postpartum period can bring about a whirlwind of emotions. TCM offers various techniques, including herbal remedies and mind-body practices like meditation and qigong, to support emotional well-being and reduce stress and anxiety.',
+      ], 'number' ),
       paragraph(
         'The key takeaway is balance. A thoughtful confinement plan can respect tradition while still making space for informed decisions, personal comfort, and advice from qualified practitioners when needed.'
       ),
       heading('Challenges and Tradeoffs In Incorporating TCM'),
       list([
-        '1. **Limited Scientific Evidence:** While TCM has a rich historical background, the scientific evidence supporting its effectiveness in postpartum recovery is still evolving. It\'s important to approach TCM as a complementary approach, supplementing it with evidence-based practices and consulting healthcare professionals to make informed decisions. ',
-        '2. **Individual Variations:** Every person is unique, and what works for one may not work for another. TCM treatments are highly personalized, taking into account individual characteristics, symptoms, and medical history. It\'s crucial to consult with a qualified TCM practitioner who can tailor treatments to your specific needs. ',
-        '3. **Safety Considerations:** TCM encompasses a vast array of herbal remedies, and some herbs may have potential interactions with medications or specific health conditions. Open communication with your healthcare provider and a qualified TCM practitioner is vital to ensure a safe and effective experience.',
-      ]),
+        ' **Limited Scientific Evidence:** While TCM has a rich historical background, the scientific evidence supporting its effectiveness in postpartum recovery is still evolving. It\'s important to approach TCM as a complementary approach, supplementing it with evidence-based practices and consulting healthcare professionals to make informed decisions. ',
+        ' **Individual Variations:** Every person is unique, and what works for one may not work for another. TCM treatments are highly personalized, taking into account individual characteristics, symptoms, and medical history. It\'s crucial to consult with a qualified TCM practitioner who can tailor treatments to your specific needs. ',
+        ' **Safety Considerations:** TCM encompasses a vast array of herbal remedies, and some herbs may have potential interactions with medications or specific health conditions. Open communication with your healthcare provider and a qualified TCM practitioner is vital to ensure a safe and effective experience.',
+      ], 'number'),
       heading('FAQs about TCM in Confinement'),
       
       list([
@@ -167,7 +193,7 @@ export const mockPosts: PostItemData[] = [
         'A: Certain TCM practices, such as intense detoxification methods or certain herbal remedies, may not be suitable during the postpartum period. It\'s important to work with a qualified TCM practitioner who specializes in postpartum care to create a tailored treatment plan that aligns with your specific needs.',
         '**Q: Can TCM help with postpartum depression?**',
         'A: TCM takes a holistic approach to address emotional well-being, including postpartum depression. Herbal remedies, acupuncture, and mind-body practices prescribed by a qualified TCM practitioner can provide support and complement other forms of treatment.',
-      ]),
+      ], 'none'),
 
       heading('Conclusion'),
       paragraph('Incorporating Traditional Chinese Medicine (TCM) into the practice of confinement offers a potential path to holistic postpartum recovery. It emphasises restoring balance, nourishing the body, and supporting emotional well-being.'),
@@ -210,78 +236,78 @@ export const mockPosts: PostItemData[] = [
         'Black Chicken Ginseng Soup is rich in essential nutrients, including protein, vitamins, and minerals, that can help to boost energy levels, promote healing, and nourish the body. It is particularly beneficial for confinement mothers as it helps to replenish lost nutrients during childbirth and breastfeeding.'
       ),
 
+      paragraph('**Ingredients:**'),
       list([ 
-        '**Ingredients:**',
-        '**•** 1 whole black chicken (around 1.2kg)',
-        '**•** 30g ginseng root',
-        '**•** 10 red dates',
-        '**•** 5g wolfberries',
-        '**•** 5g dried longan',
-        '**•** 3 slices of ginger',
-        '**•** 2 cloves of garlic',
-        '**•** 2 tbsp rice wine',
-        '**•** 10 cups of water'
+        ' 1 whole black chicken (around 1.2kg)',
+        ' 30g ginseng root',
+        ' 10 red dates',
+        ' 5g wolfberries',
+        ' 5g dried longan',
+        ' 3 slices of ginger',
+        ' 2 cloves of garlic',
+        ' 2 tbsp rice wine',
+        ' 10 cups of water'
       ]),
 
+      paragraph('**Preparation**'),
       list([
-        '**Preparation:**',
-        '1. Soak the ginseng root in cold water for 30 minutes to an hour. This will help to soften the root and make it easier to handle.',
-        '2. Rinse the black chicken and remove any excess fat. Then, blanch the chicken in boiling water for 5 minutes to remove any impurities.',
-        '3. Rinse the red dates, wolfberries, and dried longan in cold water.',
-        '4. Peel and slice the ginger and garlic.'
-      ]),
+        ' Soak the ginseng root in cold water for 30 minutes to an hour. This will help to soften the root and make it easier to handle.',
+        ' Rinse the black chicken and remove any excess fat. Then, blanch the chicken in boiling water for 5 minutes to remove any impurities.',
+        ' Rinse the red dates, wolfberries, and dried longan in cold water.',
+        ' Peel and slice the ginger and garlic.'
+      ], 'number'),
 
+      paragraph('**Cooking Method:**'),
       list([
-        '**Cooking Method:**',
-        '1. In a large pot, add the blanched chicken, soaked ginseng root, red dates, wolfberries, dried longan, ginger, and garlic.',
-        '2. Pour in 10 cups of water and bring the pot to a boil over high heat.',
-        '3. Once the water is boiling, reduce the heat to low and simmer the soup for 2 to 3 hours, until the chicken is tender and the soup is flavorful.',
-        '4. Halfway through cooking, add 2 tbsp of rice wine to the pot to enhance the flavor of the soup.',
-        '5. Once the soup is done, turn off the heat and let it cool slightly.',
-        '6. Strain the soup and discard the solids.',
-        '7. Serve the soup hot with some steamed rice or on its own.'
-      ]),
+        ' In a large pot, add the blanched chicken, soaked ginseng root, red dates, wolfberries, dried longan, ginger, and garlic.',
+        ' Pour in 10 cups of water and bring the pot to a boil over high heat.',
+        ' Once the water is boiling, reduce the heat to low and simmer the soup for 2 to 3 hours, until the chicken is tender and the soup is flavorful.',
+        ' Halfway through cooking, add 2 tbsp of rice wine to the pot to enhance the flavor of the soup.',
+        ' Once the soup is done, turn off the heat and let it cool slightly.',
+        ' Strain the soup and discard the solids.',
+        ' Serve the soup hot with some steamed rice or on its own.'
+      ], 'number'),
 
       list([
         '**Q: Can I use a regular chicken instead of a black chicken?**',
         'A: While you can use a regular chicken to make this soup, a black chicken is preferred as it has a richer and more intense flavor.',
         '**Q: How long can I keep the soup in the fridge?**',
         'A: You can keep the soup in the fridge for up to 3 days. To reheat, simply bring the soup to a boil over low heat.',
-      ]),
+      ], 'none'),
 
       {type:'pinkHeading', text: 'Black Bean Pork Ribs Soup'},
 
       paragraph('A nourishing and flavourful dish, this soup is rich in protein, vitamins, and minerals, making it an excellent choice for new moms who need to replenish their bodies after childbirth.'
       ),
 
+      paragraph('**Ingredients:**'),
       list([
-        '**Ingredients:**',
-        '**•** 500g pork ribs',
-        '**•** 1 cup dried black beans',
-        '**•** 2-3 slices of ginger',
-        '**•** 1 tablespoon Shaoxing wine',
-        '**•** 1 tablespoon soy sauce',
-        '**•** 1 teaspoon salt',
-        '**•** 8 cups water',
-        '**•** Optional: 2-3 dried red dates, 2-3 dried shiitake mushrooms'
+        ' 500g pork ribs',
+        ' 1 cup dried black beans',
+        ' 2-3 slices of ginger',
+        ' 1 tablespoon Shaoxing wine',
+        ' 1 tablespoon soy sauce',
+        ' 1 teaspoon salt',
+        ' 8 cups water',
+        ' Optional: 2-3 dried red dates, 2-3 dried shiitake mushrooms'
       ]),
 
+      paragraph('**Directions:**'),
       list([
-        '**Directions:**',
-        '**1.** Soak the black beans in water for at least 2 hours or overnight. Drain and set aside.',
-        '**2.** In a large pot, blanch the pork ribs in boiling water for 3-5 minutes to remove any impurities. Rinse and set aside.',
-        '**3.** In the same pot, sauté the ginger until fragrant. Add the pork ribs and stir-fry until lightly browned.',
-        '**4.** Add the black beans, Shaoxing wine, soy sauce, salt, and water to the pot. Bring to a boil, then reduce heat and simmer for 2-3 hours, or until the pork ribs are tender and the beans are soft.',
-        '**5.** Optional: Add dried red dates and shiitake mushrooms during the last 30 minutes of cooking.',
-        '**6.** Serve hot and enjoy!'
-      ]),
+        ' Soak the black beans in water for at least 2 hours or overnight. Drain and set aside.',
+        ' n a large pot, blanch the pork ribs in boiling water for 3-5 minutes to remove any impurities. Rinse and set aside.',
+        ' In the same pot, sauté the ginger until fragrant. Add the pork ribs and stir-fry until lightly browned.',
+        ' Add the black beans, Shaoxing wine, soy sauce, salt, and water to the pot. Bring to a boil, then reduce heat and simmer for 2-3 hours, or until the pork ribs are tender and the beans are soft.',
+        ' Optional: Add dried red dates and shiitake mushrooms during the last 30 minutes of cooking.',
+        ' Serve hot and enjoy!'
+      ], 'number'),
 
+      paragraph('**Tips and Tricks:**'),
       list([
-        '**Tips and Tricks:**',
-        '**•** Soaking the black beans in advance helps them cook faster and more evenly.',
-        '**•** Blanching the pork ribs before cooking removes any impurities and improves the flavor of the soup.',
-        '**•** Adding dried red dates and shiitake mushrooms can enhance the flavor and nutritional value of the soup.',
-        '**•** Adjust the salt and soy sauce to taste.'
+        ' Soaking the black beans in advance helps them cook faster and more evenly.',
+        ' Blanching the pork ribs before cooking removes any impurities and improves the flavor of the soup.',
+        ' Adding dried red dates and shiitake mushrooms can enhance the flavor and nutritional value of the soup.',
+        ' Adjust the salt and soy sauce to taste.'
       ]),
 
       {type:'pinkHeading', 
@@ -292,38 +318,38 @@ export const mockPosts: PostItemData[] = [
       ),
 
       list([
-        '1. **Rich in protein** - Threadfin is a good source of protein, which is essential for muscle repair and growth',
-        '2. **Boosts immunity** - Black fungus contains beta-glucans, a type of carbohydrate that can boost the immune system and fight off infections.',
-        '3. **Anti-inflammatory** - Ginger has anti-inflammatory properties that can help reduce inflammation and swelling, making it an ideal ingredient for postpartum recovery.',
-        '4. **Helps with digestion** - Sesame oil is high in antioxidants and can help promote healthy digestion.'
+        ' **Rich in protein** - Threadfin is a good source of protein, which is essential for muscle repair and growth',
+        ' **Boosts immunity** - Black fungus contains beta-glucans, a type of carbohydrate that can boost the immune system and fight off infections.',
+        ' **Anti-inflammatory** - Ginger has anti-inflammatory properties that can help reduce inflammation and swelling, making it an ideal ingredient for postpartum recovery.',
+        ' **Helps with digestion** - Sesame oil is high in antioxidants and can help promote healthy digestion.'
+      ], 'number'),
+
+      paragraph('**Ingredients:**'),
+      list([
+        ' 1 medium-sized threadfin (about 500g)',
+        ' 20g black fungus',
+        ' 20g ginger, julienned',
+        ' 2 tablespoons light soy sauce',
+        ' 1 tablespoon sesame oil',
+        ' 1 tablespoon Shaoxing wine',
+        ' 1 teaspoon sugar',
+        ' 1 tablespoon vegetable oil',
+        ' 2 stalks scallions, chopped',
+        ' 1 red chili, sliced (optional)'
       ]),
 
+      paragraph('**Instructions:**'),
       list([
-        '**Ingredients:**',
-        '**•** 1 medium-sized threadfin (about 500g)',
-        '**•** 20g black fungus',
-        '**•** 20g ginger, julienned',
-        '**•** 2 tablespoons light soy sauce',
-        '**•** 1 tablespoon sesame oil',
-        '**•** 1 tablespoon Shaoxing wine',
-        '**•** 1 teaspoon sugar',
-        '**•** 1 tablespoon vegetable oil',
-        '**•** 2 stalks scallions, chopped',
-        '**•** 1 red chili, sliced (optional)'
-      ]),
-
-      list([
-        '**Instructions:**',
-        '1. Soak the black fungus in water for 30 minutes or until softened. Drain and cut into smaller pieces.',
-        '2. Clean the threadfin and pat dry with paper towels. Make 3-4 shallow cuts on each side of the fish.',
-        '3. In a bowl, mix together the light soy sauce, sesame oil, Shaoxing wine, and sugar. Set aside.',
-        '4. In a wok or frying pan, heat the vegetable oil over medium heat. Add the ginger and stir-fry for 1-2 minutes until fragrant.',
-        '5. Add the black fungus and stir-fry for another 2-3 minutes.',
-        '6. Pour the soy sauce mixture into the wok and bring to a boil.',
-        '7. Place the threadfin on a heatproof plate and pour the ginger and black fungus mixture over it.',
-        '8. Steam the fish over high heat for 10-12 minutes or until fully cooked.',
-        '9. Garnish with chopped scallions and sliced red chili (optional).'
-      ]),
+        ' Soak the black fungus in water for 30 minutes or until softened. Drain and cut into smaller pieces.',
+        ' Clean the threadfin and pat dry with paper towels. Make 3-4 shallow cuts on each side of the fish.',
+        ' In a bowl, mix together the light soy sauce, sesame oil, Shaoxing wine, and sugar. Set aside.',
+        ' In a wok or frying pan, heat the vegetable oil over medium heat. Add the ginger and stir-fry for 1-2 minutes until fragrant.',
+        ' Add the black fungus and stir-fry for another 2-3 minutes.',
+        ' Pour the soy sauce mixture into the wok and bring to a boil.',
+        ' Place the threadfin on a heatproof plate and pour the ginger and black fungus mixture over it.',
+        ' Steam the fish over high heat for 10-12 minutes or until fully cooked.',
+        ' Garnish with chopped scallions and sliced red chili (optional).'
+      ], 'number'),
 
       {type:'pinkHeading', 
       'text': 'Stir-Fried Kai Lan with Pork Kidney'
@@ -331,34 +357,34 @@ export const mockPosts: PostItemData[] = [
       paragraph('Pork kidney is a good source of protein, vitamin B12, and iron, all of which are important for postpartum recovery. Kai lan is also packed with vitamins A, C, and K, as well as calcium and fiber.'
       ),
       
+      paragraph('**Ingredients:**'),
       list([
-        '**Ingredients:**',
-        '**•** 500g kai lan (Chinese broccoli)',
-        '**•** 2 cloves of garlic, chopped',
-        '**•** 1 tablespoon of ginger, grated',
-        '**•** 1 tablespoon of light soy sauce',
-        '**•** 1 teaspoon of sesame oil',
-        '**•** 1 tablespoon of vegetable oil',
-        '**•** Salt and pepper to taste'
+        ' 500g kai lan (Chinese broccoli)',
+        ' 2 cloves of garlic, chopped',
+        ' 1 tablespoon of ginger, grated',
+        ' 1 tablespoon of light soy sauce',
+        ' 1 teaspoon of sesame oil',
+        ' 1 tablespoon of vegetable oil',
+        ' Salt and pepper to taste'
       ]),
 
+      paragraph('**Instructions:**'),
       list([
-        '**Instructions:**',
-        '1. Preparing the pork kidney: Rinse the pork kidney thoroughly under running water and cut into thin slices. Soak the slices in cold water for 30 minutes to remove any impurities and excess blood. Drain and pat dry with a paper towel.',
-        '2. Preparing the kai lan: Wash the kai lan thoroughly under running water and chop into bite-sized pieces, separating the leaves from the stems.',
-        '3. In a wok or frying pan, heat up the vegetable oil over high heat. Add the garlic and ginger and stir-fry for 30 seconds until fragrant.',
-        '4. Add the pork kidney slices and stir-fry for 3-4 minutes until they turn golden brown.',
-        '5. Add the kai lan stems and continue to stir-fry for another 2-3 minutes until they are tender.',
-        '6. Finally, add the kai lan leaves, light soy sauce, and sesame oil, and stir-fry for another 1-2 minutes until the leaves are wilted but still bright green.',
-        '7. Season with salt and pepper to taste and serve hot.'
-      ]),
+        ' Preparing the pork kidney: Rinse the pork kidney thoroughly under running water and cut into thin slices. Soak the slices in cold water for 30 minutes to remove any impurities and excess blood. Drain and pat dry with a paper towel.',
+        ' Preparing the kai lan: Wash the kai lan thoroughly under running water and chop into bite-sized pieces, separating the leaves from the stems.',
+        ' In a wok or frying pan, heat up the vegetable oil over high heat. Add the garlic and ginger and stir-fry for 30 seconds until fragrant.',
+        ' Add the pork kidney slices and stir-fry for 3-4 minutes until they turn golden brown.',
+        ' Add the kai lan stems and continue to stir-fry for another 2-3 minutes until they are tender.',
+        ' Finally, add the kai lan leaves, light soy sauce, and sesame oil, and stir-fry for another 1-2 minutes until the leaves are wilted but still bright green.',
+        ' Season with salt and pepper to taste and serve hot.'
+      ], 'number'),
 
       list([
         '**Q: Can I use other types of meat instead of pork kidney?**',
         'A: Yes, you can use chicken or beef if you prefer. However, pork kidney is a traditional ingredient in this dish and is particularly beneficial for postpartum recovery.',
         '**Q: Can I substitute kai lan with other vegetables?**',
         'A: Yes, you can use other leafy greens such as bok choy or choy sum if kai lan is not available.',
-      ]),
+      ], 'none'),
 
       callout(
         'Menu planning principle',
@@ -372,32 +398,32 @@ export const mockPosts: PostItemData[] = [
       ),
 
       list([
-        '**•** Help with blood circulation and promote healing',
-        '**•** Nourish the blood and boost energy levels',
-        '**•** Aid in digestion and relieve constipation',
-        '**•** Improve the immune system and fight against infections',
+        ' Help with blood circulation and promote healing',
+        ' Nourish the blood and boost energy levels',
+        ' Aid in digestion and relieve constipation',
+        ' Improve the immune system and fight against infections',
       ]),
 
+      paragraph('**Ingredients**'),
       list([
-        '**Ingredients**',
-        '  **•** 1 whole chicken (about 1k g)',
-          '**•** 50g Dang Gui (Chinese Angelica Root)' ,
-          '**•** 20g Dried Longan', 
-          '**•** 10g Goji Berries' ,
-          '**•** 20g Red Dates' ,
-          '**•** 2 slices of ginger' ,
-          '**•** 10 cups of water',
-          '**•** Salt to taste',
+          ' 1 whole chicken (about 1k g)',
+          ' 50g Dang Gui (Chinese Angelica Root)' ,
+          ' 20g Dried Longan', 
+          ' 10g Goji Berries' ,
+          ' 20g Red Dates' ,
+          ' 2 slices of ginger' ,
+          ' 10 cups of water',
+          ' Salt to taste',
       ]),
 
+      paragraph('**Instructions**'),
       list([
-        '**Instructions**',
-        '1. Rinse the chicken and remove any excess fat or organs. Place it in a pot of boiling water for 5 minutes to remove any impurities. Remove and set aside.',
-        '2. Rinse all the herbs and dried fruits.',
-        '3. In a clean pot, add 10 cups of water and bring it to a boil.',
-        '4. Add the chicken, Dang Gui, dried longan, goji berries, red dates, and ginger to the pot.',
-        '5. Bring the soup to a boil again, then reduce the heat to low and let it simmer for 2 hours.',
-        '6. Add salt to taste and serve hot.',
+        ' Rinse the chicken and remove any excess fat or organs. Place it in a pot of boiling water for 5 minutes to remove any impurities. Remove and set aside.',
+        ' Rinse all the herbs and dried fruits.',
+        ' In a clean pot, add 10 cups of water and bring it to a boil.',
+        ' Add the chicken, Dang Gui, dried longan, goji berries, red dates, and ginger to the pot.',
+        ' Bring the soup to a boil again, then reduce the heat to low and let it simmer for 2 hours.',
+        ' Add salt to taste and serve hot.',
       ]),
 
       paragraph ('There you have it! These 5 Chinese confinement meals offer a delicious and nutritious way to support your postpartum recovery journey. Incorporate them into your diet, along with plenty of rest and relaxation, and you\'ll be on your way to feeling energised and healthy in no time.'
@@ -414,7 +440,7 @@ export const mockPosts: PostItemData[] = [
         'Absolutely! These recipes can be adapted to suit your personal preferences or dietary restrictions. For example, you can substitute pork for chicken, or use a different type of fish.',
         '**How long should I continue to eat these confinement meals?**',
         'The length of the postpartum confinement period varies among cultures and individuals. It is typically recommended to continue to eat these meals for at least the first month after childbirth, but it is important to consult with your healthcare provider for guidance on the appropriate length of time for your specific situation.'
-      ]),
+      ], 'none'),
       
     ],
   },
@@ -443,15 +469,15 @@ export const mockPosts: PostItemData[] = [
       paragraph('Baby blues is a mild and transient form of postpartum depression that typically begins within the first few days after giving birth and lasts for up to two weeks.'),
       paragraph('The symptoms of baby blues can range from mild to moderate and include:'),
       list([
-        '**•** Mood swings',
-        '**•** Feelings of sadness, anxiety, or irritability',
-        '**•** Crying spells for no apparent reason',
-        '**•** Difficulty sleeping or sleeping too much',
-        '**•** Loss of appetite or overeating',
-        '**•** Fatigue and lack of energy',
-        '**•** Difficulty concentrating or making decisions',
-        '**•** Feelings of guilt or worthlessness',
-        '**•** Reduced interest in activities that were previously enjoyed',
+        ' Mood swings',
+        ' Feelings of sadness, anxiety, or irritability',
+        ' Crying spells for no apparent reason',
+        ' Difficulty sleeping or sleeping too much',
+        ' Loss of appetite or overeating',
+        ' Fatigue and lack of energy',
+        ' Difficulty concentrating or making decisions',
+        ' Feelings of guilt or worthlessness',
+        ' Reduced interest in activities that were previously enjoyed',
       ]),
       gallery(ARTICLE_IMAGES.wellbeing, 'Postpartum support works best when nutrition and practical care move together.'),
       heading('WHAT CAUSES BABY BLUES?'),
@@ -468,22 +494,22 @@ export const mockPosts: PostItemData[] = [
       paragraph('Fortunately, there are several things that new mothers can do to manage the symptoms of baby blues and help prevent them from developing into more serious forms of postpartum depression.'),
       list([
         'Here are some strategies that may be helpful:',
-        '',
+        
         '**Rest and sleep:** Getting adequate rest and sleep is important for new mothers, as it can help alleviate fatigue and improve mood. It may be helpful to nap when the baby naps, or to enlist the help of a partner or loved one to take care of the baby so that the mother can rest.',
         '**Eat a healthy diet:** Eating a healthy and balanced diet can help support overall health and wellbeing, and may also improve mood. It may be helpful to plan and prepare healthy meals and snacks in advance, or to ask for help from loved ones.',
         '**Exercise:** Exercise can help alleviate stress and improve mood, and may also provide an opportunity for social interaction. Start with gentle exercises, such as walking or yoga, and gradually increase intensity as strength and energy levels allow.',
         '**Seek support:** It is important for new mothers to seek support from loved ones, healthcare providers, or support groups. Talking to other mothers who have experienced baby blues or postpartum depression can be particularly helpful, as they may have tips and advice for managing symptoms and coping with the challenges of motherhood.',
-        '',
+        
         ' Support groups or therapy sessions can also provide a safe space for new mothers to discuss their feelings and concerns.',
-        '',
+        
         '**Practice self-care**: Taking time for self-care can help new mothers feel refreshed and rejuvenated. This can include activities such as taking a warm bath, reading a book, or spending time outdoors.',
         '**Stay connected**: Feeling isolated or disconnected from others can contribute to feelings of sadness and anxiety. Stay connected with family and friends, either in person or through phone calls or video chats.',
         ' Joining a new mother\'s group or attending classes with other new parents can also provide opportunities for social interaction and support.',
-        '',
+        
         ' Dealing with baby blues is a common experience for many new mothers, but it doesn\'t have to define your postpartum journey. By recognising the symptoms, understanding the causes, and implementing effective strategies for managing and overcoming baby blues, you can navigate this emotional period with confidence and resilience.',
-        '',
+        
         ' Remember, you are not alone in this journey. Reach out to your support system, whether it\'s your partner, family, or friends, and don\'t hesitate to seek professional help if needed',
-      ]),
+      ], 'none'),
       paragraph(
         'This piece takes its direction from the previous Chilli Padi article about baby blues and the emotional reality of postpartum adjustment. The message is that low mood, overwhelm, and mental fatigue can sit alongside physical recovery, and both deserve attention.'
       ),
@@ -573,30 +599,30 @@ export const mockPosts: PostItemData[] = [
       heading('Benefits of Papaya Fish Soup For Confinement Mothers'),
       list([
         '**Promotes Healing**',
-        '',
+        
         'During childbirth, the body undergoes a lot of stress and trauma. Papaya fish soup contains high levels of collagen, which can help to speed up the healing process and repair damaged tissue. It is also rich in vitamins A and C, which are essential for wound healing and tissue repair.',
-       '',
+       
         '**Nourishes the Body**',
-        '',
+        
         'Papaya fish soup is an excellent source of protein, which is essential for building and repairing tissues in the body. It also contains a variety of vitamins and minerals, including vitamin B12, iron, and calcium, which are important for overall health and wellbeing.',
-        '',
+        
         '**Boosts Breast Milk Production**',
-        '',
+        
         'Breastfeeding is an important part of postpartum recovery, and papaya fish soup is believed to help boost milk production. Papaya contains enzymes that can help to increase milk supply, while fish is rich in omega-3 fatty acids, which are important for the development of the baby\'s brain.',
-        '',
+        
         '**Provides Energy**',
-       '',
+       
         'New mothers often feel tired and exhausted during the confinement period. Papaya fish soup is a great source of energy, thanks to its high protein content and complex carbohydrates. It can help to keep you feeling full and energized throughout the day.',
-        '',
+        
         '**Improves Digestion**',
-        '',
+        
         'Many new mothers experience digestive issues during the postpartum period, such as constipation and bloating. Papaya fish soup contains enzymes that can help to improve digestion and reduce bloating. It is also a great source of fiber, which can help to promote regular bowel movements.',
-       '',
+       
         '**Boosts Immunity**',
-       '',
+       
         'The confinement period is a time when new mothers are more susceptible to infections and illnesses. Papaya fish soup is rich in antioxidants, which can help to boost the immune system and protect against infections. It is also a great source of vitamin C, which is essential for immune function.',
-        '',
-      ]),
+        
+      ], 'none'),
 
       gallery(ARTICLE_IMAGES.papaya, 'Papaya fish soup remains one of the most recognisable confinement dishes.'),
       paragraph(
@@ -604,36 +630,34 @@ export const mockPosts: PostItemData[] = [
       ),
       
       heading('How to Prepare Papaya Fish Soup'),
+      paragraph('**Ingredients:**'),
       list([
-        '**Ingredients:**',
-        '**•** 1 papaya, peeled and chopped',
-        '**•** 500g fish (such as cod or snapper), cut into chunks',
-        '**•** 1 inch ginger, sliced',
-        '**•** 3 cloves garlic, minced',
-        '**•** 1 onion, chopped',
-        '**•** 2 stalks spring onion, chopped',
-        '**•** 2-3 red dates',
-        '**•** 1 tablespoon cooking oil',
-        '**•** Salt and pepper to taste',
-        '**•** Water',
+        ' 1 papaya, peeled and chopped',
+        ' 500g fish (such as cod or snapper), cut into chunks',
+        ' 1 inch ginger, sliced',
+        ' 3 cloves garlic, minced',
+        ' 1 onion, chopped',
+        ' 2 stalks spring onion, chopped',
+        ' 2-3 red dates',
+        ' 1 tablespoon cooking oil',
+        ' Salt and pepper to taste',
+        ' Water',
       ]),
 
+      paragraph('**Instructions:**'),
       list([
-        '**Instructions:**',
-        '1. Heat up the cooking oil in a pot.',
-        '2. Add the garlic, onion, and ginger and sauté until fragrant.',
-        '3. Add the fish and cook for a few minutes.',
-        '4. Add the chopped papaya, red dates, and enough water to cover the ingredients. Bring to a boil.',
-        '5. Reduce heat and simmer for 20-30 minutes, or until the papaya is soft and the fish is cooked through.',
-        '6. Add salt and pepper to taste.',
-        '7. Garnish with chopped spring onions before serving.',
-        '',
-        'It can be consumed as a standalone meal or served as a side dish with rice or noodles. It is also important to consume a variety of other nutrient-dense foods such as fruits, vegetables, lean proteins, and whole grains to ensure optimal postpartum recovery.',
-        '',
-        'It is important to note that fish should be thoroughly cooked to avoid food poisoning. Raw or undercooked fish can contain harmful bacteria and parasites that can cause foodborne illnesses. Confinement mothers should ensure that the fish is cooked to an internal temperature of 145°F (63°C) and avoid consuming fish that has a strong odor or unusual color.',
-        '',
-        'In conclusion, papaya fish soup is a nutritious and delicious dish that offers a range of health benefits for confinement mothers. By incorporating this soup into their diets, confinement mothers can improve their nutrient intake, boost their immunity, and support their postpartum recovery. ',
-      ]),
+        ' Heat up the cooking oil in a pot.',
+        ' Add the garlic, onion, and ginger and sauté until fragrant.',
+        ' Add the fish and cook for a few minutes.',
+        ' Add the chopped papaya, red dates, and enough water to cover the ingredients. Bring to a boil.',
+        ' Reduce heat and simmer for 20-30 minutes, or until the papaya is soft and the fish is cooked through.',
+        ' Add salt and pepper to taste.',
+        ' Garnish with chopped spring onions before serving.',
+      ], 'number'),
+
+      paragraph('It can be consumed as a standalone meal or served as a side dish with rice or noodles. It is also important to consume a variety of other nutrient-dense foods such as fruits, vegetables, lean proteins, and whole grains to ensure optimal postpartum recovery.'),
+      paragraph('It is important to note that fish should be thoroughly cooked to avoid food poisoning. Raw or undercooked fish can contain harmful bacteria and parasites that can cause foodborne illnesses. Confinement mothers should ensure that the fish is cooked to an internal temperature of 145°F (63°C) and avoid consuming fish that has a strong odor or unusual color.'),
+      paragraph('In conclusion, papaya fish soup is a nutritious and delicious dish that offers a range of health benefits for confinement mothers. By incorporating this soup into their diets, confinement mothers can improve their nutrient intake, boost their immunity, and support their postpartum recovery. '),
       paragraph(
         'Its appeal also comes from routine. Soups are easy to portion, easy to pair with other dishes, and often easier to finish during periods when appetite is uneven. That makes them useful in real postpartum schedules, not just in theory.'
       ),
@@ -884,29 +908,38 @@ export const mockPosts: PostItemData[] = [
 
       paragraph('**Ingredients**'),
       paragraph('Here\'s a recipe to make red dates tea with longan for confinement'),
-      paragraph('Ingredients'),
-      paragraph('50g dried red dates'),
-      paragraph('25g dried longan'),
-      paragraph('1.5L water'),
-      paragraph('Rock sugar to taste (optional)'),
+      paragraph('**Ingredients:**'),
+      list([
+        '50g dried red dates',
+        '25g dried longan',
+        '1.5L water',
+        'Rock sugar to taste (optional)',
+      ], 'none'),
 
       paragraph('**Instructions**'),
       list([
-        '**•** Rinse the red dates and dried longan with water and drain',
-        '**•** In a pot, add the red dates, dried longan, and water',
-        '**•** Bring the water to a boil over high heat',
-        '**•** Once the water is boiling, lower the heat to medium-low and let it simmer for about 45 minutes to an hour',
-        '**•** Stir occasionally to prevent the ingredients from sticking to the bottom of the pot',
-        '**•** After 45 minutes to an hour, the water should have reduced to about half',
-        '**•** If you want the tea to be sweeter, you can add rock sugar to taste',
-        '**•** Stir until the sugar is dissolved',
-        '**•** Turn off the heat and let the tea cool down for a few minutes',
-        '**•** Strain the tea and serve hot',
+        ' Rinse the red dates and dried longan with water and drain',
+        ' In a pot, add the red dates, dried longan, and water',
+        ' Bring the water to a boil over high heat',
+        ' Once the water is boiling, lower the heat to medium-low and let it simmer for about 45 minutes to an hour',
+        ' Stir occasionally to prevent the ingredients from sticking to the bottom of the pot',
+        ' After 45 minutes to an hour, the water should have reduced to about half',
+        ' If you want the tea to be sweeter, you can add rock sugar to taste',
+        ' Stir until the sugar is dissolved',
+        ' Turn off the heat and let the tea cool down for a few minutes',
+        ' Strain the tea and serve hot',
       ]),
       paragraph('Red dates tea with longan is best consumed warm, as it is believed to have better therapeutic effects when consumed warm. You can drink this tea daily during confinement to help nourish and replenish your body.'),
       quote("A quiet cup of red dates tea is a gentle reminder to slow down, steep in the moment, and let warmth fill the spaces in between"),
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
       paragraph('In addition to the red dates longan tea, our confinement meal packages offer a selection of confinement herbal soups. Check out our confinement food packages to see more! '),
-      
     ],
   },
    {
@@ -1071,12 +1104,12 @@ export const mockPosts: PostItemData[] = [
       paragraph('**Benefits of Postnatal Massage**'),
 
       list([
-        '1. **Relief from Neck and Shoulder Pain:** The constant carrying and breastfeeding of the baby can strain the neck and shoulders, leading to discomfort. Postnatal massage helps to relieve this pain, allowing mothers to care for their newborns more comfortably.',
-        '2. **Helps to Restore the Uterus to Its Original State:** Postnatal massage can aid in the natural process of shrinking the uterus back to its original state, promoting faster recovery.',
-        '3. **Reduction of Excess Fluids:** During pregnancy, the body tends to retain excess fluids. Postnatal massage helps in the elimination of these fluids, reducing water retention and contributing to overall comfort.',
-        '4. **Weight Loss Support:** Regular postnatal massage can assist in weight loss by stimulating the body\’s metabolism and encouraging the breakdown of fat.',
-        '5. **Improved Blood Circulation:** Enhanced blood circulation is one of the key benefits of postnatal massage. This not only helps in faster healing but also boosts energy levels, which is crucial for new mothers who need to be at their best for their baby.'
-      ]),
+        ' **Relief from Neck and Shoulder Pain:** The constant carrying and breastfeeding of the baby can strain the neck and shoulders, leading to discomfort. Postnatal massage helps to relieve this pain, allowing mothers to care for their newborns more comfortably.',
+        ' **Helps to Restore the Uterus to Its Original State:** Postnatal massage can aid in the natural process of shrinking the uterus back to its original state, promoting faster recovery.',
+        ' **Reduction of Excess Fluids:** During pregnancy, the body tends to retain excess fluids. Postnatal massage helps in the elimination of these fluids, reducing water retention and contributing to overall comfort.',
+        ' **Weight Loss Support:** Regular postnatal massage can assist in weight loss by stimulating the body\’s metabolism and encouraging the breakdown of fat.',
+        ' **Improved Blood Circulation:** Enhanced blood circulation is one of the key benefits of postnatal massage. This not only helps in faster healing but also boosts energy levels, which is crucial for new mothers who need to be at their best for their baby.'
+      ], 'number' ),
 
       image ({
         src: '/banners/PostNatal_Massage.png',
@@ -1201,6 +1234,218 @@ export const mockPosts: PostItemData[] = [
       paragraph('Sugar might be your pregnancy craving kryptonite, but it can exacerbate inflammation and fluid retention. Opt for healthier alternatives like fresh fruit or natural sweeteners.'),
       paragraph('**Seek Expert Advice**'),
       paragraph('Remember, every pregnancy is unique, and what works for one mama might not work for another. If you\'re concerned about swelling, always reach out to your trusted OB-GYN for personalised guidance. They can evaluate your specific situation, offer tailored recommendations, and ensure a smooth and healthy pregnancy journey.'),
+
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+
+    ],
+  },
+
+
+   {
+    id: 'post-16',
+    slug:'say-goodbye-to-stretch-marks-after-childbirth-effective-prevention-tips',
+    title: 'Say Goodbye to Stretch Marks After Childbirth: Effective Prevention Tips',
+    excerpt: 'Motherhood is an exciting and fulfilling time in your life, but it can also be stressful. You may be worried about your body and how it has changed during pregnancy, and one common concern is the appearance of stretch marks.',
+    category: 'Stretch Marks',
+    tags: ['beauty and skincare' , 'postpartum recovery' ],
+    coverUrl: ARTICLE_IMAGES.stretchMarks[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: ['https://chillipadiconfinement.com/blogs/confinement-tips/say-goodbye-to-stretch-marks-after-childbirth-effective-prevention-tips', 'https://www.aad.org/public/cosmetic/scars-stretch-marks/stretch-marks-why-appear' , 'https://www.mayoclinic.org/diseases-conditions/stretch-marks/symptoms-causes/syc-20351139' ],
+    blocks:[
+      paragraph('Stretch marks can be a source of insecurity for many new moms, but the good news is that there are steps you can take to prevent them from appearing or reduce their appearance.'),
+      {type: 'heading', text: 'Understanding Stretch Marks', size: 'large'}, 
+      paragraph('Stretch marks, also known as striae gravidarum, occur when the skin\'s elastic fibers are stretched beyond their limit, causing the underlying collagen and elastin to rupture. They commonly appear as streaks or bands of discolored skin, ranging from pink to purple or silver. Stretch marks can occur on the abdomen, breasts, thighs, hips, and buttocks, areas most affected by pregnancy-related changes.'),
+      paragraph('**FACTORS INFLUENCING STRETCH MARK FORMATION**'),
+      paragraph('Various factors contribute to the development of stretch marks after childbirth. Understanding these factors can help you make informed decisions in preventing and managing them.'),
+      {type: 'heading', text: '1. Genetic Predisposition', size: 'small'},
+      list([
+        ' Genetic factors play a role in determining your susceptibility to stretch marks. If your mother or other close relatives experienced them during pregnancy, you may have a higher likelihood of developing them too.',]),
+      {type: 'heading', text: '2. Weight Gain', size: 'small'},
+      list([
+        ' Rapid weight gain during pregnancy can strain the elasticity of your skin, leading to the formation of stretch marks. Gradual and healthy weight gain, guided by your healthcare provider, can help minimise the risk.',]),
+      {type: 'heading', text: '3. Hormonal Changes', size: 'small'},
+      list([
+        'Hormonal fluctuations during pregnancy can affect the production of collagen and elastin, essential proteins responsible for skin elasticity. Reduced levels of these proteins can make your skin more prone to stretch marks.'
+      ]),
+      {type: 'heading', text: '4. Hydration', size: 'small'},
+      list([
+        'Proper hydration is crucial for maintaining skin elasticity. Adequate water intake can promote skin health and reduce the likelihood of stretch marks.'
+      ]),
+      {type: 'heading', text: 'Effective Strategies for Preventing Stretch Marks', size: 'large'}, 
+      paragraph('Now that we understand the factors involved, let\'s explore practical strategies to help prevent stretch marks after childbirth:'),
+      list([
+        '**Moisturise Regularly**'
+      ]),
+      paragraph('Keep your skin well-hydrated by applying a nourishing, moisturizing cream or oil. Look for products containing ingredients like cocoa butter, shea butter, almond oil, or vitamin E, which can help improve skin elasticity. Massage the moisturizer gently into the areas prone to stretch marks.'),
+      list([
+        '**Stay Hydrated**'
+      ]),
+      paragraph('Hydrating your body from within is equally important. Aim to drink at least eight glasses of water daily to maintain optimal skin hydration and support its natural elasticity.'),
+      list([
+        '**Eat a Nutrient-rich Diet**'
+      ]),
+      paragraph('Consuming a balanced diet rich in vitamins A, C, E, and zinc can promote skin health. These nutrients help support collagen production and overall skin elasticity. Include fruits, vegetables, lean proteins, and whole grains in your meals.'),
+      list([
+        "**Gradual Weight Gain**"
+      ]),
+      paragraph('Work closely with your healthcare provider to ensure a healthy and gradual weight gain during pregnancy. Avoid rapid weight gain, which can strain your skin and increase the chances of stretch marks.'),
+      list([
+        '**Gentle Exercise**'
+      ]),
+      paragraph('Engage in gentle exercises recommended by your healthcare provider to maintain muscle tone and improve circulation. Exercise can help with overall skin health and elasticity.'),
+      list([
+        '**Use Sunscreen**'
+      ]),
+      paragraph('Protect your skin from harmful UV rays by applying a broad-spectrum sunscreen with a high SPF when spending time outdoors. Sun damage can make stretch marks more prominent.'),
+      
+      {type: 'heading' , text: 'FAQs', size: 'large'},
+      paragraph('**Q: Are there any specific creams or oils that can prevent stretch marks?**'),
+      paragraph('A: While no cream or oil can guarantee complete prevention, products containing ingredients like cocoa butter, shea butter, almond oil, or vitamin E can help improve skin elasticity and minimize the appearance of stretch marks.'),
+      paragraph('**Q: Can I use exfoliation to prevent stretch marks?**'),
+      paragraph('A: Exfoliation can be beneficial for improving skin texture but should be done with caution during pregnancy. Consult with your healthcare provider or a skincare professional to determine the safest approach.'),
+      paragraph('**Q: Can stretch marks disappear completely?**'),
+      paragraph('A: While stretch marks may fade over time, they typically do not disappear completely. However, following prevention strategies and adopting a healthy skincare routine can help minimise their appearance.'),
+      paragraph('**Conclusion**'),
+      paragraph('Preventing stretch marks after childbirth requires a proactive approach that balances different factors, such as genetics, weight gain, and skincare practices.'),
+      paragraph('By moisturising regularly, staying hydrated, eating a nutrient-rich diet, managing weight gain, and engaging in gentle exercise, you can significantly reduce the likelihood and appearance of stretch marks.'),
+      paragraph('Remember, embracing your body\'s natural changes during this incredible journey is just as important as maintaining skin health.'),
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+    ],
+  },
+
+  {
+    id: 'post-17',
+    slug:'battling-postpartum-blues-understanding-and-overcoming-postpartum-depression',
+    title: 'Battling Postpartum Blues: Understanding and Overcoming Postpartum Depression',
+    excerpt: 'Picture this: you\'ve just welcomed your little bundle of joy into the world, and you expected to be floating on cloud nine. Instead, you\'re feeling more like a stormy sea, with waves of emotions crashing over you. That\'s where the baby blues come in, leaving you feeling a little down in the dumps. It\'s like a temporary rain shower on your parade.',
+    category: 'Postpartum',
+    tags: [ 'confinement period', 'mental health', 'postpartum recovery'],
+    coverUrl: ARTICLE_IMAGES.depression[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://www.apa.org/topics/postpartum-depression' , 'https://www.mayoclinic.org/diseases-conditions/postpartum-depression/symptoms-causes/syc-20376617'],
+    blocks: [
+      heading('WHAT IS POSTPARTUM DEPRESSION (PPD)?'),
+      paragraph('Postpartum depression, also known as postnatal depression, is a type of mood disorder that can affect parents after the birth of a child. Unlike the commonly experienced baby blues, which usually last for a few days and are relatively mild, postpartum depression is more intense and persistent. It can cast a dark shadow over what should be a joyful time in a parent\'s life.'),
+      heading('SYMPTOMS OF POSTPARTUM DEPRESSION'),
+      paragraph('Postpartum depression manifests in various ways and can vary from person to person. Here are some common symptoms to watch out for:'),
+      list([
+        '**Persistent Sadness:** Feeling an overwhelming sense of sadness or hopelessness that persists throughout the day, lasting for weeks or even months. It\'s as if a dark cloud is hanging over you, making it difficult to find joy in everyday activities.',
+        '**Loss of Interest:** Experiencing a diminished interest in activities that were once enjoyable, including hobbies, socialising, and even caring for the newborn. You may find yourself going through the motions without feeling any genuine pleasure or connection.',
+        '**Fatigue and Lack of Energy:** Feeling constantly drained and exhausted, both physically and mentally, regardless of adequate rest. It\'s like running on empty, struggling to find the energy to perform even the simplest tasks.',
+        '**Disturbed Sleep Patterns:** Experiencing trouble falling asleep, staying asleep, or sleeping excessively, even when the baby is resting peacefully. Sleep becomes elusive, leaving you feeling even more exhausted and emotionally fragile.',
+        '**Changes in Appetite:** Having an increased or decreased appetite, leading to significant weight gain or loss. Food may lose its appeal, or you may find yourself seeking solace in unhealthy eating habits.',
+        '**Irritability and Anger:** Feeling irritable, agitated, or angry, often without a clear reason, and snapping at loved ones or displaying unusual aggression. The littlest things can set off intense emotional reactions, leaving you feeling guilty and out of control.',
+        '**Difficulty Bonding with the Baby:** Struggling to form a connection with the newborn or experiencing feelings of detachment or indifference. You may feel disconnected from your role as a parent, which can further contribute to feelings of guilt and inadequacy.'
+      ], 'number'),
+
+      heading('WHAT CAUSES POSTPARTUM DEPRESSION?'),
+      paragraph('Postpartum depression is not caused by a single factor but rather results from a combination of physical, emotional, and environmental elements. Let\'s explore some of the common factors associated with this condition:'),
+      list([
+        '**Hormonal Imbalance:** After childbirth, there is a rapid decline in estrogen and progesterone levels, which can disrupt the delicate balance of brain chemicals and contribute to mood swings. It\'s like a roller coaster ride for your emotions, with sudden drops and unpredictable twists.',
+        '**History of Mental Health Conditions:** Individuals with a history of depression, anxiety, or other mental health disorders are more susceptible to developing postpartum depression. It\'s as if there\'s a predisposition that makes the journey into parenthood even more challenging.',
+        '**Lack of Support:** Limited emotional and practical support from partners, family members, or friends can increase the risk of postpartum depression. Feeling isolated or overwhelmed can intensify feelings of sadness and hopelessness. It\'s like trying to navigate a stormy sea without a life raft.',
+        '**Sleep Deprivation:** The demanding schedule of caring for a newborn often leads to disrupted sleep patterns, which can exacerbate emotional distress and contribute to the development of postpartum depression. It\'s like trying to function on autopilot while sleep-deprived, which takes a toll on your mental well-being.',
+        '**Life Stressors:** Significant life events, such as financial problems, relationship difficulties, or the loss of a loved one, can amplify the emotional challenges of adjusting to parenthood and increase the risk of postpartum depression. It\'s like carrying the weight of the world on your shoulders while trying to nurture and care for a newborn.'
+      ]),
+
+      heading('HOW TO TREAT POSTPARTUM DEPRESSION?'),
+      paragraph('The good news is that postpartum depression is a highly treatable condition. Seeking support and professional help is crucial in overcoming this challenging phase. Here are some effective treatment options:'),
+      list([
+        '**Therapy and Counseling:** Individual therapy or group counseling sessions can provide a safe space to express your emotions, learn coping strategies, and gain valuable insights from experienced professionals. It\'s like having a guiding light to help you navigate through the darkness and find your way back to yourself. Cognitive-behavioral therapy (CBT) has shown particular efficacy in treating postpartum depression.',
+        '**Medication:** In some cases, healthcare providers may prescribe antidepressant medications to help alleviate the symptoms of postpartum depression. It\'s essential to consult with your healthcare provider to assess the risks and benefits, especially if you are breastfeeding. Remember, taking medication doesn\'t mean you\'ve failed—it\'s a tool to support you on your journey to recovery.',
+        '**Lifestyle Changes:** Incorporating self-care practices into your daily routine can have a profound impact on your mental well-being. Engage in activities that promote relaxation, such as meditation, exercise, or spending time in nature. Additionally, prioritise proper nutrition, and ensure you get sufficient sleep whenever possible. It\'s like nourishing your body and soul, allowing yourself the time and space to heal.',
+        '**Social Support:** Reach out to your support network, whether it\'s your partner, family, or close friends. Sharing your feelings and experiences with trusted individuals can provide emotional comfort and practical assistance, lessening the burden of postpartum depression. Remember, you don\'t have to face this journey alone—there are people who care and want to help.',
+        '**Joining Support Groups:** Connecting with other parents who have experienced or are currently experiencing postpartum depression can be immensely helpful. Support groups offer a sense of community, validation, and the opportunity to exchange advice and coping strategies. It\'s like finding a tribe that understands your journey and provides unconditional support.'
+      ], 'number'),
+
+      heading('CHALLENGES AND TRADEOFFS'),
+      paragraph('It\'s important to acknowledge that the road to recovery from postpartum depression can be challenging and unique to each individual. Balancing the demands of caring for a newborn, seeking professional help, and implementing self-care practices may present certain tradeoffs. Here are a few challenges you may encounter:'),
+      list([
+        "**Time Constraints:** Juggling the responsibilities of parenthood alongside therapy sessions, support groups, and self-care practices can feel overwhelming. Finding a schedule that accommodates your needs and commitments may require creative time management. It's like trying to fit the pieces of a puzzle together, rearranging your daily routine to prioritize your well-being.",
+        "**Stigma and Shame:** Societal stigma surrounding mental health issues can make it difficult to seek help or discuss postpartum depression openly. However, it's crucial to remember that seeking support is a sign of strength and a step towards recovery. Let go of any shame or guilt—your well-being matters, and reaching out for help is a courageous act.",
+        "**Medication Considerations:** While antidepressant medication can be effective in treating postpartum depression, there may be concerns about potential side effects, particularly for breastfeeding mothers. Consulting with a healthcare provider can help address these concerns and explore alternative options, if necessary. Remember, healthcare professionals can guide you in making informed decisions that prioritize both your mental health and your baby's well-being."
+      ]),
+      quote ('Healing from postpartum depression takes time, support, and profound self-compassion. Remember: you are not failing, you are healing, and you do not have to walk through the dark alone.') ,
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+    ],
+  },
+
+   {
+    id: 'post-18',
+    slug:'10-must-have-essentials-for-expectant-moms-what-every-pregnant-woman-needs',
+    title: '10 Must-Have Essentials for Expectant Moms: What Every Pregnant Woman Needs',
+    excerpt: 'Pregnancy is a unique and transformative experience, and being well-prepared can alleviate any unnecessary stress along the way. By investing in the right essentials, you can focus on nurturing yourself and your growing baby, fostering a positive environment for both of you.',
+    category: 'Essentials',
+    tags: [ 'mental health', 'pregnancy'],
+    coverUrl: ARTICLE_IMAGES.essentials[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/' ],
+    blocks: [
+      paragraph('So, whether you\'re seeking guidance on maternity clothing, prenatal vitamins, or baby essentials, keep reading as we unveil the must-haves for every expectant mother. Let\'s dive into the top 10 essentials to ensure your journey to motherhood is as smooth, enjoyable, and memorable as possible.'),
+      {type: 'heading' , text: 'Maternity Clothing: Dressing for Comfort and Style', size: 'medium', uppercase:true},
+      paragraph('During pregnancy, your body goes through significant changes, and finding comfortable and stylish clothing becomes essential. Maternity clothing is designed to accommodate your growing belly, provide support, and ensure you feel confident throughout your pregnancy.'),
+      paragraph('Look for stretchy fabrics, adjustable waistbands, and styles that flatter your changing silhouette. Embrace your beautiful bump and enjoy expressing your personal style through maternity fashion.'),
+      {type: 'heading' , text: 'Supportive Maternity Bras: The Foundation of Comfort', size: 'medium', uppercase:true},
+      paragraph('As your breasts undergo changes during pregnancy, investing in supportive maternity bras is crucial. A well-fitted maternity bra offers the necessary support and prevents discomfort. Look for bras with adjustable straps, wider bands, and breathable fabrics. Consider getting fitted by a professional to find the right size and choose different styles to accommodate the changes in your breast size throughout pregnancy and beyond.'),
+      {type: 'heading' , text: 'Prenatal Vitamins: Nourishing You and Your Baby', size: 'medium', uppercase:true},
+      paragraph('Prenatal vitamins are specially formulated to provide essential nutrients that support your health and the development of your baby. They supplement your diet with key vitamins and minerals like folic acid, iron, calcium, and omega-3 fatty acids.'),
+      paragraph('Consult with your healthcare provider to determine the right prenatal vitamin for you, as different women have varying nutritional needs during pregnancy. Remember, prenatal vitamins are not a substitute for a healthy diet but rather an important complement to ensure optimal nourishment.'),
+      {type: 'heading' , text: 'Body Pillows: Restful Nights and Relaxed Days', size: 'medium', uppercase:true},
+      paragraph('As your baby bump grows, finding a comfortable sleeping position can become challenging. Body pillows offer support and help alleviate discomfort, especially in the back, hips, and legs. Whether you choose a full-body pillow or a smaller one to place strategically, these pillows provide relief and promote better sleep quality. Experiment with different positions and pillow arrangements until you find what works best for you.'),
+      {type: 'heading' , text: 'Pregnancy Books: Empowering Knowledge at Your Fingertips', size: 'medium', uppercase:true},
+      paragraph('Pregnancy is a journey full of questions and uncertainties. Pregnancy books can be a valuable resource, providing you with information, advice, and guidance. From understanding the stages of pregnancy to learning about labor and childbirth, these books empower you with knowledge.'),
+      paragraph('Look for reputable authors and seek recommendations from other moms or healthcare professionals to find the most informative and reliable pregnancy books.  Some popular recommendations include "What to Expect When You\'re Expecting" by Heidi Murkoff, "Ina May\'s Guide to Childbirth" by Ina May Gaskin, and "The Mayo Clinic Guide to a Healthy Pregnancy" by the Mayo Clinic.'),
+       {type: 'heading' , text: 'Belly Balms and Oils: Pampering Your Growing Bump', size: 'medium', uppercase:true},
+       paragraph('Taking care of your skin during pregnancy is not only important for your comfort but also for preventing stretch marks and maintaining elasticity. Belly balms and oils are specifically formulated to nourish and moisturize your growing belly.'),
+       paragraph('They help soothe itching, promote skin elasticity, and create a bonding ritual between you and your baby bump. Look for products with natural ingredients like cocoa butter, shea butter, and vitamin E for the best results.'),
+       {type: 'heading' , text: 'Supportive Footwear: Happy Feet, Happy Mama', size: 'medium', uppercase:true},
+       paragraph('During pregnancy, many women experience foot and leg swelling and may develop foot pain or discomfort. Wearing supportive footwear can make a significant difference in your comfort levels.'),
+       paragraph('Opt for shoes with good arch support, cushioning, and a roomy toe box. Avoid high heels and opt for flats or low-heeled shoes to reduce strain on your feet.'),
+       paragraph('Remember, happy feet lead to a happier you!'),
+       {type: 'heading' , text: 'Pregnancy Journal: Cherishing Precious Memories', size: 'medium', uppercase:true},
+       paragraph('Documenting your pregnancy journey in a journal is a beautiful way to capture the precious moments and memories. Whether it\'s jotting down your thoughts, milestones, or even pasting ultrasound pictures, a pregnancy journal becomes a cherished keepsake.'),
+       paragraph('Start by choosing a journal that resonates with you and find moments each day to reflect on your experiences, emotions, and the excitement of becoming a mother.'),
+      {type: 'heading' , text: 'Baby Essentials: Preparing for the Arrival', size: 'medium', uppercase:true},
+      paragraph('As you prepare for the arrival of your little one, it\'s important to gather the essential items your baby will need. From diapers and clothing to a safe crib and baby care products, make a checklist and start organizing early.'),
+      paragraph('Seek advice from experienced parents, attend parenting classes, and consult reliable sources to ensure you have everything ready to welcome your bundle of joy.'),
+      {type: 'heading' , text: 'Emotional Support: Surrounding Yourself with Love', size: 'medium', uppercase:true},
+      paragraph('Pregnancy can be an emotional rollercoaster, and having a strong support system in place is crucial. Surround yourself with loved ones who can provide emotional support, understanding, and encouragement. Join online communities or local pregnancy support groups to connect with other expectant moms who can relate to your experiences.'),
+      paragraph('If needed, don\'t hesitate to seek professional help from therapists or counselors who specialise in maternal mental health.'),
+      paragraph('Remember, taking care of your emotional well-being is just as important as taking care of your physical health during pregnancy.'),
+      {type: 'heading' , text: 'Conclusion', size: 'medium', uppercase:true},
+      paragraph('Being well-prepared and equipped with the right essentials can significantly enhance your pregnancy journey. From maternity clothing and supportive bras to prenatal vitamins and emotional support, each item plays a crucial role in ensuring your comfort, well-being, and enjoyment during this special time.'),
+      paragraph('Embrace the changes, cherish the memories, and savor every moment of this incredible journey into motherhood. Remember, every pregnancy is unique, so listen to your body, trust your instincts, and enjoy this incredible chapter of your life.'),
+      
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
 
     ],
   },

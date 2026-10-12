@@ -16,11 +16,11 @@ export type PostImageAsset = {
 
 export type PostContentBlock =
   | { type: 'paragraph'; text: string }
-  | { type: 'heading'; text: string }
+  | { type: 'heading'; text: string; size?: 'small' | 'medium' | 'large'; uppercase?: boolean; }
   | { type: 'quote'; text: string }
   | { type: 'pinkHeading'; text: string }
   | { type: 'callout'; title: string; text: string }
-  | { type: 'list'; items: string[] }
+  | { type: 'list'; items: string[]; style?: 'bullet' | 'number' | 'none';}
   | { type: 'image'; image: PostImageAsset; caption?: string }
   | { type: 'table'; rows: {birth: string; avoid: string; eat: string;}[];}
   | { type: 'gallery'; images: PostImageAsset[]; caption?: string };
