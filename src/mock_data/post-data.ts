@@ -47,7 +47,8 @@ const ARTICLE_IMAGES = {
     { src: '/addons/Addon_ThermalWare.webp', alt: 'Thermal ware for warm drinks' },
   ],
   anxiety: [
-    { src: '/banners/Anxiety.png', alt: 'Overcoming Anxiety and Stress'}
+    { src: '/banners/Anxiety.png', alt: 'Overcoming Anxiety and Stress'},
+    { src: '/banners/Mindfulness_Techniques_for_Postpartum_Anxiety_Calming_Your_Mind_and_Body.png' , alt: 'Mindfulness Techniques'}
   ],
   postpartum: [
   { src: '/banners/Postpartum_Expectations_Versus_Reality.png' , 
@@ -79,6 +80,44 @@ const ARTICLE_IMAGES = {
     { src: '/banners/essentials_needed.png',
       alt: '10 Must Have Essentials for Expectant Moms'
     }
+  ],
+  sterilisers: [
+    { src: '/banners/Cilli Padi Baby Sterilizer Collection.png', alt: 'Advice for sterilisers'},
+    { src: '/banners/Bbyeol_steriliser.png' , alt: 'Bbyeol_steriliser'},
+    { src: '/banners/philips_microwave_steriliser.png' , alt: 'philips microwave steriliser'},
+    { src: '/banners/Steam_steriliser.png' , alt: 'Steam steriliser'},
+    { src: '/banners/boiling_methodf.webp' , alt:'Boiling of baby equipment'}
+  ],
+  alchemyFibre: [
+    { src: '/banners/alchemy_fibre_rice.png' , alt: 'Cover page for Alchemy Fibre'},
+    { src: '/banners/alchemy_fibre_1.png' , alt: 'Poster for Alchemy Fibre'},
+    { src: '/banners/heart_2.png', alt: 'Heartbeat photo'},
+    { src: '/banners/sugar_cube.png' , alt: 'Sugar Cube Decreasing'},
+    { src: '/banners/weight.png' , alt: 'Weighing Scale'},
+    { src: '/banners/digestion.png' , alt: 'Digestion'}
+  ],
+  skinCare: [
+    { src: '/banners/10_Skincare_Tips_to_Nurture_Your_Glow_After_Childbirth.png' ,
+      alt: 'Skincare Tips to Nurture Your Glow'}
+  ],
+  wildFood: [
+    { src: '/banners/Tips_on_Surviving_the_Wild_Food_Adventure_of_Pregnancy.png' , 
+      alt: 'Surviving the Wild Food of Pregnancy'}
+  ],
+  battlingAcne: [
+    { src: '/banners/Battling_Postpartum_Acne.png' , 
+      alt: 'Battling Postpartum Acne'
+    }
+  ],
+  tips: [
+    { src:'/banners/Your_First_Week_of_Confinement_Tips_for_New_Moms.png', 
+      alt: 'First Week of Confinement Tips for New Moms'
+    }
+  ],
+  nanny: [
+    { src: '/banners/Is_Confinement_Nanny_Necessary.png',
+      alt: 'Is Confinement Nanny Necessary?'
+    }
   ]
 
 
@@ -86,7 +125,7 @@ const ARTICLE_IMAGES = {
 
 const paragraph = (text: string): PostContentBlock => ({ type: 'paragraph', text });
 
-const heading = (text: string): PostContentBlock => ({ type: 'heading', text });
+const heading = (text: string): PostContentBlock => ({ type: 'standardHeading', text });
 
 const quote = (text: string): PostContentBlock => ({ type: 'quote', text });
 
@@ -326,7 +365,7 @@ export const mockPosts: PostItemData[] = [
 
       paragraph('**Ingredients:**'),
       list([
-        ' 1 medium-sized threadfin (about 500g)',
+        ' 1 small-sized threadfin (about 500g)',
         ' 20g black fungus',
         ' 20g ginger, julienned',
         ' 2 tablespoons light soy sauce',
@@ -343,7 +382,7 @@ export const mockPosts: PostItemData[] = [
         ' Soak the black fungus in water for 30 minutes or until softened. Drain and cut into smaller pieces.',
         ' Clean the threadfin and pat dry with paper towels. Make 3-4 shallow cuts on each side of the fish.',
         ' In a bowl, mix together the light soy sauce, sesame oil, Shaoxing wine, and sugar. Set aside.',
-        ' In a wok or frying pan, heat the vegetable oil over medium heat. Add the ginger and stir-fry for 1-2 minutes until fragrant.',
+        ' In a wok or frying pan, heat the vegetable oil over small heat. Add the ginger and stir-fry for 1-2 minutes until fragrant.',
         ' Add the black fungus and stir-fry for another 2-3 minutes.',
         ' Pour the soy sauce mixture into the wok and bring to a boil.',
         ' Place the threadfin on a heatproof plate and pour the ginger and black fungus mixture over it.',
@@ -921,7 +960,7 @@ export const mockPosts: PostItemData[] = [
         ' Rinse the red dates and dried longan with water and drain',
         ' In a pot, add the red dates, dried longan, and water',
         ' Bring the water to a boil over high heat',
-        ' Once the water is boiling, lower the heat to medium-low and let it simmer for about 45 minutes to an hour',
+        ' Once the water is boiling, lower the heat to small-low and let it simmer for about 45 minutes to an hour',
         ' Stir occasionally to prevent the ingredients from sticking to the bottom of the pot',
         ' After 45 minutes to an hour, the water should have reduced to about half',
         ' If you want the tea to be sweeter, you can add rock sugar to taste',
@@ -1404,37 +1443,37 @@ export const mockPosts: PostItemData[] = [
     reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/' ],
     blocks: [
       paragraph('So, whether you\'re seeking guidance on maternity clothing, prenatal vitamins, or baby essentials, keep reading as we unveil the must-haves for every expectant mother. Let\'s dive into the top 10 essentials to ensure your journey to motherhood is as smooth, enjoyable, and memorable as possible.'),
-      {type: 'heading' , text: 'Maternity Clothing: Dressing for Comfort and Style', size: 'medium', uppercase:true},
+      {type: 'heading' , text: 'Maternity Clothing: Dressing for Comfort and Style', size: 'small', uppercase:true},
       paragraph('During pregnancy, your body goes through significant changes, and finding comfortable and stylish clothing becomes essential. Maternity clothing is designed to accommodate your growing belly, provide support, and ensure you feel confident throughout your pregnancy.'),
       paragraph('Look for stretchy fabrics, adjustable waistbands, and styles that flatter your changing silhouette. Embrace your beautiful bump and enjoy expressing your personal style through maternity fashion.'),
-      {type: 'heading' , text: 'Supportive Maternity Bras: The Foundation of Comfort', size: 'medium', uppercase:true},
+      {type: 'heading' , text: 'Supportive Maternity Bras: The Foundation of Comfort', size: 'small', uppercase:true},
       paragraph('As your breasts undergo changes during pregnancy, investing in supportive maternity bras is crucial. A well-fitted maternity bra offers the necessary support and prevents discomfort. Look for bras with adjustable straps, wider bands, and breathable fabrics. Consider getting fitted by a professional to find the right size and choose different styles to accommodate the changes in your breast size throughout pregnancy and beyond.'),
-      {type: 'heading' , text: 'Prenatal Vitamins: Nourishing You and Your Baby', size: 'medium', uppercase:true},
+      {type: 'heading' , text: 'Prenatal Vitamins: Nourishing You and Your Baby', size: 'small', uppercase:true},
       paragraph('Prenatal vitamins are specially formulated to provide essential nutrients that support your health and the development of your baby. They supplement your diet with key vitamins and minerals like folic acid, iron, calcium, and omega-3 fatty acids.'),
       paragraph('Consult with your healthcare provider to determine the right prenatal vitamin for you, as different women have varying nutritional needs during pregnancy. Remember, prenatal vitamins are not a substitute for a healthy diet but rather an important complement to ensure optimal nourishment.'),
-      {type: 'heading' , text: 'Body Pillows: Restful Nights and Relaxed Days', size: 'medium', uppercase:true},
+      {type: 'heading' , text: 'Body Pillows: Restful Nights and Relaxed Days', size: 'small', uppercase:true},
       paragraph('As your baby bump grows, finding a comfortable sleeping position can become challenging. Body pillows offer support and help alleviate discomfort, especially in the back, hips, and legs. Whether you choose a full-body pillow or a smaller one to place strategically, these pillows provide relief and promote better sleep quality. Experiment with different positions and pillow arrangements until you find what works best for you.'),
-      {type: 'heading' , text: 'Pregnancy Books: Empowering Knowledge at Your Fingertips', size: 'medium', uppercase:true},
+      {type: 'heading' , text: 'Pregnancy Books: Empowering Knowledge at Your Fingertips', size: 'small', uppercase:true},
       paragraph('Pregnancy is a journey full of questions and uncertainties. Pregnancy books can be a valuable resource, providing you with information, advice, and guidance. From understanding the stages of pregnancy to learning about labor and childbirth, these books empower you with knowledge.'),
       paragraph('Look for reputable authors and seek recommendations from other moms or healthcare professionals to find the most informative and reliable pregnancy books.  Some popular recommendations include "What to Expect When You\'re Expecting" by Heidi Murkoff, "Ina May\'s Guide to Childbirth" by Ina May Gaskin, and "The Mayo Clinic Guide to a Healthy Pregnancy" by the Mayo Clinic.'),
-       {type: 'heading' , text: 'Belly Balms and Oils: Pampering Your Growing Bump', size: 'medium', uppercase:true},
+       {type: 'heading' , text: 'Belly Balms and Oils: Pampering Your Growing Bump', size: 'small', uppercase:true},
        paragraph('Taking care of your skin during pregnancy is not only important for your comfort but also for preventing stretch marks and maintaining elasticity. Belly balms and oils are specifically formulated to nourish and moisturize your growing belly.'),
        paragraph('They help soothe itching, promote skin elasticity, and create a bonding ritual between you and your baby bump. Look for products with natural ingredients like cocoa butter, shea butter, and vitamin E for the best results.'),
-       {type: 'heading' , text: 'Supportive Footwear: Happy Feet, Happy Mama', size: 'medium', uppercase:true},
+       {type: 'heading' , text: 'Supportive Footwear: Happy Feet, Happy Mama', size: 'small', uppercase:true},
        paragraph('During pregnancy, many women experience foot and leg swelling and may develop foot pain or discomfort. Wearing supportive footwear can make a significant difference in your comfort levels.'),
        paragraph('Opt for shoes with good arch support, cushioning, and a roomy toe box. Avoid high heels and opt for flats or low-heeled shoes to reduce strain on your feet.'),
        paragraph('Remember, happy feet lead to a happier you!'),
-       {type: 'heading' , text: 'Pregnancy Journal: Cherishing Precious Memories', size: 'medium', uppercase:true},
+       {type: 'heading' , text: 'Pregnancy Journal: Cherishing Precious Memories', size: 'small', uppercase:true},
        paragraph('Documenting your pregnancy journey in a journal is a beautiful way to capture the precious moments and memories. Whether it\'s jotting down your thoughts, milestones, or even pasting ultrasound pictures, a pregnancy journal becomes a cherished keepsake.'),
        paragraph('Start by choosing a journal that resonates with you and find moments each day to reflect on your experiences, emotions, and the excitement of becoming a mother.'),
-      {type: 'heading' , text: 'Baby Essentials: Preparing for the Arrival', size: 'medium', uppercase:true},
+      {type: 'heading' , text: 'Baby Essentials: Preparing for the Arrival', size: 'small', uppercase:true},
       paragraph('As you prepare for the arrival of your little one, it\'s important to gather the essential items your baby will need. From diapers and clothing to a safe crib and baby care products, make a checklist and start organizing early.'),
       paragraph('Seek advice from experienced parents, attend parenting classes, and consult reliable sources to ensure you have everything ready to welcome your bundle of joy.'),
-      {type: 'heading' , text: 'Emotional Support: Surrounding Yourself with Love', size: 'medium', uppercase:true},
+      {type: 'heading' , text: 'Emotional Support: Surrounding Yourself with Love', size: 'small', uppercase:true},
       paragraph('Pregnancy can be an emotional rollercoaster, and having a strong support system in place is crucial. Surround yourself with loved ones who can provide emotional support, understanding, and encouragement. Join online communities or local pregnancy support groups to connect with other expectant moms who can relate to your experiences.'),
       paragraph('If needed, don\'t hesitate to seek professional help from therapists or counselors who specialise in maternal mental health.'),
       paragraph('Remember, taking care of your emotional well-being is just as important as taking care of your physical health during pregnancy.'),
-      {type: 'heading' , text: 'Conclusion', size: 'medium', uppercase:true},
+      {type: 'heading' , text: 'Conclusion', size: 'small', uppercase:true},
       paragraph('Being well-prepared and equipped with the right essentials can significantly enhance your pregnancy journey. From maternity clothing and supportive bras to prenatal vitamins and emotional support, each item plays a crucial role in ensuring your comfort, well-being, and enjoyment during this special time.'),
       paragraph('Embrace the changes, cherish the memories, and savor every moment of this incredible journey into motherhood. Remember, every pregnancy is unique, so listen to your body, trust your instincts, and enjoy this incredible chapter of your life.'),
       
@@ -1446,6 +1485,623 @@ export const mockPosts: PostItemData[] = [
           displayHeight: 57,
         }
       ),
+
+    ],
+  },
+
+   {
+    id: 'post-19',
+    slug:'ensuring-your-babys-safety-a-guide-to-sterilisers-for-moms',
+    title: 'Ensuring Your Baby\'s Safety: A Guide to Sterilisers for Moms',
+    excerpt: 'Becoming a new mom is a beautiful journey filled with decisions aimed at keeping your baby safe. One key task is sterilising baby bottles, pacifiers, and feeding equipment. Improper sterilisation can expose your baby to harmful bacteria, causing upset stomachs or infections. With modern technology, sterilisers now make this process easier and more efficient.',
+    category: 'Sterilisers',
+    tags: [ 'mental health', 'pregnancy', 'confinement' , 'food safety'],
+    coverUrl: ARTICLE_IMAGES.sterilisers[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://www.nhs.uk/conditions/baby/breastfeeding-and-bottle-feeding/bottle-feeding/sterilising-baby-bottles/' , 'https://www.babycentre.co.uk/a562825/buying-a-steriliser' , 'https://www.philips.com.au/consumerfiles/pageitems/locales/en_GB/CONSUMER/categorypages/AventFeeding/assets/download/11762-Prep%20for%20feeding_article_GB.pdf'],
+    blocks: [
+      heading('Why sterilisation is Important'),
+      paragraph('Bacteria from tap water, milk residue, or unwashed hands can cause infections in babies, whose immune systems are still developing. Adults may fend off such germs, but babies are more vulnerable. Sterilising feeding equipment and practicing good hygiene helps prevent illness. Once your baby turns one, their immune system will be stronger, and sterilisation may no longer be needed.'),
+      heading('Benefits of using sterilisers'),
+      list([
+        '**Eliminates Harmful Germs:** Sterilisers help remove bacteria, viruses, and other harmful pathogens from baby bottles, pacifiers, breast pump parts, and other feeding equipment, reducing the risk of infections in babies with underdeveloped immune systems.',
+        '**Saves Time:** Compared to traditional methods like boiling water, using a steriliser is much more efficient and convenient. With a larger capacity, it can sterilise multiple items at once, freeing up time for mums and allowing them to focus on other tasks.',
+        '**Ensures Thorough Sterilisation:** Sterilisers offer consistent, thorough sterilisation, making sure that all surfaces of feeding equipment are properly sanitised, which is harder to achieve with manual cleaning.',
+        '**Chemical-Free:** Steam sterilisers, in particular, do not require any harsh chemicals, making them a safe and eco-friendly option for cleaning baby gear.',
+        '**Portable Options:** Some sterilisers are compact and portable, which is convenient for travelling. This allows mums to sterilise items on the go while ensuring baby products stay clean wherever you are.',
+        '**Multi-Use:** Many modern sterilisers can also be used for other items such as toys and teethers, making them versatile tools in a busy mum’s routine.',
+        '**Peace of Mind:** Knowing that feeding equipment is properly sterilised helps reduce worry about infections, allowing mums to focus more on bonding with their baby.'
+      ], 'number'),
+
+      {
+        type: 'steriliserTable',
+        title: 'Methods to sterilise equipment',
+        rows: [
+          {
+          name: 'Boiling Method',
+          description: 'Heating water to 100°C for 20 minutes kills most bacteria. This method is simple but time-consuming and requires constant supervision.',
+          image: { src: ARTICLE_IMAGES.sterilisers[4].src , alt: 'Baby feeding equipment being boiled in a pot',},
+          pros: 'Easy, cost-effective.', cons: 'Time-consuming, requires supervision, not suitable for all materials.', 
+          },
+          {
+            name: 'Microwave Sterilisers',
+            description: 'Microwave sterilisers use steam to sterilise baby feeding equipment. Follow the manufacturer’s instructions.',
+            image: {  src: ARTICLE_IMAGES.sterilisers[2].src, alt: 'Microwave steriliser for baby feeding equipment', }, 
+            pros: 'Quick and fairly inexpensive.', cons: 'Not suitable for all materials; requires a suitable microwave.', 
+          },
+          {
+            name: 'Electric Steam Sterilisers',
+            description: 'These plug-in devices use steam, requiring no chemicals or rinsing. They are highly effective and can keep items sterile for up to 24 hours with the lid closed. Some models even include an integrated dryer.',
+            image: { src: ARTICLE_IMAGES.sterilisers[3].src , alt: 'Electric Steam Sterilisers', },
+            pros: 'Non-toxic, large capacity, fast (8-15 minutes)' , cons: 'Can degrade plastics over time, requires maintenance.'
+          },
+          {
+            name: 'UV Sterilisers',
+            description: 'UV sterilisers use ultraviolet light, making them water-free and ideal for tech-savvy parents. However, they may be less effective on items with complex shapes and generally have smaller capacities. ',
+            image: { src: ARTICLE_IMAGES.sterilisers[1].src , alt: 'UV Sterilisers'},
+            pros: 'Portable, convenient, fast (10 minutes)' , cons: 'Small capacity, less effective on irregularly shaped items, requires maintenance.',
+          }
+        ],
+       },   
+      ],
+     },
+
+      {
+    id: 'post-20',
+    slug:'why-we-add-alchmey-fibre-for-rice-to-our-fragrant-white-rice',
+    title: 'Why do we add Alchemy Fibre™ for Rice to our Fragrant White Rice?',
+    excerpt: 'Alchemy Fibre™ for Rice is a powdered blend comprising of low glycemic index (GI), high fibre, high prebiotics plant-based dietary fibres. The infusion alters the dynamics of white rice, resulting in a lower GI while providing 10 times more fibre content yet without compromising on taste, texture, or appearance. Here at Chilli Padi Confinement, we incorporate Alchemy Fibre™ for Rice to our Fragrant White Rice to create a healthier option for postnatal mothers.',
+    category: 'Health',
+    tags: [ 'healthy eating', 'weight loss', 'confinement' , 'postpartum recovery'],
+    coverUrl: ARTICLE_IMAGES.alchemyFibre[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/' ],
+    blocks: [
+      {type: 'heading' , text: 'Benefits for Postnatal Mother:' , size: 'large'},
+      paragraph('**Reduces Risk of Developing Type 2 Diabetes**'),
+      image ({
+        src: ARTICLE_IMAGES.alchemyFibre[3].src,
+        alt: 'Sugar Cube'
+      }),
+      paragraph('Pregnancy can increase a woman\'s risk of developing gestational diabetes, a temporary condition that raises the risk of developing type 2 diabetes after delivery. Maintaining stable blood sugar levels is crucial for preventing this. Alchemy Fibre™ for Rice helps regulate blood sugar by promoting a controlled release of glucose, preventing the sharp spikes and crashes associated with high-GI foods.'),
+      paragraph('**Weight Management**'),
+      image ({
+        src: ARTICLE_IMAGES.alchemyFibre[4].src,
+        alt: 'Weighing Scale'
+      }),
+      paragraph('The increased fibre content in Alchemy Fibre™ for Rice promotes feelings of fullness, potentially aiding in weight management for mothers concerned about postpartum weight retention.'),
+      paragraph('**Promotes Healthy Digestion**'),
+      image ({
+        src: ARTICLE_IMAGES.alchemyFibre[5].src,
+        alt: 'Digestion'
+      }),
+      paragraph('Fibre plays a crucial role in maintaining digestive health by promoting regular bowel movements and preventing constipation, a common issue during the postpartum period.'),
+      paragraph('**Strengthen Heart Health**'),
+      image ({
+        src: ARTICLE_IMAGES.alchemyFibre[2].src,
+        alt: 'Heart Health'
+      }),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+    ],
+  },
+
+   {
+    id: 'post-21',
+    slug:'10-skincare-tips-to-nurture-your-glow-after-childbirth',
+    title: '10 Skincare Tips to Nurture Your Glow After Childbirth',
+    excerpt: 'While the arrival of your little one brings immense joy, it\'s important to take care of yourself too, including your skin. After childbirth, your skin may undergo various changes due to hormonal fluctuations and the demands of motherhood.',
+    category: 'Health',
+    tags: [ 'mental health', 'beauty and skincare', 'confinement' , 'postpartum recovery' , 'confinement period'],
+    coverUrl: ARTICLE_IMAGES.skinCare[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/' ],
+    blocks: [
+      paragraph('That\'s why we\'re here to provide you with essential skincare tips to help you nurture your skin and restore its natural radiance.'),
+      paragraph('From simple yet effective practices to targeted skincare routines, we\'ve got you covered. So, let\'s dive into the world of postpartum skincare and discover the secrets to embracing your glow from within.'),
+      {type:'pinkHeading', text:'HYDRATION: THE FOUNDATION OF GLOWING SKIN', },
+      list([
+        '**Drink Up, Glow On!**'
+      ], ),
+      paragraph('Hydration is essential for healthy, glowing skin. Drink plenty of water throughout the day to keep your skin plump and moisturised. Aim for at least 8 glasses a day and carry a water bottle with you wherever you go. Hydration is the secret ingredient to unlock your skin\'s natural radiance!'),
+      list([
+        ' **Nourish Your Skin from Within**'
+      ], ),
+      paragraph('A well-balanced diet packed with vitamins and minerals is a game-changer for your skin. Include fruits, vegetables, whole grains, and lean proteins in your meals to provide your skin with essential nutrients.'),
+      paragraph('Foods rich in antioxidants, like berries and leafy greens, can help fight free radicals and promote a healthy complexion. Remember, your skin reflects what you put inside your body!'),
+      list([
+        '**Indulge in Skincare Luxuries**'
+      ]),
+      paragraph('Treating yourself to a little skincare pampering can do wonders for your postpartum glow. Invest in a gentle cleanser, moisturiser, and sunscreen suitable for your skin type. Don\'t forget the importance of regular exfoliation and face masks to reveal fresh, rejuvenated skin. '),
+      {type: 'pinkHeading' , text: 'Be mindful of hormonal changes', },
+      list([
+        '**Adjust Your Skincare Routine**'
+      ]),
+      paragraph('Postpartum hormonal changes can bring about shifts in your skin\'s needs. Be mindful of any new concerns like dryness, oiliness, or sensitivity. Consider incorporating products specifically formulated for postpartum skin or seek advice from a skincare professional. Your skin is unique, and it deserves personalised attention!'),
+
+      list([
+        '**Combat Postpartum Acne**'
+      ]),
+      paragraph('Postpartum hormonal fluctuations can trigger acne breakouts. Opt for gentle, non-comedogenic skincare products to prevent clogged pores. Incorporate ingredients like salicylic acid or tea tree oil to help fight blemishes. Remember to resist the urge to pick or squeeze—gentle care is key.'),
+      list([
+        '**Embrace Stretch Mark Care**'
+      ]),
+      paragraph('Stretch marks are beautiful reminders of the miraculous journey your body went through. While they may fade over time, you can show your skin some extra love by applying moisturising oils or creams. Look for products containing ingredients like cocoa butter or shea butter, known for their nourishing properties. '),
+      {type: 'pinkHeading', text: 'Protect your skin from the sun'},
+      list([
+        '**Shield Your Skin with SPF**'
+      ]),
+      paragraph('Sun protection is a non-negotiable step in your skincare routine. Apply a broad-spectrum sunscreen with an SPF of 30 or higher daily, even on cloudy days. Shielding your skin from harmful UV rays helps prevent sun damage, premature aging, and pigmentation. '),
+      list([
+        '**Rock That Hat and Shades**'
+      ]),
+      paragraph('In addition to sunscreen, accessorise with wide-brimmed hats and sunglasses to provide extra protection to your face and delicate eye area. Not only will you look fabulous, but you\'ll also keep those harmful rays at bay. '),
+      {type: 'pinkHeading' , text: 'Sleep and self-care for radiant skin'},
+      list([
+        '**Beauty Rest: It\'s Real!**'
+      ]),
+      paragraph('Getting enough sleep is a beauty secret that should not be overlooked. When you\'re well-rested, your skin can rejuvenate and repair itself. Establish a consistent sleep routine, create a relaxing bedtime ritual, and make sleep a priority. Let your skin and body recharge during those precious moments of rest.'),
+      list([
+        '**Find Time for Self-Care**'
+      ]),
+      paragraph('Self-care isn\'t selfish—it\'s essential for your overall well-being and radiant skin. Set aside time for activities that bring you joy and relaxation, whether it\'s taking a bubble bath, reading a book, or practicing mindfulness. '),
+      paragraph('**Conclusion**'),
+      paragraph('Taking care of your skin after childbirth is a beautiful act of self-love. By following these top 10 skincare tips, you\'ll nourish your skin, embrace your postpartum glow, and feel confident in your own skin. Remember to be patient with yourself and celebrate the journey of motherhood. You\'re amazing and your radiant skin is a testament to the incredible journey you\'ve been through. Shine on!'),
+      
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+
+
+
+    ],
+  },
+
+   {
+    id: 'post-22',
+    slug:'tips-on-surviving-the-wild-food-adventure-of-pregnancy',
+    title: 'Tips on Surviving the Wild Food Adventure of Pregnancy',
+    excerpt: 'Pregnancy brings an abundance of excitement, anticipation, and, let\'s be honest, some unforeseen shifts in your appetite. From peculiar cravings to sudden dislikes, your taste buds are about to embark on a thrilling ride! However, fret not, as this article aims to provide you with the essential advice and strategies necessary to navigate this adventurous culinary experience successfully.',
+    category: 'Food',
+    tags: [ 'healthy eating', 'mental health', 'pregnancy' , 'nourishing food'],
+    coverUrl: ARTICLE_IMAGES.wildFood[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://www.acog.org/womens-health/faqs/nutrition-during-pregnancy' , 'https://www.nhs.uk/start4life/pregnancy/healthy-eating-pregnancy' ],
+    blocks: [
+      {type: 'heading' , text: 'Understanding Appetite Changes during Pregnancy', size: 'large'},
+      paragraph('Appetite changes during pregnancy are like a culinary magic show, and several factors contribute to this phenomenon. Hormonal fluctuations, especially the rise in estrogen and progesterone, take the center stage and influence your taste buds and cravings. These hormones can turn previously mundane foods into delectable treats or make you want to avoid them altogether. The changes in blood flow and metabolism also play a role in your appetite, making it a true feast of factors that shape your culinary desires.'),
+
+      {type: 'heading' , text: 'Hormones: The culprits behind your crazy cravings!', size: 'small', uppercase:true},
+
+      paragraph('When it comes to cravings during pregnancy, hormones take the blame! Estrogen, the superstar hormone of pregnancy, has a way of turning your taste buds into adventurous explorers. It can make you yearn for pickles and ice cream, or maybe even a peculiar combination like chocolate-covered potato chips.'),
+      paragraph('Progesterone, on the other hand, can stir up some digestive drama, leading to heartburn or bloating that may influence your food choices. The interplay of these hormones creates the perfect storm for those delightful and sometimes peculiar cravings.'),
+      
+      {type: 'heading' , text: 'Appetite Mayhem: Common Changes and What They Mean!', size: 'small', uppercase:true},
+
+      paragraph('During pregnancy, your appetite can go through some wild changes. For some lucky moms-to-be, the appetite goes into overdrive, and they find themselves feeling like they could eat a horse!'),
+      paragraph('Others may experience aversions, where foods they used to love suddenly become as appealing as a plate of brussels sprouts to a toddler. And let\'s not forget those peculiar cravings that make you wonder if your taste buds have gone on vacation. These changes can have implications for your nutrition and weight gain during pregnancy, so it\'s important to strike a balance between indulging those cravings and maintaining a healthy diet for you and your baby.'),
+      
+      {type: 'heading' , text: 'Coping Strategies for Satisfying Cravings and Conquering Aversions', size: 'large'},
+
+      paragraph('When cravings strike, it\'s all about finding that perfect harmony between satisfying your taste buds and nourishing your body. You don\'t have to deny yourself the foods you crave, but it\'s essential to make mindful choices. Incorporate nutrient-rich options into your diet, such as whole grains, lean proteins, and colorful fruits and vegetables.'),
+      paragraph('If you\'re craving something sweet, try satisfying your sweet tooth with a juicy piece of fruit or a small portion of dark chocolate. Get creative in the kitchen and experiment with healthier alternatives or modifications to your favorite recipes.'),
+      paragraph('You might be surprised at how satisfying and nutritious your cravings can be!'),
+
+      {type: 'heading' , text: 'Listen to Your Belly: The Power of Intuitive Eating', size: 'small', uppercase:true},
+
+      paragraph('Your body is your best guide during pregnancy, and listening to its cues is key.'),
+      paragraph('Pay attention to your hunger and fullness signals to ensure you\'re meeting your nutritional needs without overeating. When you feel hungry, choose wholesome snacks that provide sustained energy, such as a handful of nuts, yogurt, or a veggie and hummus combo.'),
+      paragraph('Avoid mindless munching by savoring each bite and enjoying the flavors and textures of your food. Practice mindful eating, focusing on the present moment and engaging all your senses.'),
+      paragraph('By tuning in to your body\'s signals and eating intuitively, you can strike a balance between enjoying your cravings and nourishing yourself and your baby.'),
+
+      {type: 'heading' , text: 'Stay Active and Appetite-Smart: The Tasty Connection of Exercise', size: 'small', uppercase:true},
+
+      paragraph('Physical activity during pregnancy not only benefits your overall health but can also help manage your appetite. Engage in safe exercises recommended by your healthcare provider to support a healthy appetite. Physical activity stimulates the release of endorphins, those feel-good chemicals in your brain, which can positively impact your mood and help regulate cravings.'),
+      paragraph('Plus, staying active promotes a sense of well-being, reducing the likelihood of turning to food for emotional comfort. '),
+
+      {type: 'heading' , text: 'Feast on Emotions: Navigating the Ups and Downs of Cravings', size: 'small', uppercase:true},
+
+      paragraph('Pregnancy is a time of heightened emotions, and these feelings can influence your appetite. Recognize your emotional triggers and find healthier alternatives to cope with stress or mood swings.'),
+      paragraph('Engage in activities that bring you joy and help you relax, such as yoga, meditation, or spending quality time with loved ones. If you find yourself reaching for food as an emotional crutch, consider seeking support from a therapist or counselor who specialises in pregnancy-related concerns.'),
+      paragraph('Remember, emotions and food are a complex dance, but with the right steps, you can navigate through the ups and downs with grace and deliciousness!'),
+
+      {type: 'heading' , text: 'Frequently Asked Questions ', size: 'large'},
+
+      paragraph('**Can Appetite Changes Affect Baby\'s Development?**'),
+      paragraph('Rest assured, normal appetite changes during pregnancy typically do not harm your baby\'s development. Your body has innate mechanisms to prioritise the nutritional needs of your growing baby, ensuring they receive the necessary nutrients even if your appetite fluctuates.'),
+      paragraph('However, it\'s important to maintain a balanced diet to provide optimal nutrition for both you and your baby. If you have concerns or specific questions about your appetite changes and their impact on your baby, consult with your healthcare provider for personalised guidance and reassurance.'),
+
+      paragraph('**Coping with Aversions to Healthy Foods**'),
+      paragraph('If you\'re experiencing aversions to healthy foods, it can be challenging to ensure a well-rounded diet. Fear not! There are creative ways to work around these aversions and still obtain essential nutrients.'),
+      paragraph('Try incorporating alternative options that provide similar nutrients. For example, if you\'re averse to leafy greens, consider adding more colorful vegetables like carrots or bell peppers to your meals. You can also explore different cooking methods or seasonings to make these foods more appealing.'),
+      paragraph('If your aversions persist and you\'re concerned about your nutrient intake, consult with your healthcare provider or a registered dietitian for personalised advice and support.'),
+
+      paragraph('**Are Intense Food Desires Normal?**'),
+      paragraph('Absolutely! It\'s important to indulge in your cravings occasionally, but remember to maintain a balanced diet overall.'),
+      paragraph('If your cravings are for unhealthy foods, try to find healthier alternatives or satisfy them in moderation. For example, if you\'re craving ice cream, opt for a small portion of a lower-sugar or dairy-free alternative.'),
+      paragraph('Remember, the key is to enjoy your cravings while still nourishing yourself and your baby with a variety of nutrient-dense foods.'),
+
+      paragraph('**Battling the Beast of Excessive Hunger**'),
+      paragraph('Feeling hungry all the time during pregnancy is not uncommon. Your body is working hard to support the growth and development of your baby, which requires extra energy. To manage excessive hunger, focus on eating frequent, balanced meals and snacks throughout the day.'),
+      paragraph('Incorporate protein-rich foods, healthy fats, and fiber to help keep you feeling satisfied for longer periods. Opt for nutrient-dense options that provide sustained energy, such as whole grains, lean proteins, fruits, and vegetables.'),
+      paragraph('Drinking plenty of water can also help curb excessive hunger. If you\'re concerned about your hunger levels, consult with your healthcare provider to ensure you\'re meeting your nutritional needs.'),
+
+      paragraph('**What if the Pounds keep Piling on?**'),
+      paragraph('Weight gain during pregnancy is a natural and necessary part of the process. However, it\'s important to monitor your weight gain and ensure it stays within the healthy range. Excessive weight gain can lead to complications and make it more challenging to lose the weight postpartum.'),
+      paragraph('Focus on maintaining a balanced diet, staying active, and listening to your body\'s hunger and fullness cues. Avoid strict dieting or restricting calories, as it can deprive both you and your baby of essential nutrients. '),
+
+      paragraph('**Conclusion**'),
+      paragraph('Dealing with appetite changes during pregnancy may feel like a wild ride, but armed with these fun strategies, you\'ll rock it like a true food adventurer.'),
+      paragraph('Remember, strike that balance, listen to your cravings, and nourish both yourself and your little one. If you ever need some extra support or guidance, don\'t hesitate to reach out to your healthcare provider.'),
+      paragraph('Please note that this article is intended for informational purposes only. Always consult with your healthcare provider for personalised advice during pregnancy.'),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+
+    ],
+  },
+
+   {
+    id: 'post-23',
+    slug:'battling-postpartum-acne-a-complete-guide-to-reclaiming-your-glow',
+    title: 'Battling Postpartum Acne: A Complete Guide to Reclaiming Your Glow',
+    excerpt: 'Hey there, new mama! While motherhood brings incredible joy, it can also bring a few unexpected surprises, like postpartum acne.',
+    category: 'Skincare',
+    tags: [ 'confinement', 'mental health', 'confinement period' , 'beauty and skincare', 'postpartum recovery', 'healthy eating'],
+    coverUrl: ARTICLE_IMAGES.battlingAcne[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/battling-postpartum-acne-a-complete-guide-to-reclaiming-your-glow' ],
+    blocks: [
+      paragraph('Don\'t worry; you\'re not alone! Many new moms experience this pesky skin condition due to fluctuating hormones.'),
+      paragraph('In this comprehensive guide, we\'ll dive into the causes of postpartum acne and equip you with the knowledge and tools to tackle it head-on. Say goodbye to those unwelcome blemishes and hello to your radiant glow!'),
+      {type: 'heading' , text: 'Understanding Postpartum Acne: Why Is It Happening?' , size: 'large'},
+
+      {type: 'heading' , text: 'Hormonal Rollercoaster: The Culprit Behind Postpartum Acne', size: 'small', uppercase:true},
+      paragraph('Postpartum acne is primarily caused by hormonal fluctuations. During pregnancy, your body experiences a surge in hormones, especially progesterone. These hormones work together to support the growth and development of your baby, but they can also lead to increased sebum production in your skin.'),
+      paragraph('Excessive sebum, coupled with dead skin cells, can clog your pores, paving the way for acne breakouts. As your hormone levels gradually return to normal after giving birth, your skin may take some time to readjust, causing postpartum acne to rear its head.'),
+
+      {type: 'heading' , text: 'Stress and Lack of Sleep: Partners in Crime', size: 'small', uppercase:true},
+      paragraph('Being a new mom comes with its fair share of stressors and sleepless nights. We all know that stress and lack of sleep are often intertwined during this phase. Unfortunately, they can wreak havoc on your skin.'),
+      paragraph('Stress triggers the release of cortisol, a hormone that stimulates oil production, while sleep deprivation impairs your skin\'s natural healing process. Together, they create a perfect storm for postpartum acne.'),
+      paragraph('So, mama, it\'s essential to take care of yourself and find ways to manage stress and catch up on those Zzz\'s.'),
+
+      {type: 'heading' , text: 'Banishing Postpartum Acne: Practical Tips and Tricks' , size: 'large'},
+
+      {type: 'heading' , text: 'Establishing a Gentle Skincare Routine: Less Is More', size: 'small', uppercase:true},
+      paragraph('When it comes to postpartum acne, the key is to be gentle with your skin. Harsh cleansers and aggressive exfoliation can further irritate your already sensitive complexion. Opt for mild, fragrance-free cleansers specifically formulated for acne-prone skin.'),
+      paragraph('Wash your face twice a day with lukewarm water, using your fingertips in gentle circular motions. Pat your skin dry with a clean towel—no scrubbing, please! Remember, less is more, so resist the temptation to pile on multiple skincare products. Keep it simple and let your skin breathe.'),
+
+      {type: 'heading' , text: 'Hello, Hydration: The Power of Moisturising' , size: 'small', uppercase:true},
+      paragraph('Contrary to popular belief, moisturising is crucial even if you have oily skin or acne. Hydration helps maintain your skin\'s natural barrier, preventing excessive oil production and keeping acne at bay.'),
+      paragraph('Look for oil-free, non-comedogenic moisturisers to lock in moisture without clogging your pores. Apply a pea-sized amount of moisturiser to your clean, dry face every morning and evening. Don\'t forget your neck and décolletage too!'),
+      paragraph('Hydrated skin is happy skin, mama.'),
+
+      {type: 'heading' , text: 'Kick Acne to the Curb: Natural Remedies' , size: 'small', uppercase:true},
+      paragraph('Nature has some fantastic remedies up her sleeve to combat postpartum acne. Here are a few tried-and-true favorites:'),
+      list([
+        '**Tea Tree Oil:** This essential oil has antibacterial properties that can help fight acne-causing bacteria. Dilute a few drops of tea tree oil with a carrier oil like jojoba or coconut oil and apply it to your acne-prone areas. Be cautious not to use undiluted tea tree oil directly on your skin, as it may cause irritation.',
+        '**Witch Hazel:** Known for its astringent properties, witch hazel can help reduce inflammation and soothe irritated skin. Apply witch hazel to a cotton pad and gently dab it onto your face after cleansing. It\'s a refreshing and natural way to calm your skin.',
+        '**Aloe Vera:** This magical plant is known for its healing properties. Apply pure aloe vera gel directly to your acne spots or use it as a moisturiser. It can help reduce redness and inflammation while keeping your skin hydrated.',
+        '**Green Tea:** Sip on a cup of green tea for more than just a caffeine boost. Green tea is packed with antioxidants that can help fight acne-causing bacteria and reduce inflammation. You can also brew a cup, let it cool, and use it as a toner by applying it to your skin with a cotton ball.',
+      ]),
+
+      {type: 'heading' , text: 'Lifestyle Adjustments: Taking Care of Yourself' , size: 'large'},
+      paragraph('While skincare plays a significant role in managing postpartum acne, don\'t forget to address your overall lifestyle and well-being. Here are some lifestyle adjustments that can positively impact your skin:'),
+      list([
+        '**Healthy Diet:** Opt for a balanced diet rich in fruits, vegetables, lean proteins, and whole grains. Avoid excessive sugar and processed foods, as they can contribute to inflammation and exacerbate acne. Remember, you are what you eat, mama!',
+        '**Stay Hydrated:** Hydration is key, not just for your skin but for your overall health. Drink plenty of water throughout the day to keep your skin hydrated and help flush out toxins. It\'s the simplest and most effective beauty secret!',
+        '**Get Moving:** Regular exercise improves blood circulation, reduces stress levels, and promotes a healthy glow. Engage in activities you enjoy, whether it\'s a brisk walk, yoga, or dancing around the living room with your little one. Find what makes you happy and get moving!',
+        '**Self-Care:** Take time for yourself, mama. Whether it\'s a bubble bath, reading a book, or indulging in a face mask, prioritise self-care. When you feel good, your skin will reflect that inner glow.'
+      ], 'number'),
+
+      {type: 'heading' , text: 'FAQs for Battling Postpartum Acne' , size: 'large'},
+      paragraph('**Q: Can I use my regular acne-fighting products while dealing with postpartum acne?**'),
+      paragraph('A: It\'s best to consult with your dermatologist before using any new products or continuing your pre-pregnancy skincare routine. Some acne-fighting ingredients may not be suitable during breastfeeding or may interact with hormonal changes.'),
+
+      paragraph('**Q: How long does postpartum acne typically last?**'),
+      paragraph('A: Postpartum acne duration varies from person to person. It can last anywhere from a few weeks to several months. Be patient with your skin and consistent with your skincare routine.'),
+
+      paragraph('**Q: Can postpartum acne be prevented?**'),
+      paragraph('A: While it\'s not always possible to prevent postpartum acne completely, following a gentle skincare routine, practicing good hygiene, and adopting a healthy lifestyle can minimise the likelihood and severity of breakouts.'),
+
+      paragraph('**Q: When should I seek professional help for my postpartum acne?**'),
+      paragraph('A: If your acne is severe, painful, or impacting your self-esteem, it\'s a good idea to consult with a dermatologist. They can evaluate your skin condition and recommend appropriate treatments.'),
+      paragraph('You\'ve got this, mama! With patience, self-care, and a touch of skincare magic, you\'ll bid farewell to postpartum acne and welcome back your radiant, glowing skin. Enjoy this precious time with your little one, and don\'t forget to take care of yourself along the way.'),
+      paragraph('Now, go forth and conquer those postpartum skin challenges with confidence and a smile. You\'re a superhero, and your skin will shine just as brightly as your love for your baby.'),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+
+    ],
+  },
+
+   {
+    id: 'post-24',
+    slug:'your-first-week-of-confinement-tips-for-new-moms',
+    title: 'Your First Week of Confinement: Tips for New Moms',
+    excerpt: 'Bringing a new life into the world is a beautiful, transformative experience, but it\'s not without its challenges. As a new mom, you\'ll be adjusting to a lot of changes, both physical and emotional, during your first week of confinement.',
+    category: 'Tips',
+    tags: [ 'confinement', 'mental health', 'confinement period' , 'postpartum recovery'],
+    coverUrl: ARTICLE_IMAGES.tips[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/battling-postpartum-acne-a-complete-guide-to-reclaiming-your-glow' ],
+    blocks: [
+      paragraph('From the sleepless nights to the never-ending feedings, it can feel like you\'re on a rollercoaster ride. But don\'t worry - you\'re not alone.'),
+      paragraph('Many new moms feel overwhelmed and unsure during this time. With a little bit of preparation and support, you can get through this first week with ease.'),
+      {type: 'heading' , text: 'What to Expect During Your First Week of Confinement?' , size: 'large'},
+      {type: 'heading' , text: 'Physical Changes' , size: 'small', uppercase:true},
+      paragraph('During the first week of confinement, your body will be going through a lot of changes as it heals from childbirth. Here are some things to expect:'),
+      list([
+        '**Vaginal bleeding:** It\'s normal to experience bleeding and discharge after giving birth. This is known as lochia and can last for several weeks. Make sure to use pads instead of tampons to avoid the risk of infection.',
+        '**Breast engorgement:** As your milk comes in, your breasts may become swollen, tender, and painful. Applying cold compresses and breastfeeding or pumping frequently can help alleviate the discomfort.',
+        '**Postpartum cramping:** Your uterus will be contracting as it shrinks back to its pre-pregnancy size, which can cause cramping. Taking pain relievers and using a heating pad can help.',
+        '**Fatigue:** Giving birth is a physically demanding experience, and it\'s normal to feel exhausted during your first week of confinement. You\'ll likely be getting up frequently to care for your baby, which can make it hard to get the rest you need. Try to take naps when your baby sleeps, and don\'t be afraid to ask for help from family and friends.',
+      ]),
+
+      {type: 'heading' , text: 'Emotional Changes' , size: 'small', uppercase:true},
+      paragraph('In addition to the physical changes, you\'ll also be experiencing a range of emotions during your first week of confinement. Here are some common feelings new moms have:'),
+      list([
+        '**Baby blues:** It\'s not uncommon to experience a range of emotions during your first week of confinement. You may feel elated and overjoyed one moment, and then overwhelmed and weepy the next. These feelings are known as the baby blues, and they\'re normal.',
+        '**Bonding with your baby:** Some moms feel an immediate connection with their newborns, while others may need more time to develop that bond. Don\'t worry if you don\'t feel an instant attachment - it can take time.',
+        '**Mood swings:** Hormonal changes can cause mood swings and irritability. Be patient with yourself and try to communicate your feelings with your partner or a trusted friend.',
+        '**Anxiety:** Many new moms experience anxiety during their first week of confinement. You may worry about your baby\'s health, or feel anxious about your ability to care for them. To manage anxiety, try to take breaks when you need them and practice deep breathing or other relaxation techniques.'
+      ]),
+
+      {type: 'heading' , text: 'FAQs About Your First Week of Confinement' , size: 'large'},
+      {type: 'heading' , text: 'How Long Does Confinement Last?' , size: 'small', uppercase:true},
+      paragraph('The length of your confinement period will depend on a variety of factors, including your personal preferences and your doctor\'s recommendations. In general, confinement lasts between 30 and 40 days.'),
+      {type: 'heading' , text: 'Can I Leave the House During Confinement?' , size: 'small', uppercase:true},
+      paragraph('It\'s generally recommended that you stay at home during your confinement period to allow your body to heal and reduce the risk of infection. However, it\'s okay to go outside for short walks or to attend doctor\'s appointments.'),
+      {type: 'heading' , text: 'How Can I Make My First Week of Confinement Easier?' , size: 'small', uppercase:true},
+      paragraph('There are a number of things you can do to make your first week of confinement easier:'),
+      list([
+        '**Prepare ahead of time:** Stock up on essentials like groceries, diapers, and baby supplies before your due date to avoid having to run errands during your confinement period.',
+        '**Accept help:** Don\'t be afraid to ask family and friends for help with household chores or caring for your baby. Having support can make all the difference.',
+        '**Prioritise rest:** Try to take naps when your baby sleeps, and don\'t feel guilty about taking it easy during your confinement period. Your body needs time to heal.',
+        '**Practice self-care:** Take a warm bath, read a book, or watch a movie to help you relax and unwind.',
+        '**Connect with other new moms:** Join a new mom support group or connect with other moms online to share experiences and get advice.'
+      ], 'number'),
+      paragraph('**Conclusion**'),
+      paragraph('Your first week of confinement is a time of major physical and emotional changes, but with the right preparation and support, you can get through it with ease.'),
+      paragraph('Remember to prioritise rest, seek help when you need it, and be kind to yourself as you adjust to your new role as a mom. If you\'re struggling, don\'t hesitate to reach out to your doctor or a mental health professional for support'),
+      paragraph('With time, you\'ll settle into a routine that works for you and your baby, and the joys of motherhood will far outweigh any challenges you may face during your first week of confinement.'),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+    ],
+  },
+
+   {
+    id: 'post-25',
+    slug:'mindfulness-techniques-for-postpartum-anxiety-calming-your-mind-and-body',
+    title: 'Mindfulness Techniques for Postpartum Anxiety: Calming Your Mind and Body',
+    excerpt: 'Welcoming a new life into the world can be both exciting and overwhelming. As a new mother, you\'re likely to experience a range of emotions, from joy and excitement to fear and anxiety. It\'s perfectly normal to feel anxious during the postpartum period, as you adjust to the demands of motherhood and cope with the physical and emotional changes that come with childbirth.',
+    category: 'Anxiety',
+    tags: [ 'confinement', 'mental health', 'confinement period' , 'postpartum recovery'],
+    coverUrl: ARTICLE_IMAGES.anxiety[1].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/battling-postpartum-acne-a-complete-guide-to-reclaiming-your-glow' ],
+    blocks: [
+      paragraph('However, if your anxiety becomes overwhelming or starts to interfere with your daily life, it\'s important to seek help'),
+      paragraph('Mindfulness techniques can be a powerful tool in managing postpartum anxiety, helping you to calm your mind and body and find a sense of peace amidst the challenges of motherhood.'),
+      {type: 'heading' , text: 'What is Postpartum Anxiety?' , size: 'small', uppercase:true},
+      paragraph('Postpartum anxiety is a condition that affects many new mothers. It is characterized by excessive worry, fear, and nervousness that can interfere with a mother\'s ability to care for her baby and herself.'),
+      paragraph('Symptoms of postpartum anxiety can include:'),
+      list([
+        'Constant worry or fear',
+        'Racing thoughts',
+        'Difficulty sleeping',
+        'Physical symptoms such as heart palpitations, headaches, and nausea',
+        'Avoidance of certain situations',
+        'Difficulty focusing or concentrating',
+      ]),
+      {type: 'heading' , text: 'How Mindfulness Can Help with Postpartum Anxiety?' , size: 'small', uppercase:true},
+      paragraph('Mindfulness is the practice of being present and fully engaged in the current moment. It involves paying attention to your thoughts, feelings, and sensations without judgment. Mindfulness can help with postpartum anxiety in several ways:'),
+      list([
+        'It can help you become more aware of your anxious thoughts and feelings, allowing you to acknowledge them without becoming overwhelmed by them.',
+        'It can help you manage physical symptoms of anxiety, such as heart palpitations and muscle tension.',
+        'It can help you develop a sense of calm and relaxation, which can reduce feelings of anxiety.',
+      ]),
+      {type: 'heading' , text: 'Mindfulness Techniques for Postpartum Anxiety' , size: 'small', uppercase:true},
+      paragraph('**Body Scan Meditation**'),
+      paragraph('Body scan meditation involves focusing your attention on different parts of your body, one at a time. This can help you become more aware of physical sensations and relax your body.'),
+      paragraph('To practice body scan meditation:'),
+      list([
+        'Find a quiet, comfortable place to sit or lie down.',
+        'Close your eyes and take a few deep breaths.',
+        'Begin by focusing on your toes. Notice any sensations you feel in your toes, such as tingling or warmth. Hold your attention on your toes for a few moments, then move on to your feet.',
+        'Continue this process, moving up your body one part at a time, until you reach the top of your head.',
+      ]),
+      paragraph('**Mindful Breathing**'),
+      paragraph('Mindful breathing involves paying attention to your breath and focusing on the present moment. This can help you calm your mind and reduce feelings of anxiety.'),
+      paragraph('To practice mindful breathing:'),
+      list([
+        'Find a quiet, comfortable place to sit or lie down.',
+        'Close your eyes and take a few deep breaths.',
+        'Begin to pay attention to your breath. Notice the sensation of the air moving in and out of your body.',
+        'If your mind wanders, gently bring your attention back to your breath. You can also try counting your breaths or repeating a calming phrase to help focus your mind.',
+      ]),
+      paragraph('**Mindful Movement**'),
+      paragraph('Mindful movement involves engaging in physical activity while being fully present and aware of your body and surroundings. This can help reduce stress and anxiety and promote a sense of relaxation.'),
+      paragraph('To practice mindful movement:'),
+      list([
+        'Choose an activity that you enjoy, such as yoga, walking, or dancing.',
+        'As you engage in the activity, focus on the sensations in your body and the movements you are making.',
+        'Pay attention to your breath and try to synchronize your movements with your breath.',
+        'If your mind begins to wander, gently bring your attention back to the present moment and your body.',
+      ]),
+      paragraph('**Loving-Kindness Meditation**'),
+      paragraph('Loving-kindness meditation involves focusing on feelings of love, kindness, and compassion toward yourself and others. This can help promote positive emotions and reduce feelings of anxiety and stress.'),
+      paragraph('To practice loving-kindness meditation:'),
+      list([
+        'Find a quiet, comfortable place to sit or lie down.',
+        'Close your eyes and take a few deep breaths.',
+        'Begin by focusing on feelings of love and kindness toward yourself.',
+        'Repeat a phrase such as "May I be happy, healthy, and at peace" or "May I be kind and compassionate to myself."',
+        'After a few minutes, shift your focus to others, repeating similar phrases for loved ones, acquaintances, and even those who may be difficult to love.',
+      ]),
+      {type: 'heading' , text: 'Other Mindfulness Practices That Can Help with Postpartum Anxiety' , size: 'small', uppercase:true},
+      list([
+        '1. **Mindful Parenting**'
+      ], 'none'),
+      paragraph('Mindful parenting involves bringing awareness to the present moment while caring for your child. '),
+      paragraph('To practice mindful parenting:'),
+      paragraph('Focus on the present moment while interacting with your child. Listen to your child without judgment or distraction. Engage in activities with your child, such as playing or reading, with full attention and presence. Practice self-compassion and forgiveness when mistakes are made.'),
+
+      list([
+        '2. **Gratitude Practice**'
+      ], 'none'),
+      paragraph('Gratitude practice involves focusing on the things you are thankful for in your life. This can help shift your focus from negative thoughts and reduce symptoms of anxiety.'),
+      paragraph('To practice gratitude:'),
+      paragraph('Take a few minutes each day to reflect on things you are thankful for, such as your health, family, or home. Write down these things in a gratitude journal. Express gratitude towards others by thanking them for their support and kindness.'),
+
+      list([
+        '3. **Mindful Self-Compassion**'
+      ], 'none'),
+      paragraph('Mindful self-compassion involves being kind and compassionate towards oneself in moments of difficulty or stress. This can help reduce feelings of self-criticism and promote self-care.'),
+      paragraph('To practice mindful self-compassion:'),
+      paragraph('Acknowledge and validate your feelings without judgment. Speak to yourself in a kind and understanding tone. Practice self-care activities, such as taking a relaxing bath or going for a walk.'),
+
+      {type: 'heading' , text: 'Frequently Asked Questions about Mindfulness Techniques for Postpartum Anxiety' , size: 'large'},
+      list([
+        '1. **What is the best mindfulness technique for postpartum anxiety?**'
+      ], 'none'),
+      paragraph('There is no one "best" mindfulness technique for postpartum anxiety, as everyone\'s experience is unique. It is recommended to try different techniques and find what works best for you. '),
+
+      list([
+        '2. **How long do I need to practice mindfulness before seeing results?**'
+      ], 'none'),
+      paragraph('The amount of time it takes to see results from mindfulness practice can vary from person to person. However, many people begin to feel the benefits within a few weeks of regular practice. Consistency is key, so make sure to incorporate mindfulness techniques into your daily routine and be patient with yourself.'),
+
+      list([
+        '3. **Can mindfulness replace medication for postpartum anxiety?**'
+      ], 'none'),
+      paragraph('While mindfulness techniques can be an effective addition to other treatments for postpartum anxiety, such as medication and therapy, they may not replace these treatments entirely. It\'s essential to talk to your healthcare provider about the best treatment options for you'),
+      paragraph('Postpartum anxiety can be a challenging condition to manage, but with mindfulness techniques, you can reduce your symptoms and promote relaxation and calm.'),
+      paragraph('By practicing techniques such as body scan meditation, mindful breathing, and loving-kindness meditation, and incorporating other mindfulness practices such as mindful parenting, gratitude, and self-compassion, you can begin to manage postpartum anxiety and lead a more peaceful life.'),
+      paragraph('Remember to be patient and consistent in your practice, and always seek help from a healthcare professional if you experience symptoms of postpartum anxiety.'),
+
+       image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+
+    ]
+  },
+
+   {
+    id: 'post-26',
+    slug:'is-confinement-nanny-necessary',
+    title: 'Is Confinement Nanny Necessary',
+    excerpt: 'Bringing a newborn into the world is a life-changing event that can be overwhelming for both new mothers and fathers. The first few weeks after birth are often filled with sleepless nights, round-the-clock feeding, and adjusting to the new addition to the family.',
+    category: 'Anxiety',
+    tags: [ 'confinement food', 'mental health', 'confinement period' , 'postpartum recovery', 'nourishing food'],
+    coverUrl: ARTICLE_IMAGES.nanny[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/battling-postpartum-acne-a-complete-guide-to-reclaiming-your-glow' ],
+    blocks: [
+      paragraph('In Singapore, many families turn to confinement nannies to help ease the transition and provide much-needed support during this challenging period. '),
+      paragraph('In this article, we\'ll explore the benefits and drawbacks of engaging a confinement nanny and provide alternatives for families who prefer to go it alone.'),
+      {type: 'heading' , text: 'What is a confinement Nanny?' , size: 'small', uppercase:true},
+      
+{
+  type: 'comparisonTable',
+  title: 'PROS AND CONS OF HIRING CONFINEMENT NANNY',
+  pros: [
+    {
+      title: 'Experienced care:',
+      text: 'A confinement nanny can provide valuable support and guidance',
+    },
+    {
+      title: 'Customised care:',
+      text: 'Confinement nannies can tailor their services to meet the needs',
+    },
+    {
+      title: 'Nutritious meals:',
+      text: 'A confinement nanny can prepare healthy and nutritious meals',
+    },
+    {
+      title: 'Peace of mind:',
+      text: 'Engaging a confinement nanny can provide peace of mind',
+    },
+    {
+      title: 'Assistance with breastfeeding:',
+      text: 'A confinement nanny can provide valuable support and guidance in breastfeeding',
+    },
+    {
+      title: 'Help with newborn care:',
+      text: 'A confinement nanny can help new parents learn how to care for their newborn',
+    },
+    {
+      title: 'Additional household help:',
+      text: 'Some confinement nannies offer additional help with household chores, such as cleaning',
+    },
+  ],
+  cons: [
+    {
+      title: 'Cost:',
+      text: 'Engaging a confinement nanny can be expensive, especially for longer periods',
+    },
+    {
+      title: 'Personality clash:',
+      text: 'The confinement nanny and the mother may not get along',
+    },
+    {
+      title: 'Loss of control:',
+      text: 'The mother may feel like she has lost control over her household',
+    },
+    {
+      title: 'Intrusion of privacy:',
+      text: 'Having someone constantly in the home can be invasive and uncomfortable',
+    },
+    {
+      title: 'Difficulty adjusting:',
+      text: 'Having someone take over daily tasks can be a challenge for mothers who are used to being in control',
+    },
+    {
+      title: 'Dependency:',
+      text: 'Some mothers may become overly reliant on their confinement nanny and struggle to care for their newborn without them',
+    },
+    {
+      title: 'Cultural differences:',
+      text: 'Confinement nannies may come from a different cultural background, which can lead to misunderstandings',
+    },
+  ],
+},
 
     ],
   },

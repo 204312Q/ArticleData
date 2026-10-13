@@ -34,6 +34,125 @@ const categoryChipSx = {
 } as const;
 
 function renderBlock(block: PostContentBlock, index: number) {
+  
+if (block.type === 'comparisonTable') {
+  return (
+    <Box key={index} sx={{ my: 4, width: '100%' }}>
+      <Typography
+        variant="h5"
+        sx={{
+          mb: 3,
+          color: '#68727D',
+          fontWeight: 800,
+          letterSpacing: '2px',
+          textTransform: 'uppercase',
+          textAlign: 'left',
+        }}
+      >
+        {block.title}
+      </Typography>
+
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+          borderTop: '1px solid #e2e4e7',
+          borderLeft: '1px solid #e2e4e7',
+          backgroundColor: 'rgba(255,255,255,0.65)',
+        }}
+      >
+        {/* Pros header */}
+        <Box
+          sx={{
+            p: 1.5,
+            textAlign: 'center',
+            fontWeight: 800,
+            color: '#f47795',
+            borderRight: '1px solid #e2e4e7',
+            borderBottom: '1px solid #e2e4e7',
+          }}
+        >
+          Pros
+        </Box>
+
+        {/* Cons header */}
+        <Box
+          sx={{
+            p: 1.5,
+            textAlign: 'center',
+            fontWeight: 800,
+            color: '#68727D',
+            borderRight: '1px solid #e2e4e7',
+            borderBottom: '1px solid #e2e4e7',
+          }}
+        >
+          Cons
+        </Box>
+
+        {Array.from(
+          { length: Math.max(block.pros.length, block.cons.length) },
+          (_, rowIndex) => (
+            <Box
+              key={rowIndex}
+              sx={{
+                display: 'contents',
+              }}
+            >
+              {/* Pros cell */}
+              <Box
+                sx={{
+                  p: 1.5,
+                  textAlign: 'center',
+                  lineHeight: 1.8,
+                  color: '#68727D',
+                  borderRight: '1px solid #e2e4e7',
+                  borderBottom: '1px solid #e2e4e7',
+                }}
+              >
+                {block.pros[rowIndex] && (
+                  <>
+                    <Box
+                      component="span"
+                      sx={{ color: '#f47795', fontWeight: 800 }}
+                    >
+                      {block.pros[rowIndex].title}
+                    </Box>{' '}
+                    {block.pros[rowIndex].text}
+                  </>
+                )}
+              </Box>
+
+              {/* Cons cell */}
+              <Box
+                sx={{
+                  p: 1.5,
+                  textAlign: 'center',
+                  lineHeight: 1.8,
+                  color: '#68727D',
+                  borderRight: '1px solid #e2e4e7',
+                  borderBottom: '1px solid #e2e4e7',
+                }}
+              >
+                {block.cons[rowIndex] && (
+                  <>
+                    <Box
+                      component="span"
+                      sx={{ fontWeight: 800 }}
+                    >
+                      {block.cons[rowIndex].title}
+                    </Box>{' '}
+                    {block.cons[rowIndex].text}
+                  </>
+                )}
+              </Box>
+            </Box>
+          ),
+        )}
+      </Box>
+    </Box>
+  );
+}
+
     if (block.type === 'table') {
     return (
       <TableContainer
@@ -60,6 +179,7 @@ function renderBlock(block: PostContentBlock, index: number) {
               </TableCell>
             </TableRow>
           </TableHead>
+          
 
           <TableBody>
             {block.rows.map((row, rowIndex) => (
@@ -78,12 +198,29 @@ function renderBlock(block: PostContentBlock, index: number) {
           </TableBody>
         </Table>
       </TableContainer>
+      
     );
   }
+
+  if (block.type === 'standardHeading') {
+  return (
+    <Typography
+      key={`standard-heading-${index}`}
+      variant="h4"
+      sx={{
+        mt: 1,
+        color: '#68727D',
+        fontWeight: 700,
+      }}
+    >
+      {block.text}
+    </Typography>
+  );
+}
   
 if (block.type === 'heading') {
   const headingSize = {
-    small: 'h6',
+    small: 'h5',
     medium: 'h4',
     large: 'h3',
   } as const;
@@ -112,7 +249,7 @@ if (block.type === 'heading') {
 
   if (block.type === 'paragraph') {
     return (
-      <Typography key={`paragraph-${index}`} color="text.secondary" sx={{ lineHeight: 1.95 }}>
+      <Typography key={`paragraph-${index}`} color="#68727D" sx={{ lineHeight: 1.95  }}>
         <ReactMarkdown
         components={{
           p: ({ children }) => <>{children}</>,
@@ -146,6 +283,83 @@ if (block.type === 'heading') {
       </Box>
     );
   }
+  if (block.type === 'steriliserTable') {
+  return (
+    <Box
+      key={`steriliser-table-${index}`}
+      sx={{
+        width: '100%',
+        border: '1px solid',
+        borderColor: 'divider',
+        mt: 3,
+      }}
+    >
+      <Typography
+        variant="h4"
+        sx={{ p: 2, fontWeight: 800, color: '#68727D' }}
+      >
+        {block.title}
+      </Typography>
+
+      {block.rows.map((item, rowIndex) => (
+        <Box
+          key={`${item.name}-${rowIndex}`}
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+            borderTop: '1px solid',
+            borderColor: 'divider',
+          }}
+        >
+          <Box sx={{ p: 2 }}>
+            <Typography variant="h5" sx={{ mb: 2, color: '#68727D' }}>
+              {item.name}
+            </Typography>
+
+            <Typography sx={{ lineHeight: 1.8, color: 'text.secondary' }}>
+              {item.description}
+            </Typography>
+
+            {item.pros && (
+              <Typography sx={{ mt: 1, lineHeight: 1.8, color: 'text.secondary' }}>
+                <strong>• Pros:</strong> {item.pros}
+              </Typography>
+            )}
+
+            {item.cons && (
+              <Typography sx={{ mt: 0.5, lineHeight: 1.8, color: 'text.secondary' }}>
+                <strong>• Cons:</strong> {item.cons}
+              </Typography>
+            )}
+          </Box>
+
+          <Box
+            sx={{
+              p: 2,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderLeft: { xs: 0, md: '1px solid #e5e5e5' },
+              borderColor: 'divider',
+            }}
+          >
+            <Image
+              src={item.image.src}
+              alt={item.image.alt}
+              width={700}
+              height={500}
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+              }}
+            />
+          </Box>
+        </Box>
+      ))}
+    </Box>
+  );
+}
 
   if (block.type === 'callout') {
     return (
@@ -178,8 +392,8 @@ if (block.type === 'list') {
       component={listStyle === 'number' ? 'ol' : 'ul'}
       sx={{
         m: 0,
-        pl: listStyle === 'none' ? 0 : 5,
-        color: 'text.secondary',
+        pl: listStyle === 'none' ? 3 : 5,
+        color: '#68727D',
         display: 'grid',
         gap: 1.25,
         listStyleType:
@@ -197,7 +411,7 @@ if (block.type === 'list') {
           <Box
             key={itemIndex}
             component="li"
-            sx={{ lineHeight: 2.0 }}
+            sx={{ lineHeight: 2.0 , '&::marker': {fontWeight: 800}, }}
           >
             {match ? (
               <>
@@ -231,7 +445,7 @@ if (block.type === 'pinkHeading') {
         fontSize: '1.6rem',
         fontWeight: 700,
         color: '#F07A9A',
-        letterSpacing: '0.09em',
+        letterSpacing: '0.10em',
         lineHeight: 1.2,
         textTransform: 'uppercase',
       }}
