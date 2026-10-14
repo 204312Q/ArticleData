@@ -12,18 +12,22 @@ export type PostImageAsset = {
   objectPosition?: string;
   maxWidth?: number;
   displayHeight?: number;
+  fit?: 'cover' | 'contain';
 };
 
 export type PostContentBlock =
   | { type: 'paragraph'; text: string }
-  | { type: 'heading'; text: string; size?: 'small' | 'medium' | 'large'; uppercase?: boolean; }
+  | { type: 'heading'; text: string; size?: 'small' | 'medium' | 'large'; uppercase?: boolean; fontWeight?: number; }
   | { type: 'standardHeading'; text: string }
   | { type: 'quote'; text: string }
-  | { type: 'comparisonTable'; title: string; pros: { title: string; text: string }[];cons: { title: string; text: string }[]; }
+  | { type: 'practiceTable'; headers: string[]; rows: { cells: { text: string; colSpan?: number; bold?: boolean; }[];}[];}
+  | { type: 'comparisonTable'; title: string; pros: { title: string; text: string }[];cons: { title: string; text: string }[];}
   | { type: 'pinkHeading'; text: string }
+  | { type: 'spacedHeading'; text: string; number?: string }
   | { type: 'callout'; title: string; text: string }
-  | { type: 'list'; items: string[]; style?: 'bullet' | 'number' | 'none';}
+  | { type: 'list'; items: string[]; style?: 'bullet' | 'number' | 'none'; links?: { text: string; url: string }[];}
   | { type: 'image'; image: PostImageAsset; caption?: string }
+  | { type: 'promoLink'; before: string; linkText: string; after: string; url: string;}
   | { type: 'steriliserTable' ; title: string;rows: {name: string;description: string;image: PostImageAsset;pros?: string;cons?: string;}[];}
   | { type: 'table'; rows: {birth: string; avoid: string; eat: string;}[];}
   | { type: 'gallery'; images: PostImageAsset[]; caption?: string };

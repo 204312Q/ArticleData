@@ -1,5 +1,6 @@
+import { Param } from '@prisma/client/runtime/client';
 import type { PostItemData, PostImageAsset, PostContentBlock } from 'src/lib/post/types';
-import { it } from 'zod/v4/locales';
+import { ar, it } from 'zod/v4/locales';
 
 const ARTICLE_IMAGES = {
   tcm: [
@@ -9,10 +10,13 @@ const ARTICLE_IMAGES = {
   meals: [
     { src: '/assets/background/Confinement_menu.jpg', alt: 'Chinese confinement menu selection' },
     { src: '/menu/HakkaYellowWineChickenwithBlackFungus_360x.webp', alt: 'Hakka yellow wine chicken' },
+    { src: '/banners/CPC_9Dishes_Stacked.png', alt: 'Tingkat Meals'},
+    { src: '/banners/What_is_the_Benefit_of_Pig_Trotter.png', alt: 'Pig Trotter'},
   ],
   wellbeing: [
     { src: '/assets/background/confinement_group_shot.png', alt: 'Overcoming Baby Blues' },
     { src: '/addons/Addon_ComfortingSet.webp', alt: 'Comforting postpartum add-on set' },
+    { src: '/banners/Food_in_Plastic_Containers.png' , alt: 'Food in Plastic Containers'}
   ],
   science: [
     { src: '/banners/Confinement_Banner_1.png', alt: 'Science behind Confinement food' },
@@ -52,7 +56,10 @@ const ARTICLE_IMAGES = {
   ],
   postpartum: [
   { src: '/banners/Postpartum_Expectations_Versus_Reality.png' , 
-    alt: 'Post Partum Expectations Vs Reality' }
+    alt: 'Post Partum Expectations Vs Reality' },
+  { src: '/banners/How_Husbands_Can_Support_Their_Wife_During_The_Postpartum_Period.png' ,
+    alt: 'How Husbands can Support their wife'
+  }
   ],
   weightLoss: [
     { src: '/banners/Weight_Loss.png' , alt: 'Tips to Lose Weight Safely'},
@@ -112,12 +119,62 @@ const ARTICLE_IMAGES = {
   tips: [
     { src:'/banners/Your_First_Week_of_Confinement_Tips_for_New_Moms.png', 
       alt: 'First Week of Confinement Tips for New Moms'
+    },
+    { src: '/banners/How_to_Produce_More_Breastmilk.png' ,
+      alt: 'How to produce more breastmilk'
     }
   ],
   nanny: [
     { src: '/banners/Is_Confinement_Nanny_Necessary.png',
       alt: 'Is Confinement Nanny Necessary?'
     }
+  ],
+  massage: [
+    { src: '/banners/Postnatal_Massage.png',
+      alt: 'Why a Postpartum Massage is Essential'
+    }
+  ],
+  myths:[
+    { src: '/banners/Confinement_Myths.png',
+      alt: 'Confinement myths every mother should know'
+    }
+  ],
+  DOM: [
+    { src: '/banners/How_Much_DOM_to_Drink_During_Confinement.png' ,
+      alt: 'How much DOM should you drink?'
+    }
+  ],
+  Miscarriage: [
+    { src: '/banners/What_to_Eat_After_a_Miscarriage.png', 
+      alt: 'What to eat after a miscarriage'
+    }
+  ],
+  foodtoAvoid: [
+    { src: '/banners/Foods_to_Avoid_During_Confinement.png' , 
+      alt: 'Foods to Avoid During Confinement'
+    }
+  ],
+  soup: [
+    { src: '/banners/Ginseng_Black_Chicken_Soup .png', alt: 'Ginseng Black Chicken Soup'},
+    { src: '/banners/Papaya_Fish_Soup_Black_Bean_Pork_Ribs_Soup.png', alt: 'Papaya Fish Soup and Black Bean Pork Ribs Soup'}
+  ],
+  fiveTips: [
+    { src: '/banners/Five_Tips_for_a_Smooth_Confinement_540x.png' , alt: 'Five Tips for a Smooth Confinement'},
+    { src: '/banners/postpartumcare.png' , alt: 'Meme 1'},
+    { src: '/banners/babymeme.png' , alt:'Baby Meme'},
+  ],
+  fiveTips2: [
+    { src: '/banners/Stir-Fried_Spinach_with_Sea_Cucumber_topped_with_Wolfberries.png' , alt: 'Stir fried spinach'},
+    { src: '/banners/CPC-ChickenwEgg.png' , alt: 'Chicken With Egg'}
+  ],
+  kuhlbarra: [
+    { src: '/banners/Why_we_use_Kuhlbarra_Barramundi_in_our_dishes.png',
+      alt: 'Why we use Kuhlbarra Barramundi in our dishes'
+    }
+  ],
+  chineseWine: [
+    { src: '/banners/Chilli_Padi_Confinement_-_Sesame_Rice_Wine_Ginger_Slices.jpg', alt: 'Chinese Wine'},
+    { src: '/banners/Cover_Page_For_Traditional_Chinese_Practices.png', alt: 'Cover Page'}
   ]
 
 
@@ -1455,17 +1512,17 @@ export const mockPosts: PostItemData[] = [
       paragraph('As your baby bump grows, finding a comfortable sleeping position can become challenging. Body pillows offer support and help alleviate discomfort, especially in the back, hips, and legs. Whether you choose a full-body pillow or a smaller one to place strategically, these pillows provide relief and promote better sleep quality. Experiment with different positions and pillow arrangements until you find what works best for you.'),
       {type: 'heading' , text: 'Pregnancy Books: Empowering Knowledge at Your Fingertips', size: 'small', uppercase:true},
       paragraph('Pregnancy is a journey full of questions and uncertainties. Pregnancy books can be a valuable resource, providing you with information, advice, and guidance. From understanding the stages of pregnancy to learning about labor and childbirth, these books empower you with knowledge.'),
-      paragraph('Look for reputable authors and seek recommendations from other moms or healthcare professionals to find the most informative and reliable pregnancy books.  Some popular recommendations include "What to Expect When You\'re Expecting" by Heidi Murkoff, "Ina May\'s Guide to Childbirth" by Ina May Gaskin, and "The Mayo Clinic Guide to a Healthy Pregnancy" by the Mayo Clinic.'),
-       {type: 'heading' , text: 'Belly Balms and Oils: Pampering Your Growing Bump', size: 'small', uppercase:true},
-       paragraph('Taking care of your skin during pregnancy is not only important for your comfort but also for preventing stretch marks and maintaining elasticity. Belly balms and oils are specifically formulated to nourish and moisturize your growing belly.'),
-       paragraph('They help soothe itching, promote skin elasticity, and create a bonding ritual between you and your baby bump. Look for products with natural ingredients like cocoa butter, shea butter, and vitamin E for the best results.'),
-       {type: 'heading' , text: 'Supportive Footwear: Happy Feet, Happy Mama', size: 'small', uppercase:true},
-       paragraph('During pregnancy, many women experience foot and leg swelling and may develop foot pain or discomfort. Wearing supportive footwear can make a significant difference in your comfort levels.'),
-       paragraph('Opt for shoes with good arch support, cushioning, and a roomy toe box. Avoid high heels and opt for flats or low-heeled shoes to reduce strain on your feet.'),
-       paragraph('Remember, happy feet lead to a happier you!'),
-       {type: 'heading' , text: 'Pregnancy Journal: Cherishing Precious Memories', size: 'small', uppercase:true},
-       paragraph('Documenting your pregnancy journey in a journal is a beautiful way to capture the precious moments and memories. Whether it\'s jotting down your thoughts, milestones, or even pasting ultrasound pictures, a pregnancy journal becomes a cherished keepsake.'),
-       paragraph('Start by choosing a journal that resonates with you and find moments each day to reflect on your experiences, emotions, and the excitement of becoming a mother.'),
+      paragraph('Look for reputable authors and seek recommendations from other moms or healthcare professionals to find the most informative and reliable pregnancy books. Some popular recommendations include "What to Expect When You\'re Expecting" by Heidi Murkoff, Ina May\'s Guide to Childbirth by Ina May Gaskin, and The Mayo Clinic Guide to a Healthy Pregnancy by the Mayo Clinic.'),
+      {type: 'heading' , text: 'Belly Balms and Oils: Pampering Your Growing Bump', size: 'small', uppercase:true},
+      paragraph('Taking care of your skin during pregnancy is not only important for your comfort but also for preventing stretch marks and maintaining elasticity. Belly balms and oils are specifically formulated to nourish and moisturize your growing belly.'),
+      paragraph('They help soothe itching, promote skin elasticity, and create a bonding ritual between you and your baby bump. Look for products with natural ingredients like cocoa butter, shea butter, and vitamin E for the best results.'),
+      {type: 'heading' , text: 'Supportive Footwear: Happy Feet, Happy Mama', size: 'small', uppercase:true},
+      paragraph('During pregnancy, many women experience foot and leg swelling and may develop foot pain or discomfort. Wearing supportive footwear can make a significant difference in your comfort levels.'),
+      paragraph('Opt for shoes with good arch support, cushioning, and a roomy toe box. Avoid high heels and opt for flats or low-heeled shoes to reduce strain on your feet.'),
+      paragraph('Remember, happy feet lead to a happier you!'),
+      {type: 'heading' , text: 'Pregnancy Journal: Cherishing Precious Memories', size: 'small', uppercase:true},
+      paragraph('Documenting your pregnancy journey in a journal is a beautiful way to capture the precious moments and memories. Whether it\'s jotting down your thoughts, milestones, or even pasting ultrasound pictures, a pregnancy journal becomes a cherished keepsake.'),
+      paragraph('Start by choosing a journal that resonates with you and find moments each day to reflect on your experiences, emotions, and the excitement of becoming a mother.'),
       {type: 'heading' , text: 'Baby Essentials: Preparing for the Arrival', size: 'small', uppercase:true},
       paragraph('As you prepare for the arrival of your little one, it\'s important to gather the essential items your baby will need. From diapers and clothing to a safe crib and baby care products, make a checklist and start organizing early.'),
       paragraph('Seek advice from experienced parents, attend parenting classes, and consult reliable sources to ensure you have everything ready to welcome your bundle of joy.'),
@@ -1581,6 +1638,14 @@ export const mockPosts: PostItemData[] = [
         src: ARTICLE_IMAGES.alchemyFibre[2].src,
         alt: 'Heart Health'
       }),
+      paragraph('Soluble fibre helps lower total blood cholesterol levels by reducing low-density lipoprotein, or "bad" cholesterol levels. Additionally, high-fibre foods reduce blood pressure, inflammation, and the risk of cardiovascular heart disease.'),
+
+      { type: 'promoLink',
+        before: 'Enjoy a healthier rice option with delicious confinement dishes!',
+        linkText: 'Choos a meal plan here.',
+        after: '',
+        url: 'https://www.chillipadiconfinement.com/menu',
+      },
 
       image(
         {
@@ -1848,7 +1913,7 @@ export const mockPosts: PostItemData[] = [
     tags: [ 'confinement', 'mental health', 'confinement period' , 'postpartum recovery'],
     coverUrl: ARTICLE_IMAGES.tips[0].src,
     createdAt: '2026-09-10T09:00:00+08:00',
-    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/battling-postpartum-acne-a-complete-guide-to-reclaiming-your-glow' ],
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/your-first-week-of-confinement-tips-for-new-moms' ],
     blocks: [
       paragraph('From the sleepless nights to the never-ending feedings, it can feel like you\'re on a rollercoaster ride. But don\'t worry - you\'re not alone.'),
       paragraph('Many new moms feel overwhelmed and unsure during this time. With a little bit of preparation and support, you can get through this first week with ease.'),
@@ -1910,7 +1975,7 @@ export const mockPosts: PostItemData[] = [
     tags: [ 'confinement', 'mental health', 'confinement period' , 'postpartum recovery'],
     coverUrl: ARTICLE_IMAGES.anxiety[1].src,
     createdAt: '2026-09-10T09:00:00+08:00',
-    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/battling-postpartum-acne-a-complete-guide-to-reclaiming-your-glow' ],
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/mindfulness-techniques-for-postpartum-anxiety-calming-your-mind-and-body' ],
     blocks: [
       paragraph('However, if your anxiety becomes overwhelming or starts to interfere with your daily life, it\'s important to seek help'),
       paragraph('Mindfulness techniques can be a powerful tool in managing postpartum anxiety, helping you to calm your mind and body and find a sense of peace amidst the challenges of motherhood.'),
@@ -2032,79 +2097,846 @@ export const mockPosts: PostItemData[] = [
     tags: [ 'confinement food', 'mental health', 'confinement period' , 'postpartum recovery', 'nourishing food'],
     coverUrl: ARTICLE_IMAGES.nanny[0].src,
     createdAt: '2026-09-10T09:00:00+08:00',
-    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/battling-postpartum-acne-a-complete-guide-to-reclaiming-your-glow' ],
     blocks: [
       paragraph('In Singapore, many families turn to confinement nannies to help ease the transition and provide much-needed support during this challenging period. '),
       paragraph('In this article, we\'ll explore the benefits and drawbacks of engaging a confinement nanny and provide alternatives for families who prefer to go it alone.'),
       {type: 'heading' , text: 'What is a confinement Nanny?' , size: 'small', uppercase:true},
-      
-{
-  type: 'comparisonTable',
-  title: 'PROS AND CONS OF HIRING CONFINEMENT NANNY',
-  pros: [
-    {
-      title: 'Experienced care:',
-      text: 'A confinement nanny can provide valuable support and guidance',
-    },
-    {
-      title: 'Customised care:',
-      text: 'Confinement nannies can tailor their services to meet the needs',
-    },
-    {
-      title: 'Nutritious meals:',
-      text: 'A confinement nanny can prepare healthy and nutritious meals',
-    },
-    {
-      title: 'Peace of mind:',
-      text: 'Engaging a confinement nanny can provide peace of mind',
-    },
-    {
-      title: 'Assistance with breastfeeding:',
-      text: 'A confinement nanny can provide valuable support and guidance in breastfeeding',
-    },
-    {
-      title: 'Help with newborn care:',
-      text: 'A confinement nanny can help new parents learn how to care for their newborn',
-    },
-    {
-      title: 'Additional household help:',
-      text: 'Some confinement nannies offer additional help with household chores, such as cleaning',
-    },
-  ],
-  cons: [
-    {
-      title: 'Cost:',
-      text: 'Engaging a confinement nanny can be expensive, especially for longer periods',
-    },
-    {
-      title: 'Personality clash:',
-      text: 'The confinement nanny and the mother may not get along',
-    },
-    {
-      title: 'Loss of control:',
-      text: 'The mother may feel like she has lost control over her household',
-    },
-    {
-      title: 'Intrusion of privacy:',
-      text: 'Having someone constantly in the home can be invasive and uncomfortable',
-    },
-    {
-      title: 'Difficulty adjusting:',
-      text: 'Having someone take over daily tasks can be a challenge for mothers who are used to being in control',
-    },
-    {
-      title: 'Dependency:',
-      text: 'Some mothers may become overly reliant on their confinement nanny and struggle to care for their newborn without them',
-    },
-    {
-      title: 'Cultural differences:',
-      text: 'Confinement nannies may come from a different cultural background, which can lead to misunderstandings',
-    },
-  ],
-},
+      paragraph('A confinement nanny is a trained professional who provides postpartum care for new mothers and their babies. The primary purpose of engaging a confinement nanny is to ease the transition for new mothers during the postpartum period. '),
+      paragraph('Confinement nannies are typically experienced in postpartum care and offer a range of services such as preparing confinement meals, helping with breastfeeding, and caring for the newborn.'),
+      paragraph('The specific responsibilities of a confinement nanny can vary depending on the package selected, but typically include the following:'),
+      list([
+        '**Preparing confinement meals:** A confinement nanny is responsible for preparing nutritious and balanced meals for the new mother, which are essential for postpartum recovery. They may also recommend traditional Chinese medicine dishes, which are believed to aid in postpartum recovery.',
+        '**Caring for the newborn:** A confinement nanny is responsible for caring for the newborn, including feeding, bathing, and changing diapers. They may also provide guidance on newborn care, such as how to swaddle a baby and establish a sleep routine.',
+        '**Assisting with breastfeeding:** A confinement nanny can provide support and advice on breastfeeding, which can be challenging for new mothers. They can also help to position the baby correctly during feeding and offer tips to increase milk production.',
+        '**Providing postpartum care:** A confinement nanny can provide support and advice on postpartum recovery, including tips on how to care for the perineum and how to manage postpartum bleeding.',
+        '**Cleaning the house:** Some confinement nannies may also offer additional services such as cleaning the house, doing laundry, and cooking for the rest of the family.'
+      ]),
+      {type: 'heading', text: 'How Much Does Confinement Nanny Charge?' , size: 'small', uppercase:true},
+      paragraph('The cost of hiring can vary depending on factors such as their experience, qualifications, the services included in the package, and the duration of the confinement period.'),
+      paragraph('On average, a confinement nanny can cost anywhere from $2,500 to $4,000 or even more per month, with prices increasing for highly experienced nannies or those with additional qualifications such as TCM certification. The cost may also be higher for shorter confinement periods or if additional services are requested.'),
+      paragraph('Prices for confinement nanny services may not always be readily available on agency websites, so it\'s best to call and inquire directly. Costs can vary based on specific requirements and factors such as the number of babies, with higher rates during festive seasons like Chinese New Year.'),
 
+      {type: 'heading', text: 'Where To Find Confinement Nanny?' , size: 'medium', uppercase:true},
+      list([
+        '**Through agencies:** There are many confinement nanny agencies in Singapore that provide a range of services, including finding and hiring confinement nannies. These agencies can help match you with a nanny based on your preferences and requirements. Some examples are ^^Confinement Angels^^ and ^^PEM Confinement Nanny Agency^^.',
+        '**Referrals:** You can ask for recommendations from friends, family, or acquaintances who have previously engaged the services of a confinement nanny. They can provide valuable insights and recommendations based on their personal experiences.',
+        '**Online platforms:** There are several online platforms where you can find confinement nannies in Singapore. These platforms allow you to browse through a list of available nannies, read their profiles, and reviews from other clients. ^^Caregiver Asia^^ and ^^NannySOS^^ is worth checking out.'
+      ]),
+      {
+        type: 'comparisonTable',
+        title: 'PROS AND CONS OF HIRING CONFINEMENT NANNY',
+        pros: [
+          {
+            title: 'Experienced care:',
+            text: 'A confinement nanny can provide valuable support and guidance',
+          },
+          {
+            title: 'Customised care:',
+            text: 'Confinement nannies can tailor their services to meet the needs',
+          },
+          {
+            title: 'Nutritious meals:',
+            text: 'A confinement nanny can prepare healthy and nutritious meals',
+          },
+          {
+            title: 'Peace of mind:',
+            text: 'Engaging a confinement nanny can provide peace of mind',
+          },
+          {
+            title: 'Assistance with breastfeeding:',
+            text: 'A confinement nanny can provide valuable support and guidance in breastfeeding',
+          },
+          {
+            title: 'Help with newborn care:',
+            text: 'A confinement nanny can help new parents learn how to care for their newborn',
+          },
+          {
+            title: 'Additional household help:',
+            text: 'Some confinement nannies offer additional help with household chores, such as cleaning',
+          },
+        ],
+        cons: [
+          {
+            title: 'Cost:',
+            text: 'Engaging a confinement nanny can be expensive, especially for longer periods',
+          },
+          {
+            title: 'Personality clash:',
+            text: 'The confinement nanny and the mother may not get along',
+          },
+          {
+            title: 'Loss of control:',
+            text: 'The mother may feel like she has lost control over her household',
+          },
+          {
+            title: 'Intrusion of privacy:',
+            text: 'Having someone constantly in the home can be invasive and uncomfortable',
+          },
+          {
+            title: 'Difficulty adjusting:',
+            text: 'Having someone take over daily tasks can be a challenge for mothers who are used to being in control',
+          },
+          {
+            title: 'Dependency:',
+            text: 'Some mothers may become overly reliant on their confinement nanny and struggle to care for their newborn without them',
+          },
+          {
+            title: 'Cultural differences:',
+            text: 'Confinement nannies may come from a different cultural background, which can lead to misunderstandings',
+          },
+        ],
+      },
+      paragraph('In conclusion, hiring a confinement nanny can be a beneficial option for new parents who require additional support during the postpartum period.'),
+      paragraph('However, the decision to engage a confinement nanny should be made based on individual circumstances and budget considerations.'),
+      paragraph('For those who may not be able to afford a confinement nanny or prefer to go without one, there are alternatives available. These include seeking support from family and friends, hiring a part-time helper for household chores, and ordering confinement meal delivery.'),
+      paragraph('It is important to remember that every family\'s needs are unique, and there is no one-size-fits-all solution to postpartum care. Ultimately, the most important thing is to prioritise the health and well-being of both the mother and newborn.'),
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+      { type: 'promoLink',
+        before: 'Ready to order confinement meals? Order our',
+        linkText: 'confinement food delivery service',
+        after: 'now to enjoy the discounted price!',
+        url: 'https://www.chillipadiconfinement.com/product',
+      },
     ],
   },
 
-]
+   {
+    id: 'post-27',
+    slug:'why-a-postpartum-massage-is-essential-during-your-confinement-period',
+    title: 'Why a Postpartum Massage is Essential During Your Confinement Period',
+    excerpt: 'Congratulations on the arrival of your little bundle of joy! As a new mother, you may find that your body has undergone some significant changes during pregnancy and childbirth.',
+    category: 'Massage',
+    tags: [ 'mental health', 'confinement period' , 'postpartum recovery', 'confinement'],
+    coverUrl: ARTICLE_IMAGES.massage[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    blocks: [
+      paragraph('It\'s not uncommon to feel exhausted, sore, and overwhelmed during the postpartum period. That\'s why a postpartum massage can be a game-changer for your physical and mental well-being.'),
+      {type: 'heading', text: 'What is a Postpartum Massage?' , size: 'large'},
+      paragraph('A postpartum massage is a specialised massage that is designed to help new mothers recover after childbirth. It is a gentle and nurturing massage that focuses on the areas of the body that are most affected by childbirth, such as the lower back, hips, abdomen, and shoulders. '),
+      paragraph('Whether you choose to have the massage done in the comfort of your own home or at a spa, the primary goal is to provide you with a deeply relaxing and rejuvenating experience.'),
+      {type: 'heading', text: 'The Benefits of a Postpartum Massage During Your Confinement Period' , size: 'medium', uppercase:true},
+      list([
+        '**Alleviates Postpartum Pain and Discomfort:** The postpartum period often brings various physical discomforts, such as sore muscles, back pain, and overall body aches. A postpartum massage can work wonders in relieving these discomforts, promoting faster healing, and aiding in the restoration of your body\'s strength.',
+        '**Enhances Postpartum Recovery:** The gentle techniques employed during a postpartum massage stimulate blood circulation and lymphatic flow, expediting the healing process. This enhanced circulation helps in reducing swelling, promoting tissue repair, and restoring vitality to your body.',
+        '**Reduces Stress and Anxiety:** Being a new mother can be overwhelming, with a multitude of responsibilities and adjustments. A postpartum massage serves as a soothing therapy that eases stress, anxiety, and tension. It creates a calming atmosphere that helps you relax, rejuvenate, and find emotional balance during this transformative period.',
+        '**Promotes Breastfeeding:** Breast engorgement and milk flow issues are common concerns for new mothers. A postpartum massage can provide relief by stimulating lymphatic drainage, improving blood flow to the breasts, and reducing any discomfort associated with breastfeeding. It can also help prevent clogged milk ducts and promote a healthy milk supply.',
+        '**Supports Postpartum Mental Health:** The postpartum period can sometimes trigger emotional challenges, including postpartum depression and anxiety. Regular postpartum massages have been shown to have a positive impact on mental health by reducing stress hormones, increasing serotonin and dopamine levels, and promoting an overall sense of well-being.',
+      ], 'number'),
+      {type: 'heading', text: 'Frequently Asked Questions About Postpartum Massage' , size: 'medium', uppercase:true},
+      paragraph('**Q: When is the best time to get a postpartum massage?**'),
+      paragraph('A: The ideal time to get a postpartum massage is during the first six weeks after childbirth. This is the time when your body is going through the most changes, and massage can help with the physical and emotional demands of this period.'),
+      
+      paragraph('**Q: How long does a postpartum massage last?**'),
+      paragraph('A: The duration of a postpartum massage session can vary, but it usually ranges from 60 to 90 minutes. However, shorter sessions can also be beneficial depending on your preferences and needs.'),
+
+      paragraph ('**Q: Can I get a postpartum massage if I had a c-section?**'),
+      paragraph('A: Yes, you can get a postpartum massage after a c-section. However, you should wait until your incision has fully healed and your doctor has given you clearance to resume normal activities.'),
+
+      paragraph('**Q: How often should I get a postpartum massage?**'),
+      paragraph('A: It\'s recommended to get a postpartum massage once a week for the first six weeks after childbirth. After that, you can decrease the frequency to once every two weeks or once a month, depending on your needs.'),
+
+      paragraph('**Q: Can I get a postpartum massage at home?**'),
+      paragraph('A: If you prefer the comfort and convenience of performing a postpartum massage in the privacy of your own home, you can certainly do so.'),
+      paragraph('Here are some simple and effective massage techniques that you can try:'),
+
+      paragraph('**Back and Shoulder Massage:**'),
+      list([
+        'Sit comfortably on a chair or lie on your side on a bed.',
+        'Use a massage oil or lotion to lubricate your hands.',
+        'Start by placing your hands on your partner\'s upper back and apply gentle pressure with your palms, moving in circular motions.',
+        'Gradually work your way down to the lower back, using your fingertips or knuckles to apply more focused pressure on any tense areas.',
+        'Repeat these movements for several minutes, focusing on areas that feel particularly tight or sore.',
+        'For the shoulders, use your thumbs to apply firm pressure on the muscles, moving in upward strokes towards the neck.',
+      ]),
+      paragraph('**Leg and Foot Massage:**'),
+      list([
+        'Have your partner lie down comfortably with their legs extended.',
+        'Apply some massage oil or lotion to your hands.',
+        'Start with gentle strokes from the ankles up to the thighs, using both hands in a sweeping motion.',
+        'Use your thumbs or the palms of your hands to apply circular pressure on the calf muscles, focusing on any areas of tightness.',
+        'Move on to the feet, using your fingers to apply pressure on the soles and heels. You can also use your thumbs to knead the arches of the feet in circular motions.',
+        'Pay attention to your partner\'s feedback and adjust the pressure accordingly.',
+      ]),
+      paragraph('**Abdominal Massage:**'),
+      list([
+        'Ensure that your partner is lying down comfortably with their knees bent.',
+        'Apply a small amount of massage oil or lotion to your hands.',
+        'Place your hands gently on the lower abdomen and use slow, circular motions to massage the area in a clockwise direction.',
+        'Gradually move your hands upwards, continuing the circular motions. Be mindful of the level of pressure and adjust as needed.',
+        'This massage technique can help to promote healing and reduce discomfort in the abdominal area.',
+      ]),
+      paragraph('**Scalp and Head Massage:**'),
+      list([
+        'Have your partner sit comfortably with their head slightly tilted forward.',
+        'Use your fingertips to gently massage the scalp in circular motions. Start from the base of the skull and work your way up towards the crown.',
+        'Apply gentle pressure to release any tension or tightness in the scalp muscles.',
+        'Move your fingers in a kneading motion, applying slight pressure on different areas of the scalp.',
+        'Finish by using your fingertips to massage the temples in circular motions.',
+      ]),
+      paragraph('The postpartum period is a time of immense change and adjustment for new mothers. Incorporating a postpartum massage into your confinement period can provide a myriad of benefits, including pain relief, enhanced recovery, reduced stress, and support for mental well-being.'),
+      paragraph('Whether you choose to visit a professional massage therapist or perform self-massage at home, make sure to communicate your needs, preferences, and any specific concerns with your healthcare provider or a qualified massage therapist.'),
+      paragraph('Remember, every new mother deserves care, relaxation, and support during this transformative phase. Embrace the soothing and rejuvenating power of a postpartum massage, allowing it to contribute to your overall well-being as you embark on this beautiful journey of motherhood.'),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+    ],
+  },
+  {
+    id: 'post-28',
+    slug:'confinement-myths-every-mother-should-know',
+    title: 'Confinement Myths Every Mother Should Know',
+    excerpt: 'It\'s no secret that childbirth can be extremely taxing on the body. It is a common practice in Asia for mothers to undergo confinement period to properly recover. Many Asian mothers, in particular, are familiar with many practices surrounding confinement, and while some have been tried and tested, others are simply myths — at least from a medical standpoint.',
+    category: 'Myths',
+    tags: [ 'confinement food', 'confinement period' , 'postpartum recovery', 'confinement'],
+    coverUrl: ARTICLE_IMAGES.myths[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    blocks: [
+      paragraph('There are several food-related confinement myths that have been passed down through generations or spread through misinformation. Here are some beliefs about confinement that you may have heard before, as well as how they stack up against modern medical knowledge.'),
+      {type: 'heading', text: '"You shouldn\'t eat spicy food during confinement."' , size: 'medium', fontWeight: 600},
+      paragraph('This is a common myth in many cultures that is not supported by any scientific evidence. Eating spicy food during confinement does not affect the baby in any way. In fact, some spicy foods can have health benefits such as reducing inflammation.'),
+      {type: 'heading', text: '"You should avoid seafood during confinement."' , size: 'medium', fontWeight: 600},
+      paragraph('Seafood is an excellent source of protein and omega-3 fatty acids, which are important for the development of the baby\'s brain and nervous system. However, pregnant women should avoid certain types of fish such as shark, swordfish, and king mackerel, which contain high levels of mercury.'),
+      {type: 'heading', text: '"You need to eat for two during confinement."' , size: 'medium', fontWeight: 600},
+      paragraph('Pregnant women only need to consume about 300 extra calories per day during confinement. Eating too much can lead to excessive weight gain, which can cause health problems for both the mother and the baby.'),
+      {type: 'heading', text: '"You should avoid cold foods and drinks during confinement."' , size: 'medium', fontWeight: 600},
+      paragraph('There is no scientific evidence to support the claim that cold foods and drinks are harmful during confinement. However, pregnant women should avoid unpasteurized or raw foods, which can increase the risk of foodborne illness.'),
+      {type: 'heading', text: '"You should only eat certain types of food during confinement."' , size: 'medium', fontWeight: 600},
+      paragraph('Pregnant women should aim for a balanced diet that includes a variety of foods from all food groups. This will ensure that both the mother and the baby are getting all the nutrients they need for optimal health.'),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+
+      {type: 'promoLink',
+        before: 'Our confinement meal packages offer a wide selection of confinement dishes that nourish and replenish body. Check out our',
+        linkText: 'confinement food packages',
+        after: 'to see more!',
+        url: 'https://www.chillipadiconfinement.com/product',
+      },
+    ],
+  },
+
+  {
+    id: 'post-29',
+    slug:'how-much-dom-to-drink-during-confinement',
+    title: 'How Much DOM to Drink During Confinement',
+    excerpt: 'DOM is used in baking and cooking, as it helps to add sweetness and texture to recipes. It is also used in the production of pharmaceuticals, as it helps to bind ingredients together. DOM is a versatile sweetener that can be used in a variety of ways to add sweetness to food and drinks.',
+    category: 'DOM',
+    tags: [ 'dom benedictine', 'confinement period' , 'confinement'],
+    coverUrl: ARTICLE_IMAGES.DOM[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    blocks: [
+      {type: 'heading', text: 'What is DOM?' , size: 'medium', fontWeight: 600},
+      paragraph('DOM, also known as dextrose monohydrate, is a white crystalline powder made up of 100% natural cornstarch. It is most often used as a sweetener in food and drinks, such as soft drinks and candy. Unlike other artificial sweeteners, DOM is calorie-free and can help to add sweetness without adding extra calories.'),
+      paragraph('This makes it an important part of keeping weight gain to a minimum during rest and recovery periods. Secondly, DOM provides essential vitamins and minerals. This is important because access to a complete diet may be limited during confinement. Lastly, DOM can provide energy and mental clarity during times of ill health or inactivity.'),
+      paragraph('In addition, DOM can help to reduce stress and anxiety levels during confinement. The natural sweetness of DOM can help to boost mood and provide a sense of comfort and relaxation. Furthermore, DOM can help to reduce inflammation and improve overall health, which can be beneficial during periods of rest and recovery.'),
+
+      {type: 'heading', text: 'How to Choose the Right DOM for You' , size: 'medium', fontWeight: 600},
+      paragraph('When selecting DOM for consumption during confinement, the variety of options can be daunting. The best choice depends on individual preferences regarding flavor, as well as needs in terms of required vitamins and minerals. It’s important to choose one that meets the dietary needs and allows for a safe, healthy recovery. Special consideration should be given to DOM with added vitamins or minerals, as this variety can provide additional nutrients needed during recuperation.'),
+      paragraph('When selecting DOM, it is important to read the label carefully to ensure that the product contains the necessary vitamins and minerals. Additionally, it is important to consider the amount of sugar and fat in the product, as these can have an impact on overall health. Finally, it is important to consider the cost of the product, as some DOM can be more expensive than others.'),
+
+      {type: 'heading', text: 'Tips for Drinking DOM During Confinement' , size: 'medium', fontWeight: 600},
+      paragraph('Consuming DOM can be a safe and beneficial part of a wellness routine during confinement. However, it’s important to take into account such factors as medical conditions and special dietary needs when determining how much DOM to consume.'),
+      paragraph('In addition, as DOM contains essential carbohydrates, it’s important to monitor intake carefully to ensure that it’s consumed in appropriate quantities over the course of the day. For those without medical concerns or dietary restrictions, the recommended amount is between 10 and 30 grams per day.'),
+      paragraph('It\'s also important to remember that DOM should be consumed in moderation. Too much DOM can lead to an increase in blood sugar levels, which can be dangerous for those with diabetes or other medical conditions. Additionally, DOM should not be consumed by pregnant women or those with kidney disease.'),
+
+      {type: 'heading', text: 'Possible Side Effects of Drinking Too Much DOM' , size: 'medium', fontWeight: 600},
+      paragraph('Drinking too much DOM can have various negative side effects. Consuming more than 30 grams per day may lead to weight gain and increase the risk of developing diabetes and other chronic illnesses. In addition, those taking medications may experience reduced effectiveness due to the high sugar content of DOM. Lastly, DOM has been associated with an increased risk of abdominal pain, cramps, diarrhea, and headaches.'),
+
+      {type: 'heading', text: 'What Else to Consider When Drinking DOM During Confinement' , size: 'medium', fontWeight: 600},
+      paragraph('Drinking DOM may also affect other aspects of daily life, such as digestion and sleep quality. Those already prone to heartburn or indigestion should limit their intake of sweetened drinks, especially those containing DOM. Similarly, due to DOM’s ability to raise blood sugar levels, those prone to sleeplessness should watch their intake of sweetened drinks and limit their consumption in the evening.'),
+
+      {type: 'heading', text: 'Summary and Conclusion' , size: 'medium', fontWeight: 600},
+      paragraph('DOM is an artificial sweetener derived from natural sources that can offer several benefits when consumed in moderation during confinement. These benefits include providing essential vitamins and minerals, boosting energy levels, aiding in digestion, and helping to reduce weight gain.'),
+      paragraph('While there are potentially negative side effects associated with drinking too much DOM, these can be avoided by limiting daily intake to less than 30 grams.'),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+
+    ],
+  },
+   {
+    id: 'post-30',
+    slug:'what-to-eat-after-a-miscarriage',
+    title: 'What to Eat After a Miscarriage',
+    excerpt: 'Grieving the loss of a baby from a miscarriage can be a daunting and challenging process. Physically, your body needs to heal and it can take a month or more for your body to restore itself.',
+    category: 'Food',
+    tags: [ 'food for miscarriage', 'miscarriage' , 'nourishing food'],
+    coverUrl: ARTICLE_IMAGES.Miscarriage[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/what-to-eat-after-a-miscarriage' ],
+    blocks: [
+      paragraph('Emotionally your mental health needs to endure this difficult experience and regain balance. One way to facilitate the healing journey is to be mindful of what you consume. Paying attention to your diet after a miscarriage can support the healing process both mentally and physically.'),
+      {type: 'heading', text: 'What happens to your body after a miscarriage?' , size: 'medium', fontWeight: 600},
+      paragraph('After a miscarriage, you will encounter a range of hormonal and physiological changes, such as tiredness, lack of appetite, and difficulty concentrating. Eating specific foods, like oranges and lentils, can help to boost vitamin and mineral stores and speed up the healing process.'),
+      paragraph('Furthermore, it\'s recommended to drink eight or more glasses of water per day to remain hydrated. In addition to physical wellbeing, dealing with the emotional effects of a miscarriage is essential.'),
+      paragraph('You might experience a range of emotions such as shock, guilt, depression, or even anger. Eating snacks like nuts and dark chocolate might help provide comfort and some emotional relief.'),
+      {type: 'heading', text: 'Miscarriage recovery food' , size: 'medium', fontWeight: 600},
+      image ({
+        src: ARTICLE_IMAGES.Miscarriage[0].src,
+        alt: 'Miscarriage Recovery Food',
+        objectPosition: 'center 30%'
+      }),
+      paragraph('**Fluids:** In order to help the healing process after miscarriage, try to drink plenty of fluids such as water, detox water or juices to replace lost fluid and absorb iron.'),
+      paragraph('**Protein Rich Diet:** Your body needs protein to repair and rebuild tissue. Consuming a protein-rich diet, such as milk, cheese, eggs, legumes, lentils, grains and other proteins is important to help rebuild damaged cells.'),
+      paragraph('**Iron Rich Foods:** Miscarriages can lead to blood loss, which may cause iron deficiency anemia. Iron-rich foods like red meat, spinach, and lentils can help replenish your iron levels.'),
+      paragraph('**Healthy Fats:** Healthy fats like those found in salmon, avocado, and nuts can help reduce inflammation and promote healing.'),
+      paragraph('**Vitamin C Rich Foods:** Iron and vitamin C both are vital components in aiding recovery after a miscarriage. Vitamin C helps with a speedy recovery and contributes to better absorption of iron in our body which is beneficial for adults. Include foods such as raisins, dates, papaya, beans, oranges and fish in your diet to ensure a sufficient intake of both iron and vitamin C.'),
+      paragraph('**Calcium and Magnesium Rich Foods:** Various research has shown that a lack of magnesium can result in depression. Eating magnesium-rich foods can help alleviate depression and anxiety, which can become symptomatic due to the effects of a miscarriage. Such foods include dark chocolate, leafy greens, and wholegrains. In order to ensure optimal calcium intake, adults should also consider adding dairy products to their diet.'),
+      paragraph('Loss of a baby through miscarriage can be a significant source of emotional and physical stress for women. A healthy diet, emotional support from family and friends, and feeling positive can help them to cope better with their loss.'),
+      paragraph('With the advice of their general practitioner and the inclusion of certain nutritious foods, they should be able to make a quicker recovery.'),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+    ],
+  },
+  {
+    id: 'post-31',
+    slug:'how-to-produce-more-breastmilk',
+    title: 'How to Produce More Breastmilk',
+    excerpt: 'Many mothers worry about a low milk supply, but in most cases your body produces exactly what your baby needs, even if you don\'t realise it. Although this fear is common, there are few mothers who are truly unable to produce enough breast milk. If your breast milk supply is too low, it can usually be increased naturally with a few simple measures.',
+    category: 'BreastMilk',
+    tags: [ 'confinement', 'confinement period' , 'postpartum recovery' , 'healthy eating'],
+    coverUrl: ARTICLE_IMAGES.tips[1].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    blocks: [
+      paragraph('There are also other ways to build up a strong and healthy supply of breast milk or to increase your milk supply naturally. Try these before looking into alternative treatments such as herbs or medicines'),
+      list([
+        '**Frequent and effective breastfeeding:** Breastfeeding frequently and ensuring a good latch can help increase milk production. Aim to breastfeed your baby at least 8-12 times in 24 hours.',
+        '**Pumping:** Using a breast pump after or between feedings can help stimulate milk production and increase milk supply. Consider using a double electric breast pump for maximum efficiency.',
+        '**Proper hydration:** Staying well hydrated is important for milk production. Drink plenty of fluids, such as water, milk, and natural fruit juices.',
+        '**Avoid things that decrease milk supply:** Many things can get in the way of the establishment of a healthy breast milk supply. Starting birth control pills during the first six weeks after your baby is born, especially a method that contains estrogen, can make it more difficult to make breast milk. Other factors such as consuming too much caffeine, drinking alcohol, or smoking can also interfere with the amount of breast milk that you\'ll be able to make.',
+        '**Balanced diet:** Eating a healthy and balanced diet that includes whole grains, fruits, vegetables, lean proteins, and healthy fats can help promote milk production.',
+        '**Rest and relaxation:** Getting enough sleep and reducing stress levels can help promote milk production. Try to rest and relax as much as possible.',
+        '**Skin-to-skin contact:** Holding your baby skin-to-skin can help stimulate milk production and promote bonding.',
+      ]),
+      paragraph('Don\'t let doubts get in the way of your confidence - most mums can assemble and maintain a good source of breast milk for their little one, and you can too!'),
+      paragraph('Just make sure you breastfeed often and your baby looks like they are getting enough milk, and you\'ll be just fine. Believe in yourself!'),
+
+       image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+    ],
+  },
+  {
+    id: 'post-32',
+    slug:'food-to-avoid-during-confinement',
+    title: 'Food to Avoid During Confinement',
+    excerpt: 'You might be wondering why there is a need to follow a diet plan after childbirth. Now that the pregnancy is over, surely you can eat all the food that you have avoided, right? The truth is this. Many changes occur after childbirth and the body needs to heal.',
+    category: 'Food',
+    tags: [ 'confinement food', 'confinement period' , 'confinement', 'healthy eating' , 'postpartum recovery'],
+    coverUrl: ARTICLE_IMAGES.foodtoAvoid[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    blocks: [
+      paragraph('Adhering to a diet that provides the necessary nutrients to promote healing and recovery for the mother is therefore essential. Furthermore, taking care of a newborn can be exhausting, and a healthy diet can provide the energy and stamina needed to care for the baby.'),
+      paragraph('Not forgetting that breast milk can transfer whatever you eat to your child, mother should therefore continue to carefully control your confinement diet even after giving birth.'),
+      paragraph('Here is a list of food to avoid during confinement period:'),
+      list([
+        '**Raw or cold food:** Raw or undercooked food, especially meats, poultry, seafood, and eggs, can contain harmful bacteria or viruses that can cause foodborne illness, such as Salmonella, E. coli, and Listeria. These pathogens can cause symptoms such as vomiting, diarrhoea, fever, and dehydration, which can be especially dangerous for individuals with weakened immune systems.',
+        '**Spicy or pungent food:** Spicy or pungent food are considered "heaty" and may cause symptoms such as heartburn, indigestion, discomfort, or constipation, which can be uncomfortable or even harmful during the postpartum period.',
+        '**Seafood:** Seafood, especially shellfish, is believed to be cold and difficult to digest, which can cause bloating, gas and diarrhoea. Some seafood contains high levels of mercury that can affect brain and nervous system development in babies. Therefore, try to stay away from seafood for best safety.',
+        '**Processed food:** Processed food are often high in calories and low in nutrients, which can lead to overconsumption and weight gain. Moreover, processed food can also lead to digestive issues such as bloating, constipation, and discomfort. This is because processed food often lack fibre and other essential nutrients that are necessary for proper digestion and gut health. In postpartum confinement, a diet consisting of primarily processed food can be especially harmful as the body is recovering from childbirth and needs proper nutrition to heal and support lactation.',
+        '**Caffeine and alcohol:** Caffeine and alcohol can be dehydrating and can affect milk production. Caffeine does leak into breast milk and can affect the central nervous system, which may interfere with sleep patterns and cause restlessness in babies. Alcohol can be dehydrating and may interfere with the body\'s natural healing and recovery processes. For postpartum women, alcohol consumption can also affect the quality and quantity of breast milk.'
+      ]),
+      paragraph('The key is to act sensibly and consume food in moderation. As long as a balanced diet is maintained throughout your confinement period, the claimed "negative effects" should be minimal and safe for you and your baby.'),
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+      {type: 'promoLink',
+        before: 'Order nutritious confinement food that promotes faster healing and recovery for mothers. Check out our',
+        linkText: 'confinement food packages',
+        after: 'to see more!',
+        url: 'https://www.chillipadiconfinement.com/product',
+      },
+    ],
+  },
+  {
+    id: 'post-33',
+    slug:'are-plastic-containers-safe',
+    title: 'Are Plastic Containers Safe',
+    excerpt: 'Storing food in plastic containers can be a convenient way to keep food fresh and easily accessible. However, there are also potential risks and harms associated with storing food in plastic containers, especially if they are not used correctly.',
+    category: 'Plastic',
+    tags: [ 'confinement food', 'food safety', 'healthy eating'],
+    coverUrl: ARTICLE_IMAGES.wellbeing[2].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    blocks: [
+      paragraph('Even for containers labelled “safe” for the microwave and dishwasher, experts caution that heat and plastic don\'t mix well. Besides harmful effects on your health and the environment, some of the harmful effects of storing food in plastic containers include:'),
+      list([
+        '**Chemical leaching:** Some plastic containers may contain chemicals like BPA and phthalates that can leach into your food and cause health problems like hormonal imbalances, developmental problems, and cancer.',
+        '**Microplastic contamination:** Over time, plastic containers can break down and release small particles called microplastics into your food. These particles can be harmful if ingested and may cause digestive problems.',
+        '**Cross-contamination:** If plastic containers are not cleaned properly, they can harbour bacteria and other contaminants that can contaminate your food and cause food poisoning.',
+        '**Environmental pollution:** Plastic containers contribute to environmental pollution by taking up space in landfills and releasing harmful chemicals when they break down.'
+      ]),
+      paragraph('To reduce the harmful effects of storing food in plastic containers, you can use glass, stainless steel, or silicone containers instead. These materials are safer and more eco-friendly alternatives to plastic.'),
+      paragraph('If you must use plastic containers, look for ones that are labeled BPA-free and avoid heating them in the microwave or dishwasher, as this can cause the plastic to break down and release harmful chemicals.'),
+      {type: 'heading' , text:'Chilli Padi Confinement uses Tingkat' , size:'medium' , uppercase:true},
+      image({
+        src: ARTICLE_IMAGES.meals[2].src,
+        alt: 'Tingkat Meals',
+        maxWidth: 650,
+        displayHeight: 57,
+        objectPosition: 'center 10%'
+      }),
+      paragraph('We store food in Tingkat or metal containers in all of our meals before delivering it to you. The Tingkat containers are typically made of stainless steel or aluminium and are designed to be lightweight and easy to carry.'),
+      paragraph('They are stackable, so multiple containers can be transported at once, and they come in different sizes to accommodate different types of dishes'),
+      paragraph('There are several benefits to storing confinement food in metal containers:'),
+
+      list([
+        '**Airtight seal:** Metal containers are typically airtight, which can help prevent air, moisture, and other contaminants from getting in and spoiling the food. This can help keep the food fresher for longer.',
+        '**Odour containment:** Strong foods can have pungent odours that can affect other foods stored nearby. Metal containers can help contain these odours and prevent them from spreading throughout your pantry or refrigerator.',
+        '**Durability:** Metal containers are often very durable and can withstand rough handling or extreme temperatures. This can be especially important for foods that need to be stored for long periods of time or transported over long distances.',
+        '**Protection from light:** Some foods, such as spices and herbs, can be sensitive to light and can lose their flavour or potency if exposed to too much light. Metal containers can help protect these foods from light and help them maintain their quality.',
+        '**Recyclable:** Many metal containers are recyclable, which can help reduce waste and support sustainable practices.'
+      ]),
+      paragraph('Overall, storing strong food in metal containers can help protect the food from spoilage, maintain its quality, and reduce waste.'),
+      paragraph('In addition, it is important to ensure that food is stored at a safe temperature to prevent the growth of harmful bacteria. Hot food should be kept at a temperature of 140°F (60°C) or higher to prevent bacterial growth.'),
+      paragraph('It is recommended to use a food thermometer to check the temperature of the food before serving, and to discard any food that has been left at room temperature for more than four hours.'),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+      {type: 'promoLink',
+        before: 'Order confinement food that\'s nutritious, healthy and safe for consumption today!',
+        linkText: 'Choose your confinement food catering package',
+        after: 'here!',
+        url: 'https://www.chillipadiconfinement.com/product',
+      },
+    ],
+  },
+  {
+    id: 'post-34',
+    slug:'what-is-the-benefit-of-pig-trotter',
+    title: 'What is the Benefit of Pig Trotter',
+    excerpt: 'After giving birth, a woman\'s body undergoes significant changes, including hormonal shifts, tissue repair, and blood loss. This can leave the body depleted of essential nutrients and in need of nourishment to support recovery during confinement.',
+    category: 'Food',
+    tags: [ 'confinement food', 'pig trotter', 'confinement period' , 'postpartum recovery', 'confinement'],
+    coverUrl: ARTICLE_IMAGES.meals[3].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/what-is-the-benefit-of-pig-trotter' ],
+    blocks: [
+      paragraph('A strict diet is often observed during the confinement period to promote healing, restore energy levels, and support breastfeeding.'),
+      {type: 'heading' , text:'Pig trotters are rich in protein and iron' , size:'small' , uppercase:true},
+      paragraph('It\'s important to eat nourishing food during the confinement period that can help support postpartum recovery. Pig trotters are often consumed during confinement or postpartum recovery because they are believed to have certain nutritional and health benefits that can aid in recovery after childbirth.'),
+      paragraph('Pig trotters are also believed to be rich in iron, which can help restore a new mother\'s iron levels after childbirth, which may be depleted due to blood loss during delivery.'),
+      paragraph('Additionally, pig trotters are often cooked in soups or stews, which can be easy to digest and provide nourishment for the new mother during confinement. They are also often paired with other ingredients such as ginger, vinegar, and black fungus, which are believed to have additional health benefits.'),
+      {type: 'heading' , text:'Power food for new mothers' , size:'small' , uppercase:true},
+      paragraph('Combined with vinegar, pig trotters have several benefits for postpartum recovery, including:'),
+      list([
+        '**Helps with digestion:** Vinegar is known to stimulate the production of digestive enzymes, which can aid in the digestion of foods. This can be especially beneficial for postpartum women who may experience digestive issues after giving birth.',
+        '**Rich in collagen:** Pig\'s trotters are a good source of collagen, which is important for maintaining healthy skin, hair, and nails. Collagen also supports joint health and can help to alleviate joint pain.',
+        '**Boosts energy:** Pig\'s trotters are high in protein and iron, which can help to boost energy levels and combat fatigue for the new mother during confinement.',
+        '**Warming:** In Traditional Chinese Medicine, pig trotter is believed to have a warming effect on the body, which can help to support postpartum recovery and prevent illness.',
+        '**Easy to digest:** Pig trotter is a soft and easily digestible food, which can be beneficial for new mothers who may have digestive issues or a weakened digestive system after childbirth.',
+        '**Supports lactation:** The vinegar in the dish is believed to help promote milk production, which can be beneficial for breastfeeding mothers.'
+      ]),
+      paragraph('Overall, pig\'s trotters in vinegar is considered a nourishing and restorative dish that can help the new mother during confinement to support postpartum recovery.'),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+      {type: 'promoLink',
+        before: 'Incorporate the benefits of pig trotter into your confinement diet now!',
+        linkText: 'Choose a meal plan',
+        after: 'today!',
+        url: 'https://www.chillipadiconfinement.com/menu',
+      },
+    ],
+  },
+  {
+    id: 'post-35',
+    slug:'revitalise-your-body-with-28-days-of-confinement-soup',
+    title: 'Revitalise Your Body with 28 Days of Confinement Soup',
+    excerpt: 'Drinking confinement soup is a traditional practice believed to help new mothers recover from childbirth and boost overall health. It is typically made with chicken, ginger, and herbs. However, it can also be prepared with vegetarian or vegan ingredients by using alternative protein sources and vegetables. To extract the maximum amount of nutrients and flavours from the ingredients, confinement soup is typically cooked for long periods of time.',
+    category: 'Soup',
+    tags: [ 'confinement food', 'confinement', 'confinement period' , 'postpartum recovery', 'nourishing food'],
+    coverUrl: ARTICLE_IMAGES.soup[1].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/revitalise-your-body-with-28-days-of-confinement-soup' ],
+    blocks: [
+      paragraph('There are various types of confinement soups that include ginger-based soups, herbal soups, bone broth soups, vegetable soups, and fish-based soups.'),
+      paragraph('Ginger-based soups are known to boost immunity while reducing inflammation. Herbal soups often include Chinese herbs like goji berries and red dates that have multiple health benefits. Bone broth soups are rich in nutrients and easily digestible, making them a popular choice for postpartum confinement.'),
+      paragraph('Vegetable soups include nutrient-dense ingredients like spinach, kale, and broccoli to aid in postpartum recovery. Fish-based soups are an excellent addition to confinement diets as they contain omega-3 fatty acids and protein, which support overall health and wellbeing.'),
+
+      paragraph('**Black Chicken Herbal Soup**'),
+      paragraph('One of the most popular confinement soups in traditional Chinese medicine is Black Chicken Herbal Soup. This soup contains several ingredients such as black chicken, goji berries, and Chinese yam, which are believed to promote postpartum healing and nourishment.'),
+      paragraph('Black chicken is a great source of protein and amino acids while goji berries are known for their antioxidant properties. Additionally, Chinese yam is high in fiber and can help regulate digestion.'),
+
+      paragraph('**Pig Trotter and Black Vinegar Soup**'),
+      paragraph('This soup is made with pig trotters, black vinegar, ginger, and garlic, among other ingredients.'),
+      paragraph('Black vinegar is believed to help improve blood circulation and boost energy levels, while pig trotters are a rich source of collagen that can help improve skin elasticity and promote joint health. Additionally, this soup is a great source of nutrients such as protein and iron.'),
+
+      paragraph('**Fish Head Soup with Papaya**'),
+      paragraph('Fish heads are a particularly beneficial ingredient as they are rich in collagen and omega-3 fatty acids that can improve skin health and brain function.'),
+      paragraph('Papaya contains enzymes that aid digestion and can help reduce inflammation, while ginger is known for its anti-inflammatory properties and can ease nausea and vomiting.'),
+
+      paragraph('**Lotus Root and Peanut Soup**'),
+      paragraph('This popular soup is believed to have several health benefits for new mothers or those recovering from illness, including promoting lactation, reducing inflammation, and improving digestion. Lotus root is rich in vitamin C, fiber, and antioxidants while peanuts provide protein, healthy fats, and vitamins.'),
+      paragraph('To enhance its nutritional value and flavor, this soup can also be made with other ingredients such as pork ribs or chicken. It\'s recommended to consume this soup during the postpartum period or whenever you need a boost in nutrient intake or faster recovery.'),
+
+      paragraph('**Ginger Wine Chicken Soup**'),
+      paragraph('Ginger Wine Chicken Soup is made with chicken, ginger, and rice or Shaoxing wine. Ginger is known for its anti-inflammatory and immune-boosting properties while the wine adds warmth to the body. This delicious and easy-to-make soup is not only nourishing but also helps new moms heal after childbirth.'),
+      paragraph('Other types of confinement soups include black bean soup, lotus root soup, and pork rib soup.'),
+      paragraph('Each of these soups has its own unique benefits and can contribute to overall wellness during the confinement period. Incorporating these soups into a regular diet can help revitalize the body and promote recovery after childbirth.'),
+
+      {type: 'heading' , text:'Benefits of Drinking Confinement Soup' , size:'medium' , uppercase:true},
+
+      image({
+        src: ARTICLE_IMAGES.soup[0].src,
+        alt:'Benefits Of Drinking Confinement Soup',
+        objectPosition: 'center 10%'
+      }),
+      paragraph('Confinement soup is a traditional Chinese remedy that has been used for centuries to aid in postpartum recovery. This soup is packed with nutrient-rich ingredients such as ginger, chicken, and goji berries that promote healing and boost the immune system. Drinking confinement soup can also aid in digestion, promote better sleep, and improve overall well-being.'),
+      paragraph('The benefits of confinement soup are not limited to new mothers. Anyone can enjoy this soup to revitalize their body and reap its many health benefits. Whether you\'re recovering from an illness or looking to enhance your immune system, confinement soup is an excellent choice'),
+      paragraph('**Boosts Postpartum Recovery**'),
+      paragraph('One of the main benefits of drinking confinement soup is its ability to boost postpartum recovery by aiding digestion, reducing inflammation, and improving blood circulation.'),
+      paragraph('The ingredients used in confinement soup are carefully selected for their healing properties and are believed to promote overall well-being. Drinking this soup on a regular basis can help new mothers recover faster, feel more energized, and improve their overall health.'),
+      paragraph('**Helps with Lactation**'),
+      paragraph('Confinement soup\'s ingredients are carefully selected for their nutritional and healing properties, including herbs and ingredients that have been used for centuries to support breastfeeding and milk production.'),
+      paragraph('Aside from promoting lactation, drinking confinement soup can also help replenish nutrients lost during childbirth and support overall postpartum recovery.'),
+      paragraph('**Replenishes Nutrients in the Body**'),
+      paragraph('One of the main benefits of drinking confinement soup is its ability to replenish the body\'s nutrients, including protein. This makes it an excellent source of nutrition for women recovering from childbirth or illness. Additionally, confinement soup can help boost the immune system and improve digestion due to its high nutrient content.'),
+      paragraph('Overall, drinking confinement soup is a delicious and healthy way to nourish your body from the inside out.'),
+      {type: 'heading' , text:'Frequently Asked Questions about Confinement Soup' , size:'medium' , uppercase:true},
+      paragraph('**Can I Drink Confinement Soup if I Had a C-Section?**'),
+      paragraph('One frequently asked question about confinement soup is whether it is safe to consume after a C-section. While confinement soup can be beneficial for new mothers who have had a C-section, it is important to consult with your doctor or healthcare provider before consuming it.'),
+      paragraph('Certain ingredients in the soup, such as ginger and Chinese herbs, may have healing properties that can aid in recovery. However, it is important to exercise caution when consuming any new foods or beverages after surgery and to follow your doctor\'s recommendations.'),
+      paragraph('By consulting with your healthcare provider and using caution, you can safely enjoy the benefits of confinement soup and help revitalize your body after pregnancy.'),
+
+      paragraph('**Can I Drink Confinement Soup if I am Vegetarian?**'),
+      paragraph('If you are a vegetarian, you can still enjoy the benefits of confinement soup. There are several vegetarian-friendly recipes available that include ingredients like mushrooms, tofu, and various vegetables. Additionally, you can customize your own recipe by choosing vegetables and herbs that suit your taste and dietary needs.'),
+      paragraph('Vegetarian confinement soups can provide the same nourishing benefits as traditional meat-based soups, such as boosting immunity, improving digestion, and aiding in postpartum recovery. However, it is important to consult with a healthcare professional before starting any new diet or nutrition plan to ensure that it is safe for you.'),
+
+      {type: 'heading' , text:'Where to Get Confinement Soup' , size:'medium' , uppercase:true},
+
+      paragraph('**Preparing Confinement Soup at Home**'),
+      paragraph('If you\'re looking to try 30 days of confinement soup, preparing it at home can be a great option. This allows you to save money and customize the ingredients to your liking. To make the soup, you will need a slow cooker or a large pot and some basic ingredients such as meat, vegetables, herbs, and spices. You can find many confinement soup recipes online that cater to different dietary needs and preferences.'),
+      paragraph('It\'s important to follow food safety guidelines when preparing and storing the soup, especially if you plan on freezing it for later use. If you don\'t have time to make the soup from scratch, pre-made confinement soups are available for purchase from specialty stores or online retailers.'),
+      paragraph('**Buying from a Confinement Meal Delivery Service**'),
+      paragraph('If you are looking for a convenient way to get freshly cooked confinement soup delivered to your doorstep, a confinement meal delivery service may be the right solution for you. These services often use high-quality ingredients and follow traditional recipes to ensure the best possible flavor and nutritional value. When choosing a confinement meal delivery service, it\'s important to consider factors such as menu variety, pricing, and delivery options.'),
+      paragraph('Additionally, some services may also offer additional dishes and snacks that are specifically designed for postpartum recovery. This can include items like lactation cookies or soups with specific herbs and ingredients that support healing after childbirth. By using a confinement meal delivery service, you can save time and energy while still enjoying the benefits of delicious and nutritious confinement soup tailored to your postpartum needs.'),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+      {type: 'promoLink',
+        before: 'Ready to try some yourself? We are currently having a sale with our 28 days meal plan. Find out all about it ',
+        linkText: 'here.',
+        after: '',
+        url: 'https://www.chillipadiconfinement.com/menu',
+      },
+    ],
+  },
+  {
+    id: 'post-36',
+    slug:'how-husbands-can-support-their-wife-during-the-postpartum-period',
+    title: 'How Husbands Can Support Their Wife During The Postpartum Period',
+    excerpt: 'Welcoming a newborn into the family is an exciting step for any father. But with all the attention turned towards the baby, your wife may be feeling a little neglected or under-appreciated',
+    category: 'Support',
+    tags: [ 'mental health', 'confinement period' , 'postpartum recovery', 'confinement'],
+    coverUrl: ARTICLE_IMAGES.postpartum[1].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/how-husbands-can-support-their-wife-during-the-postpartum-period' ],
+    blocks: [
+      paragraph('The changes after pregnancy and childbirth can be overwhelming. Fulfilling mummy duties while still finding the time to take care of herself might seem impossible. '),
+      paragraph('Your wife will need your help. So roll up your sleeves and get ready to learn.'),
+      {type: 'heading' , text:'What’s Going to Happen' , size:'large' , fontWeight:800},
+      {type: 'heading' , text:'Postnatal blues' , size:'large'},
+      paragraph('Your wife may be weak, tired, and even upset. Pregnancy is a long and laborious nine months. Delivery, whether vaginal or cesarean, will have placed strain on your wife’s body. '),
+      paragraph('Due to hormonal changes, many women experience a ‘sad’ or ‘depressed mood’ in the one to two weeks after childbirth. Brace yourself for cries and tears. They may not just be from the baby!'),
+      paragraph('Postnatal blues, also known as ‘Baby Blues’, is common. However, some women may develop Postpartum Depression (PPD). Watch out for red flags. Excessive crying and mood swings lasting for more than two weeks may be a sign of PPD. For more information consult your healthcare provider.'),
+      paragraph('**Major shake-ups in her routine**'),
+      paragraph('Nap time, feeding time, diaper changes, nursing, pumping schedules!'),
+      paragraph('Especially for a first-time mother, caring for a newborn can be overwhelming. For working women on maternity leave, suddenly being alone at home with a newborn may feel disorienting or isolating. '),
+      paragraph('Did you know? You can take time off work to accompany your wife and newborn. Fathers are entitled to **government-paid paternity leave** for all births if you fulfil the eligibility criteria:'),
+      list([
+        'Your baby is a Singapore citizen',
+        'You’re lawfully-married to your baby’s mother between conception and birth',
+        'You’ve been with your employer for a continuous period of at least three months before the birth of your baby.',
+      ], 'number'),
+      paragraph('Whether you’re working or staying home, both your wife and yourself should expect sleepless nights. Most babies don’t start sleeping through the night until they are about three months old. Unlike adults, babies spend less time in rapid eye movement (REM) sleep and have short sleep cycles.'),
+      paragraph('**The confinement period**'),
+      paragraph('With all these changes, the four to six week period right after childbirth is especially important for both mummy and baby. '),
+      paragraph('Confinement is a crucial phase for your wife’s body to recuperate, repair, and restore its natural reserves. In some traditions, the confinement period can last for up to three months after childbirth.'),
+      paragraph('In Western cultures, the confinement period is referred to as ‘lying-in’ as it requires a long period of bedrest during and after pregnancy even if there were no medical complications during childbirth. '),
+      paragraph('In Asian cultures, emphasis is placed on diet. As a general rule of thumb, traditional Chinese, Malay and Indian confinement practices emphasise the consumption of ‘warming’ foods and beverages. '),
+
+      {type: 'heading' , text:'What you should avoid' , size:'medium' , uppercase:true},
+
+      paragraph('**Acting like nothing has changed**'),
+      paragraph('Welcoming a newborn into the family is a massive change. Especially for first-time parents. So that’s rule number one, don’t act as though nothing has changed. Simple right?'),
+      paragraph('Postpone your boys nights to clubs or pubs. Forget about late-nights watching EPL or UFC matches live. Parenthood isn’t just a mother’s duty, but yours too. Be there as much as you can. Remember your priorities.'),
+
+      paragraph('**Trying to ‘fix’ your wife**'),
+      paragraph('Don’t be solution-focused or try to ‘fix’ her. Birth brings about many changes to a mother, but in no way should you treat her as though anything needs to be ‘fixed’. Instead, focus on helping her recover healthy and supporting her throughout.'),
+
+      {type: 'heading' , text:'What you can do' , size:'medium' , uppercase:true},
+
+      paragraph('**Throw Her A Baby Shower**'),
+      paragraph('Baby showers are not limited to the pregnancy period. In several Asian cultures, it is customary to have ‘Full Month’ or ‘Whole Month’(满月 mǎn yuè) celebrations, the first month of your newborn’s life.'),
+      paragraph('Another milestone that has become popular among young Singaporean parents is their baby’s **100** Day birthday. Having a **100 Day** instead of a **Full Month** celebration gives you more time to prepare and more time for your wife to recover.'),
+      paragraph('As Dr Christopher Ng, gynaecology specialist at GynaeMD Clinic, points out, new mums may face issues such as breast engorgement, pain from a C-section wound, urinary incontinence and haemorrhoids. It may take eight weeks or more for your wife to feel fully herself again'),
+      paragraph('Whether your family prefers an elaborate themed party or intimate gathering over a meal, it might be best to wait until your wife has recovered and is ready. Plan surprise parties at your own risk!'),
+
+      paragraph('**Engage A Confinement Caterer**'),
+      paragraph('Eating right is crucial for a smooth confinement period. Consuming the right herbs, soups and teas will make a difference in your wife’s postpartum recovery. What’s more, the right type of diet evolves during the different stages of confinement. '),
+      paragraph('In traditional Chinese practices, it is believed that consuming Sheng Hua Tonics is crucial during the initial stage of confinement to dispel wind and discharge lochia and placental fragments from the womb effectively. '),
+      paragraph('Can’t cook and don’t have time to research recipes? Confinement catering services are available. '),
+      paragraph('Postpartum meal services are usually priced as single-meal (lunch or dinner) or dual-meal (lunch and dinner) packages lasting from one week to twenty-eight days. '),
+
+      paragraph('**Pamper Her**'),
+      paragraph('Lactation cookies, postnatal massages, mummy-and-baby photoshoots...there are plenty of ways you can pamper your wife post-pregnancy. '),
+      paragraph('If your wife has a sweet tooth, consider ordering lactation bakes for her. These treats are gaining popularity among breastfeeding mums. Some women even report an increase of up to 50% after consuming lactation cookies. '),
+
+      {type: 'heading' , text:'Be Patient With Parenthood' , size:'medium' , uppercase:true},
+
+      paragraph('Parenthood is a team effort all the way. With your wife having to focus on taking care of her child as well as her own recovery, there’s only so much she can handle. So ease the load for her, find places to help wherever you can! Clean up the house, take-over on baby duty, and (most importantly) get her food. '),
+      paragraph('Be patient. Parenthood is as new to her as it is to you, and mothers often worry if they’re doing things right. Reassure her when she needs it, and acknowledge her efforts, it’ll make all the difference. '),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+    ],
+  },
+  {
+    id: 'post-37',
+    slug:'five-tips-for-a-smooth-confinement',
+    title: 'Five Tips for a Smooth Confinement',
+    excerpt: 'Pregnancy is one of the most significant experiences in a woman’s life. However, equally important is the postpartum confinement period. The six to eight week time-window after childbirth is crucial for both the mother and newborn.',
+    category: 'Tips',
+    tags: [ 'confinement' , 'confinement period' , 'postpartum recovery'],
+    coverUrl: ARTICLE_IMAGES.fiveTips[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    blocks: [
+      paragraph('Conceiving and carrying a baby to term is very demanding on your body. Reserves of essential nutrients such as folate, calcium and vitamin B6 are depleted. Whether you gave birth vaginally or you had a cesarean delivery, your body will need extra care to recover properly.'),
+      {type: 'spacedHeading' , number: '1' , text: 'Pay Attention to Your Body'},
+      paragraph('After giving birth, your newborn might be the centre of your focus. But don’t forget to pay attention to your body and monitor your recovery.'),
+      image({
+        src: ARTICLE_IMAGES.fiveTips[2].src,
+        alt: 'Baby Meme',
+        fit: 'contain'
+      }),
+      paragraph('If you are experiencing severe **pain, bleeding, swelling, fever, headache**, contact your doctor as soon as possible. These could be signs of **complications** such as postpartum haemorrhage, deep vein thrombosis or heart problems.'),
+      {type: 'spacedHeading' , number: '2' , text: 'Eat Well'},
+      paragraph('Did you know? The average blood loss for a vaginal birth is roughly 480ml - more than one can of your average soft drink! Blood loss with a cesarean delivery can be close to one litre. Regardless of the method of delivery, there will be blood loss and eating the right foods can help you to replenish it. '),
+      paragraph('A good diet is essential for restoring your body’s natural stores of vitamins and minerals. Eating food rich in **iron, vitamin A, B** and **C** will help with **increasing** your energy levels and **repairing** your body. '),
+      gallery(ARTICLE_IMAGES.fiveTips2 , 'Stir-Fried Spinach with Sea Cucumber topped with WolfBerries and Chicken with Egg topped with WolfBerries'),
+      paragraph('Drink **eight glasses** of water a day whether you are breastfeeding or not. It is important to replenish the fluids you have lost from the process of giving birth and staying hydrated will help bring your blood volume levels back to normal.'),
+      paragraph('For breastfeeding mothers, foods like **dark green** and **yellow vegetables, fenugreek, oatmeal, lean meat** and **poultry, goji berries** and **papaya**, can help with **regulating** the production of milk and **increasing** milk flow.'),
+      paragraph('^^Lactation cookies^^ and other treats like ^^lactation nougats^^ are great to have on hand as they make great snacks and contain beneficial power foods for lactation like flax, yeast and oatmeal.'),
+      list([
+        'Flaxseeds - have oestrogenic properties that can help nursing moms produce more milk and provides healthy fats that are a healthy component of breast milk to promote a child\'s brain development.',
+        'Yeast - known for its highly digestible protein levels, minerals, vitamin B, key amino acids and chromium which supports healthy milk supply for breastfeeding mothers. Not only that, it also elevates the energy levels and mood of postnatal mums.',
+        'Oatmeal - contain plant oestrogens, which have been associated with the stimulation of milk glands. It also has a fiber called Beta-glucan, which can increase the levels of prolactin (a hormone that is responsible for producing milk) in the bloodstream.',
+      ]),
+      {type: 'spacedHeading' , number: '3' , text: 'Watch out for emotional red flags'},
+      paragraph('The sudden decrease of hormones after childbirth might trigger an emotional response in new mothers. **‘Baby Blues’** are common and you may experience symptoms like irritability, crying, mood swings, appetite problems or reduced concentration. These symptoms should **go away within the first two weeks**.'),
+      paragraph('A more severe emotional complication is **postnatal depression (PND)**. PND may cause mothers to have:'),
+      list([
+        'panic attacks',
+        'uncontrollable mood swings',
+        'feelings of emptiness, shame or guilt',
+        'thoughts of harming themself or their baby',
+      ]),
+      paragraph('If you notice any of these red flags, contact a mental health professional as soon as possible.'),
+      {type: 'spacedHeading' , number: '4' , text: 'Prioritise Self-Care'},
+      paragraph('Have plenty of rest and avoid strenuous or mentally-draining activities. It is important to recharge both physically and mentally. Watch a movie, read a magazine, or do some online shopping. **Anything that helps you destress should be prioritised.** '),
+      image({
+        src: ARTICLE_IMAGES.fiveTips[1].src,
+        alt: 'Meme 1'
+      }),
+      paragraph('Accept help from family members offering to assist with cooking and doing housework. Is your husband terrible at cooking? Engage a **confinement caterer** instead. Lunch and dinner are prepared with the optimal mix of herbs and ingredients for your recovery. Meals are delivered to your doorstep so you have more time to focus on yourself and to spend with family.'),
+      paragraph('If it feels right for your body, consider **postnatal massages.** Massage may help relieve water retention, muscle soreness and breast engorgement, and tone your body. There are also in-home sessions available so you won’t even have to step out your door. '),
+      {type: 'spacedHeading' , number: '5' , text: 'Don\'t be too hard on yourself' },
+      paragraph('Having a child is a beautiful experience but it is not easy being a mother. Don’t put too much pressure on yourself. Despite what you may see on social media, never stress about fitting society’s standards of a “perfect mother”. '),
+      quote('Remember, happy mum equals happy baby. '),
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+    ],
+  },
+   {
+    id: 'post-38',
+    slug:'why-we-use-kuhlbarra-barramundi-in-our-dishes',
+    title: 'Why we use Kühlbarra Barramundi in our dishes',
+    excerpt: 'Kühlbarra’s Barramundi complements our confinement meals as its flesh is sweet and has a refreshing taste. Most of all, Barramundi has been tested to be higher in Omega-3 & Omega-6 as compared to most other edible fish species. This greatly benefits postnatal mothers whose bodies’ own store of nutrients have been depleted due to breast-feeding.',
+    category: 'Dish',
+    tags: ['Kuhlbarra Barramundi' , 'confinement'],
+    coverUrl: ARTICLE_IMAGES.kuhlbarra[0].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    blocks: [
+      paragraph('Since October 2019, ^^Chilli Padi Confinement^^ has been using ^^Kühlbarra’s Barramundi^^ for our confinement food!'),
+      paragraph('Kühlbarra is certified with the Highest Rating of 4 Stars by ^^Best Aquaculture Practice (BAP)^^.'),
+      paragraph('BAP is a seafood-specific accreditation that is only conferred to producers who follow optimal practices to deliver farmed seafood safely and responsibly. The BAP evaluates four key areas of sustainability —environmental, social, food safety, and animal health & welfare— at each step of the aquaculture production chain.'),
+      paragraph('Kühlbarra is 1 of 5 farms in the world, and the only farm in Singapore with this 4-star rating.'),
+      paragraph('Kühlbarra farm their barramundi in pristine ocean waters located on the south side of Singapore. The fish are bred in spacious pens offering sufficient frolicking space and where tides bring in oxygen-rich waters while effectively dispersing waste. The water environment is rigorously monitored at 10-minute intervals. There are also dedicated divers checking on the health of the fish and pen conditions daily.'),
+      paragraph('Kühlbarra’s barramundi is rigorously tested by Singapore Food Agency (formerly Agri-Food and Veterinary Authority), according to standards even more stringent than the European Union Standards for Food Safety.'),
+      paragraph('Furthermore, Kühlbarra’s Barramundi is only fed with a specially formulated feed of 70% plant-based proteins, free of antibiotics & hormones, and tested safe from mercury.'),
+      paragraph('This greatly benefits postnatal mothers whose bodies’ own store of nutrients have been depleted due to breast-feeding.'),
+
+      image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+    ],
+  },
+  {
+    id: 'post-39',
+    slug:'traditional-chinese-confinement-practices',
+    title: 'Traditional Chinese Confinement Practices',
+    excerpt: 'The tradition of Chinese confinement postpartum practices can be traced back to the early Qin Dynasty (221 B.C to 206 B.C) where it was recorded in 礼记内则 (Li Ji Nei Ze): a collection of records, over 2000 years old, detailing the rules regarding a women’s seclusion after delivering.',
+    category: 'Traditions',
+    tags: [],
+    coverUrl: ARTICLE_IMAGES.chineseWine[1].src,
+    createdAt: '2026-09-10T09:00:00+08:00',
+    blocks: [
+      paragraph('Postpartum Confinement is also known as 坐月子 (zuò yuè zi). The confinement practices were passed down verbally from one generation to the next, and the practices vary between regions.'),
+      paragraph('Ginger, Sesame Oil, and Rice Wine are major staples in confinement dietary practices. As Sesame Oils are used as the base for most of the dishes and soups, many new mothers find the look of these dishes unappetising as the resulting dishes look greasier.'),
+      paragraph('‘Heating’ ingredients are mainly used to prepare postpartum meals as these are considered ‘hot’ and help nourish and rebalance the mother’s body which would be in a \'cold\' state due to childbirth. Ingredients that are considered ‘cooling’ should not be taken during this period'),
+      image({
+        src: ARTICLE_IMAGES.chineseWine[0].src,
+        alt: 'Chinese Wine'
+      }),
+      paragraph('**The different confinement practices**'),
+      paragraph('Confinement practices are commonplace throughout Asia, although the cultures and beliefs differ between regions. For instance, confinement periods may last from 30 to 100 days depending on the cultural practice.'),
+      paragraph('Postpartum Confinement is not only practiced by the Chinese -- in Japan it is known as “Sango no hidachi”, In Korea, it is known as “Samchilil”, and in India it is known as “Jaappa”. The common belief is that these practices would greatly benefit a new mother’s physical, mental and emotional state and wellbeing.'),
+      paragraph('^^An article on the Ministry of Social and Family Development’s website^^ shows a breakdown of the different postpartum dietary practices between the 3 major races in Singapore:'),
+      
+{
+  type: 'practiceTable',
+  headers: [
+    '',
+    'CHINESE PRACTICES',
+    'MALAY PRACTICES',
+    'INDIAN PRACTICES',
+  ],
+  rows: [
+    {
+      cells: [
+        { text: 'Confinement Period', bold: true },
+        { text: '30 days' },
+        { text: '44 days' },
+        { text: '40 days' },
+      ],
+    },
+    {
+      cells: [
+        { text: 'Dietary Requirements', bold: true },
+        {
+          text: '• To purge out the “wind” in the body after delivery, promote “blood circulation”, strengthen the joints and promote milk supply.\n• To avoid “cooling” foods.',
+          colSpan: 3,
+        },
+      ],
+    },
+    {
+      cells: [
+        { text: '' },
+        {
+          text: 'Traditionally, they use a lot of ginger, wines and sesame oil in their diet. Common dishes include pigs’ trotters cooked with ginger and vinegar, fish soup, chicken cooked in sesame oil and a traditional tonic brewed from 10 herbs. Fish soup boiled with papaya is believed to be beneficial for milk production.\n\nIt is also recommended that plain water consumption is avoided during this period to reduce the risk of water retention. Instead, specially prepared drinks from a mixture of herbs and preserved dates are recommended.',
+        },
+        {
+          text: 'During confinement, a woman follows a special diet in which heating foods are encouraged and cooling foods avoided to restore the balance upset by the birth.\n\nSome Malay mothers who have just delivered often take a special drink called “jamu”. It is believed that the pores on the body are opened during labor and “jamu” has properties that can keep the body warm.',
+        },
+        {
+          text: 'The Indians take garlic milk to prevent “wind”. Like the Chinese and Malays, “cooling” foods are avoided, especially tomatoes, cucumbers, coconut milk, and mutton.\n\nOnly chicken and shark fish cooked with herbs are allowed while other seafood is not allowed.\n\nChilli is not allowed.\n\nPlenty of garlic fried without oil is encouraged. Cooking is done with gingelly oil.\n\nOral intake of herbs or D.O.M. is encouraged to keep the body warm.\n\nThere is a restriction on fluids/fruits/vegetable intake as well as cold drinks and food.',
+        },
+        ],
+       },
+       {
+        // Row 1: Left-side heading + introductory text
+        cells: [{ 
+          text: 'Other Practices', bold: true },
+          { text: 'The basis for such practices is to protect the new mother from future ill health, restore her strength and to protect the family from ritual pollution.', 
+            colSpan: 3, 
+          },
+        ],
+      },
+      { // Row 2: Long text, separated into three cultural columns
+       cells: [{ text: '' },
+        { text: 'The Chinese believe in staying indoors throughout the confinement period to avoid outdoor pollution. Strenuous physical activities are discouraged to prevent further “muscle-weakening”.\n\nSome would hire a confinement nanny to help with the housework and caring for the baby.\n\nOther practices may include:\n\n• Not washing the body or hair during the month; especially avoiding contact with cold water.\n• Not going outside for the entire month (or at least avoid wind).\n• Not eating raw or “cooling” foods or foods cooked the previous day.\n• Eat chicken, especially chicken cooked in sesame oil; pork liver and kidney are also good; eat five or six meals daily and rinse the rice bowl with scalding water.\n• Avoid all wind, fans and air conditioning.\n• Avoid walking or moving about; the ideal is lying on the back in bed.\n• Do not go into another person’s home.\n• Do not get sick.\n• Do not read or cry.\n• Do not have sex.\n• Do not eat with family members.\n• Do not burn incense or visit a temple or altar.',},
+        { text: 'Traditionally, childbirth is in the mother’s home attended by a bidan (Malay midwife) and the umbilical stump dusted with a mixture of spices. Fortunately, this has been replaced by hospital births that reduce complications and infection rates.\n\nBoth mother and child should be bathed immediately in heated water filled with herbs after birth.\n\nThe mother will “keep warm” through various traditional methods. These may include sitting near to or lying above a heated source or warming the abdomen by applying a heated stone over it.\n\nDuring this confinement period, a female masseuse is engaged to help the mother regain her figure or at least to keep her extended tummy trim. The practice of tightly binding the tummy is called berbengkong, and is believed to help in maintaining the body shape.\n\nSex is also strictly prohibited during the confinement period.',},
+        { text: 'Indian mothers are also discouraged from leaving their homes during their confinement period.\n\nBathing is discouraged and if done, it should be performed with special herbal preparations and turmeric powder.\n\nBathing is only allowed between 11 am and 2 pm when the temperature is at its highest.\n\nDaily body massages with oil are also encouraged.\n\nOther practices may include:\n\n• Not allowed to enter the prayer altar room.\n• Splashing of warm water on the abdomen during bathing to expel clots from the uterus.\n• Washing of hair is done on odd days i.e. day 3,5,7… during the first two weeks. Dry hair after washing with incense smoke.\n• Place incense smoke in between legs to dry episiotomy wound.\n• Binding of the tummy with six feet cloth.\n• Sex is strictly prohibited.', },
+        ],
+       },
+      ],
+     },
+     image(
+        {
+          src: '/banners/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+    ],
+   },
+  ]
 

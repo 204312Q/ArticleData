@@ -35,6 +35,113 @@ const categoryChipSx = {
 
 function renderBlock(block: PostContentBlock, index: number) {
   
+
+if (block.type === 'practiceTable') {
+  return (
+    <TableContainer
+      key={index}
+      sx={{ my: 3, border: '2px solid #e2e4e7' }}
+    >
+      <Table sx={{ tableLayout: 'fixed' }}>
+        <TableHead>
+          <TableRow>
+            {block.headers.map((header, i) => (
+              <TableCell key={i} sx={{ fontWeight: 800 }}>
+                {header}
+              </TableCell>
+            ))}
+          </TableRow>
+        </TableHead>
+
+        <TableBody>
+          {block.rows.map((row, rowIndex) => (
+            <TableRow key={rowIndex}>
+              {row.cells.map((cell, cellIndex) => (
+                <TableCell
+                  key={cellIndex}
+                  colSpan={cell.colSpan ?? 1}
+                  sx={{
+                    color: '#68727D',
+                    lineHeight: 1.8,
+                    verticalAlign: 'top',
+                    fontWeight: cell.bold ? 700 : 400,
+                    whiteSpace: 'pre-line',
+                    border: '1px solid #e2e4e7 !important',
+                    borderRight: '1px solid #e2e4e7 !important',
+                  }}
+                >
+                  {cell.text}
+                </TableCell>
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}
+  
+if (block.type === 'spacedHeading') {
+  return (
+    <Typography
+      key={`spaced-heading-${index}`}
+      sx={{
+        mt: 4,
+        mb: 2,
+        color: '#68727D',
+        fontSize: { xs: '1.15rem', md: '1.6rem' },
+        fontWeight: 400,
+        letterSpacing: '2px',
+        lineHeight: 1.5,
+        textTransform: 'uppercase',
+      }}
+    >
+      {block.number && `${block.number}. `}
+      {block.text}
+    </Typography>
+  );
+}
+
+  
+if (block.type === 'promoLink') {
+  return (
+    <Typography
+      key={index}
+      component="p"
+      sx={{
+        mt: 0.8,
+        mb: 1,
+        fontSize: '1.0rem',
+        fontStyle: 'italic',
+        fontWeight: 400,
+        lineHeight: 1.5,
+        color: '#68727D',
+      }}
+    >
+      {block.before}{' '}
+      <Box
+        component="a"
+        href={block.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={{
+          color: '#f47795',
+          fontStyle: 'italic',
+          textDecoration: 'none',
+          cursor: 'pointer',
+          '&:hover': {
+            textDecoration: 'underline',
+          },
+        }}
+      >
+        {block.linkText}
+      </Box>{' '}
+      {block.after}
+    </Typography>
+  );
+}
+
+  
 if (block.type === 'comparisonTable') {
   return (
     <Box key={index} sx={{ my: 4, width: '100%' }}>
@@ -232,7 +339,7 @@ if (block.type === 'heading') {
       sx={{
         mt: 1,
         color: '#68727D',
-        fontWeight: 700,
+        fontWeight: block.fontWeight ?? 700,
         letterSpacing: '1.5px',
         textTransform: block.uppercase ? 'uppercase' : 'none',
         ...(block.size === 'large' && {
@@ -247,24 +354,83 @@ if (block.type === 'heading') {
 }
 
 
-  if (block.type === 'paragraph') {
-    return (
-      <Typography key={`paragraph-${index}`} color="#68727D" sx={{ lineHeight: 1.95  }}>
-        <ReactMarkdown
-        components={{
-          p: ({ children }) => <>{children}</>,
-          strong: ({ children }) => (
-            <Box component="strong" sx={{ fontWeight: 700, fontSize: '18px', color: '#68727D' }}>
-              {children}
+  
+
+if (block.type === 'paragraph') {
+  const urls: Record<string, string> = {
+    'Lactation cookies': 'https://www.chillipadiconfinement.com/product',
+    'lactation nougats': 'https://www.chillipadiconfinement.com/product',
+    'Kühlbarra’s Barramundi' : 'https://kuhlbarra.com/our-kuhl-tale',
+    'Chilli Padi Confinement' : 'https://www.chillipadiconfinement.com/',
+    'Best Aquaculture Practice (BAP)' : 'https://bapcertification.org/WhoWeAre',
+    'An article on the Ministry of Social and Family Development’s website' : 'https://www.babybonus.msf.gov.sg/parentingresources/web/Pregnancy/Nutrition/Supplements/Pregnancy_Confinement_Practices_Myths?_adf.ctrl-state=makh9awou_4&_afrLoop=4362227373891004&_afrWindowMode=0&_afrWindowId=null#%40%3F_afrWindowId%3Dnull%26_afrLoop%3D4362227373891004%26_afrWindowMode%3D0%26_adf.ctrl-state%3D193jv6t2y5_4',
+
+  };
+
+  const paragraphParts = block.text.split(/(\^\^.*?\^\^)/g);
+
+  return (
+    <Typography
+      key={`paragraph-${index}`}
+      component="p"
+      color="#68727D"
+      sx={{ lineHeight: 1.95 }}
+    >
+      {paragraphParts.map((part, partIndex) => {
+        if (part.startsWith('^^') && part.endsWith('^^')) {
+          const linkText = part.slice(2, -2);
+
+          return (
+            <Box
+              key={partIndex}
+              component="a"
+              href={urls[linkText] ?? '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: '#f47795',
+                textDecoration: 'none',
+                '&:hover': { textDecoration: 'underline' },
+              }}
+            >
+              {linkText}
             </Box>
-          )
-        }}
-      >
-        {block.text}
-      </ReactMarkdown>
-      </Typography>
-    );
-  }
+          );
+        }
+
+        const leadingSpace = /^\s/.test(part);
+        const trailingSpace = /\s$/.test(part);
+
+        return (
+          <Box component="span" key={partIndex}>
+            {leadingSpace ? ' ' : ''}
+            <ReactMarkdown
+              components={{
+                p: ({ children }) => <>{children}</>,
+                strong: ({ children }) => (
+                  <Box
+                    component="strong"
+                    sx={{
+                      fontWeight: 700,
+                      fontSize: '17px',
+                      color: '#68727D',
+                    }}
+                  >
+                    {children}
+                  </Box>
+                ),
+              }}
+            >
+              {part.trim()}
+            </ReactMarkdown>
+            {trailingSpace ? ' ' : ''}
+          </Box>
+        );
+      })}
+    </Typography>
+  );
+}
+
 
   if (block.type === 'quote') {
     return (
@@ -413,26 +579,63 @@ if (block.type === 'list') {
             component="li"
             sx={{ lineHeight: 2.0 , '&::marker': {fontWeight: 800}, }}
           >
-            {match ? (
-              <>
-                {match[1]}
-                <Typography
-                  component="span"
-                  sx={{ fontWeight: 800, color: '#68727D' }}
-                >
-                  {match[3]}
-                </Typography>
-                {match[5]}
-              </>
-            ) : (
-              item
-            )}
+            
+            {(match ? [match[1], match[3], match[5]] : [item]).map(
+              (textPart, textIndex) => {
+            // Keep the existing bold heading
+            if (match && textIndex === 1) {
+            return (
+            <Typography
+            key={textIndex}
+            component="span"
+            sx={{ fontWeight: 800, color: '#68727D' }} >
+            {textPart}
+        </Typography>
+      );
+    }
+
+    // Turn ^^text^^ into a pink clickable link
+    return textPart.split(/(\^\^.*?\^\^)/g).map((part, partIndex) => {
+      if (part.startsWith('^^') && part.endsWith('^^')) {
+        const linkText = part.slice(2, -2);
+
+        const urls: Record<string, string> = {
+          'Confinement Angels': 'https://confinementangels.com.sg/',
+          'PEM Confinement Nanny Agency': 'https://pemconfinement.com//',
+          'Caregiver Asia': 'https://www.caregiverasia.com/lander',
+          'NannySOS': 'https://www.nannysos.com.sg/',
+        };
+
+        return (
+          <Box
+            key={`${textIndex}-${partIndex}`}
+            component="a"
+            href={urls[linkText] ?? '#'}
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              color: '#f47795',
+              textDecoration: 'none',
+              cursor: 'pointer',
+              '&:hover': { textDecoration: 'underline' },
+            }}
+          >
+            {linkText}
           </Box>
         );
-      })}
-    </Box>
-  );
-}
+      }
+            return (
+            <span key={`${textIndex}-${partIndex}`}> {part} </span>
+          );
+         });
+        }
+        )}
+        </Box>
+        )
+      ;})
+     }
+  </Box>
+);}
 
 
 if (block.type === 'pinkHeading') {
@@ -464,7 +667,7 @@ if (block.type === 'image') {
       key={`image-${index}`}
       sx={{
         width: '100%',
-        maxWidth: isBanner ? 650 : '100%',
+        maxWidth: isBanner ? '100%' : '100%',
         mx: 'auto',
       }}
     >
@@ -496,8 +699,8 @@ if (block.type === 'image') {
           fill={!isBanner}
           src={block.image.src}
           alt={block.image.alt}
-          width={isBanner ? 650 : undefined}
-          height={isBanner ? 57 : undefined}
+          width={isBanner ? 1200 : undefined}
+          height={isBanner ? 105 : undefined}
           style={{
             ...(isBanner
               ? {
@@ -507,7 +710,7 @@ if (block.type === 'image') {
                   height: 'auto',
                 }
               : {
-                  objectFit: 'cover',
+                  objectFit: block.image.fit ?? 'cover',
                   objectPosition: block.image.objectPosition ?? 'center',
                 }),
           }}
@@ -549,6 +752,7 @@ if (block.type === 'image') {
       )}
     </Box>
   );
+  
 }
 
 export function PostDetailsView({ post }: PostDetailsViewProps) {
