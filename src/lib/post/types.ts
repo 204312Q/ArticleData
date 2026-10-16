@@ -17,7 +17,7 @@ export type PostImageAsset = {
 
 export type PostContentBlock =
   | { type: 'paragraph'; text: string }
-  | { type: 'heading'; text: string; size?: 'small' | 'medium' | 'large'; uppercase?: boolean; fontWeight?: number; }
+  | { type: 'heading'; text: string; size?: 'small' | 'medium' | 'large'; uppercase?: boolean; fontWeight?: number; letterSpacing?: number | string; }
   | { type: 'standardHeading'; text: string }
   | { type: 'quote'; text: string }
   | { type: 'practiceTable'; headers: string[]; rows: { cells: { text: string; colSpan?: number; bold?: boolean; }[];}[];}

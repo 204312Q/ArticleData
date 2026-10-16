@@ -4,22 +4,22 @@ import { ar, it } from 'zod/v4/locales';
 
 const ARTICLE_IMAGES = {
   tcm: [
-    { src: '/banners/Confinement_Menu_Banner.png', alt: 'Confinement meal spread' },
+    { src: '/assets/articleImages/Confinement_Menu_Banner.png', alt: 'Confinement meal spread' },
     { src: '/assets/background/confinement_group_shot.avif', alt: 'Confinement support team' },
   ],
   meals: [
     { src: '/assets/background/Confinement_menu.jpg', alt: 'Chinese confinement menu selection' },
     { src: '/menu/HakkaYellowWineChickenwithBlackFungus_360x.webp', alt: 'Hakka yellow wine chicken' },
-    { src: '/banners/CPC_9Dishes_Stacked.png', alt: 'Tingkat Meals'},
-    { src: '/banners/What_is_the_Benefit_of_Pig_Trotter.png', alt: 'Pig Trotter'},
+    { src: '/assets/articleImages/CPC_9Dishes_Stacked.png', alt: 'Tingkat Meals'},
+    { src: '/assets/articleImages/What_is_the_Benefit_of_Pig_Trotter.png', alt: 'Pig Trotter'},
   ],
   wellbeing: [
     { src: '/assets/background/confinement_group_shot.png', alt: 'Overcoming Baby Blues' },
     { src: '/addons/Addon_ComfortingSet.webp', alt: 'Comforting postpartum add-on set' },
-    { src: '/banners/Food_in_Plastic_Containers.png' , alt: 'Food in Plastic Containers'}
+    { src: '/assets/articleImages/Food_in_Plastic_Containers.png' , alt: 'Food in Plastic Containers'}
   ],
   science: [
-    { src: '/banners/Confinement_Banner_1.png', alt: 'Science behind Confinement food' },
+    { src: '/assets/articleImages/Confinement_Banner_1.png', alt: 'Science behind Confinement food' },
     { src: '/menu/product-2.jpg', alt: 'Prepared confinement dish' },
   ],
   papaya: [
@@ -43,138 +43,138 @@ const ARTICLE_IMAGES = {
     },
   ],
   planning: [
-    { src: '/banners/Confinment_Meal.png', alt: 'Postpartum planning hero image' },
+    { src: '/assets/articleImages/Confinment_Meal.png', alt: 'Postpartum planning hero image' },
     { src: '/addons/Addon_ComfortingSet.webp', alt: 'Comforting set for recovery planning' },
   ],
   tea: [
-    { src: '/banners/Confinement_Banner_3.jpg', alt: 'Warm recovery drink banner' },
+    { src: '/assets/articleImages/Confinement_Banner_3.jpg', alt: 'Warm recovery drink banner' },
     { src: '/addons/Addon_ThermalWare.webp', alt: 'Thermal ware for warm drinks' },
   ],
   anxiety: [
-    { src: '/banners/Anxiety.png', alt: 'Overcoming Anxiety and Stress'},
-    { src: '/banners/Mindfulness_Techniques_for_Postpartum_Anxiety_Calming_Your_Mind_and_Body.png' , alt: 'Mindfulness Techniques'}
+    { src: '/assets/articleImages/Anxiety.png', alt: 'Overcoming Anxiety and Stress'},
+    { src: '/assets/articleImages/Mindfulness_Techniques_for_Postpartum_Anxiety_Calming_Your_Mind_and_Body.png' , alt: 'Mindfulness Techniques'}
   ],
   postpartum: [
-  { src: '/banners/Postpartum_Expectations_Versus_Reality.png' , 
+  { src: '/assets/articleImages/Postpartum_Expectations_Versus_Reality.png' , 
     alt: 'Post Partum Expectations Vs Reality' },
-  { src: '/banners/How_Husbands_Can_Support_Their_Wife_During_The_Postpartum_Period.png' ,
+  { src: '/assets/articleImages/How_Husbands_Can_Support_Their_Wife_During_The_Postpartum_Period.png' ,
     alt: 'How Husbands can Support their wife'
   }
   ],
   weightLoss: [
-    { src: '/banners/Weight_Loss.png' , alt: 'Tips to Lose Weight Safely'},
-    { src: '/banners/safe_exercise.png' , alt: 'Safe Exercises'},
-    { src: '/banners/massage.png' , alt: 'PostNatal Massage'},
+    { src: '/assets/articleImages/Weight_Loss.png' , alt: 'Tips to Lose Weight Safely'},
+    { src: '/assets/articleImages/safe_exercise.png' , alt: 'Safe Exercises'},
+    { src: '/assets/articleImages/massage.png' , alt: 'PostNatal Massage'},
   ],
   babysleep: [
-    { src: '/banners/baby_sleep_tips.png' , 
+    { src: '/assets/articleImages/baby_sleep_tips.png' , 
       alt: 'Establishing Healthy Sleep Patterns for Your Little One'},
   ],
   swelling: [
-    { src: '/banners/Soothe_Swell_Pregnancy.png' , 
+    { src: '/assets/articleImages/Soothe_Swell_Pregnancy.png' , 
       alt: 'Soothe Swelling During Pregnancy'}
   ],
   stretchMarks: [
-    { src: '/banners/Stretch_Marks.png' , 
+    { src: '/assets/articleImages/Stretch_Marks.png' , 
       alt: 'Effective Prevention Tips for Stretch Marks'}
   ],
   depression: [
-    { src: '/banners/Postpartum_Depression.png' ,
+    { src: '/assets/articleImages/Postpartum_Depression.png' ,
       alt: 'Overcoming Postpartum Depression'
     }
   ],
   essentials: [
-    { src: '/banners/essentials_needed.png',
+    { src: '/assets/articleImages/essentials_needed.png',
       alt: '10 Must Have Essentials for Expectant Moms'
     }
   ],
   sterilisers: [
-    { src: '/banners/Cilli Padi Baby Sterilizer Collection.png', alt: 'Advice for sterilisers'},
-    { src: '/banners/Bbyeol_steriliser.png' , alt: 'Bbyeol_steriliser'},
-    { src: '/banners/philips_microwave_steriliser.png' , alt: 'philips microwave steriliser'},
-    { src: '/banners/Steam_steriliser.png' , alt: 'Steam steriliser'},
-    { src: '/banners/boiling_methodf.webp' , alt:'Boiling of baby equipment'}
+    { src: '/assets/articleImages/Cilli Padi Baby Sterilizer Collection.png', alt: 'Advice for sterilisers'},
+    { src: '/assets/articleImages/Bbyeol_steriliser.png' , alt: 'Bbyeol_steriliser'},
+    { src: '/assets/articleImages/philips_microwave_steriliser.png' , alt: 'philips microwave steriliser'},
+    { src: '/assets/articleImages/Steam_steriliser.png' , alt: 'Steam steriliser'},
+    { src: '/assets/articleImages/boiling_methodf.webp' , alt:'Boiling of baby equipment'}
   ],
   alchemyFibre: [
-    { src: '/banners/alchemy_fibre_rice.png' , alt: 'Cover page for Alchemy Fibre'},
-    { src: '/banners/alchemy_fibre_1.png' , alt: 'Poster for Alchemy Fibre'},
-    { src: '/banners/heart_2.png', alt: 'Heartbeat photo'},
-    { src: '/banners/sugar_cube.png' , alt: 'Sugar Cube Decreasing'},
-    { src: '/banners/weight.png' , alt: 'Weighing Scale'},
-    { src: '/banners/digestion.png' , alt: 'Digestion'}
+    { src: '/assets/articleImages/alchemy_fibre_rice.png' , alt: 'Cover page for Alchemy Fibre'},
+    { src: '/assets/articleImages/alchemy_fibre_1.png' , alt: 'Poster for Alchemy Fibre'},
+    { src: '/assets/articleImages/heart_2.png', alt: 'Heartbeat photo'},
+    { src: '/assets/articleImages/sugar_cube.png' , alt: 'Sugar Cube Decreasing'},
+    { src: '/assets/articleImages/weight.png' , alt: 'Weighing Scale'},
+    { src: '/assets/articleImages/digestion.png' , alt: 'Digestion'}
   ],
   skinCare: [
-    { src: '/banners/10_Skincare_Tips_to_Nurture_Your_Glow_After_Childbirth.png' ,
+    { src: '/assets/articleImages/10_Skincare_Tips_to_Nurture_Your_Glow_After_Childbirth.png' ,
       alt: 'Skincare Tips to Nurture Your Glow'}
   ],
   wildFood: [
-    { src: '/banners/Tips_on_Surviving_the_Wild_Food_Adventure_of_Pregnancy.png' , 
+    { src: '/assets/articleImages/Tips_on_Surviving_the_Wild_Food_Adventure_of_Pregnancy.png' , 
       alt: 'Surviving the Wild Food of Pregnancy'}
   ],
   battlingAcne: [
-    { src: '/banners/Battling_Postpartum_Acne.png' , 
+    { src: '/assets/articleImages/Battling_Postpartum_Acne.png' , 
       alt: 'Battling Postpartum Acne'
     }
   ],
   tips: [
-    { src:'/banners/Your_First_Week_of_Confinement_Tips_for_New_Moms.png', 
+    { src:'/assets/articleImages/Your_First_Week_of_Confinement_Tips_for_New_Moms.png', 
       alt: 'First Week of Confinement Tips for New Moms'
     },
-    { src: '/banners/How_to_Produce_More_Breastmilk.png' ,
+    { src: '/assets/articleImages/How_to_Produce_More_Breastmilk.png' ,
       alt: 'How to produce more breastmilk'
     }
   ],
   nanny: [
-    { src: '/banners/Is_Confinement_Nanny_Necessary.png',
+    { src: '/assets/articleImages/Is_Confinement_Nanny_Necessary.png',
       alt: 'Is Confinement Nanny Necessary?'
     }
   ],
   massage: [
-    { src: '/banners/Postnatal_Massage.png',
+    { src: '/assets/articleImages/Postnatal_Massage.png',
       alt: 'Why a Postpartum Massage is Essential'
     }
   ],
   myths:[
-    { src: '/banners/Confinement_Myths.png',
+    { src: '/assets/articleImages/Confinement_Myths.png',
       alt: 'Confinement myths every mother should know'
     }
   ],
   DOM: [
-    { src: '/banners/How_Much_DOM_to_Drink_During_Confinement.png' ,
+    { src: '/assets/articleImages/How_Much_DOM_to_Drink_During_Confinement.png' ,
       alt: 'How much DOM should you drink?'
     }
   ],
   Miscarriage: [
-    { src: '/banners/What_to_Eat_After_a_Miscarriage.png', 
+    { src: '/assets/articleImages/What_to_Eat_After_a_Miscarriage.png', 
       alt: 'What to eat after a miscarriage'
     }
   ],
   foodtoAvoid: [
-    { src: '/banners/Foods_to_Avoid_During_Confinement.png' , 
+    { src: '/assets/articleImages/Foods_to_Avoid_During_Confinement.png' , 
       alt: 'Foods to Avoid During Confinement'
     }
   ],
   soup: [
-    { src: '/banners/Ginseng_Black_Chicken_Soup .png', alt: 'Ginseng Black Chicken Soup'},
-    { src: '/banners/Papaya_Fish_Soup_Black_Bean_Pork_Ribs_Soup.png', alt: 'Papaya Fish Soup and Black Bean Pork Ribs Soup'}
+    { src: '/assets/articleImages/Ginseng_Black_Chicken_Soup .png', alt: 'Ginseng Black Chicken Soup'},
+    { src: '/assets/articleImages/Papaya_Fish_Soup_Black_Bean_Pork_Ribs_Soup.png', alt: 'Papaya Fish Soup and Black Bean Pork Ribs Soup'}
   ],
   fiveTips: [
-    { src: '/banners/Five_Tips_for_a_Smooth_Confinement_540x.png' , alt: 'Five Tips for a Smooth Confinement'},
-    { src: '/banners/postpartumcare.png' , alt: 'Meme 1'},
-    { src: '/banners/babymeme.png' , alt:'Baby Meme'},
+    { src: '/assets/articleImages/Five_Tips_for_a_Smooth_Confinement_540x.png' , alt: 'Five Tips for a Smooth Confinement'},
+    { src: '/assets/articleImages/postpartumcare.png' , alt: 'Meme 1'},
+    { src: '/assets/articleImages/babymeme.png' , alt:'Baby Meme'},
   ],
   fiveTips2: [
-    { src: '/banners/Stir-Fried_Spinach_with_Sea_Cucumber_topped_with_Wolfberries.png' , alt: 'Stir fried spinach'},
-    { src: '/banners/CPC-ChickenwEgg.png' , alt: 'Chicken With Egg'}
+    { src: '/assets/articleImages/Stir-Fried_Spinach_with_Sea_Cucumber_topped_with_Wolfberries.png' , alt: 'Stir fried spinach'},
+    { src: '/assets/articleImages/CPC-ChickenwEgg.png' , alt: 'Chicken With Egg'}
   ],
   kuhlbarra: [
-    { src: '/banners/Why_we_use_Kuhlbarra_Barramundi_in_our_dishes.png',
+    { src: '/assets/articleImages/Why_we_use_Kuhlbarra_Barramundi_in_our_dishes.png',
       alt: 'Why we use Kuhlbarra Barramundi in our dishes'
     }
   ],
   chineseWine: [
-    { src: '/banners/Chilli_Padi_Confinement_-_Sesame_Rice_Wine_Ginger_Slices.jpg', alt: 'Chinese Wine'},
-    { src: '/banners/Cover_Page_For_Traditional_Chinese_Practices.png', alt: 'Cover Page'}
+    { src: '/assets/articleImages/Chilli_Padi_Confinement_-_Sesame_Rice_Wine_Ginger_Slices.jpg', alt: 'Chinese Wine'},
+    { src: '/assets/articleImages/Cover_Page_For_Traditional_Chinese_Practices.png', alt: 'Cover Page'}
   ]
 
 
@@ -391,7 +391,7 @@ export const mockPosts: PostItemData[] = [
       paragraph('**Directions:**'),
       list([
         ' Soak the black beans in water for at least 2 hours or overnight. Drain and set aside.',
-        ' n a large pot, blanch the pork ribs in boiling water for 3-5 minutes to remove any impurities. Rinse and set aside.',
+        ' In a large pot, blanch the pork ribs in boiling water for 3-5 minutes to remove any impurities. Rinse and set aside.',
         ' In the same pot, sauté the ginger until fragrant. Add the pork ribs and stir-fry until lightly browned.',
         ' Add the black beans, Shaoxing wine, soy sauce, salt, and water to the pot. Bring to a boil, then reduce heat and simmer for 2-3 hours, or until the pork ribs are tender and the beans are soft.',
         ' Optional: Add dried red dates and shiitake mushrooms during the last 30 minutes of cooking.',
@@ -455,7 +455,8 @@ export const mockPosts: PostItemData[] = [
       
       paragraph('**Ingredients:**'),
       list([
-        ' 500g kai lan (Chinese broccoli)',
+        ' 500g pork kidney',
+        ' 1 bunch of kai lan (Chinese broccoli)',
         ' 2 cloves of garlic, chopped',
         ' 1 tablespoon of ginger, grated',
         ' 1 tablespoon of light soy sauce',
@@ -558,10 +559,10 @@ export const mockPosts: PostItemData[] = [
     coverUrl: ARTICLE_IMAGES.wellbeing[0].src,
     createdAt: '2026-03-29T09:00:00+08:00',
     reference:
-      'https://chillipadiconfinement.com/blogs/confinement-tips/battling-postpartum-blues-understanding-and-overcoming-postpartum-depression',
+      'https://chillipadiconfinement.com/blogs/confinement-tips/overcoming-baby-blues-a-guide-for-new-moms-to-thrive-during-confinement',
     blocks: [
       paragraph('However, it is important for new mothers and their loved ones to be aware of the symptoms and to know how to manage them in order to prevent them from developing into more serious forms of postpartum depression.'),
-      heading('What is baby blues?'),
+      {type: 'heading' , text:'What is baby blues?' , uppercase:true , size: 'medium' , letterSpacing: '1.8px'},
       paragraph('Baby blues is a mild and transient form of postpartum depression that typically begins within the first few days after giving birth and lasts for up to two weeks.'),
       paragraph('The symptoms of baby blues can range from mild to moderate and include:'),
       list([
@@ -575,18 +576,17 @@ export const mockPosts: PostItemData[] = [
         ' Feelings of guilt or worthlessness',
         ' Reduced interest in activities that were previously enjoyed',
       ]),
-      gallery(ARTICLE_IMAGES.wellbeing, 'Postpartum support works best when nutrition and practical care move together.'),
-      heading('WHAT CAUSES BABY BLUES?'),
+      {type: 'heading' , text:'What causes baby blues?' , uppercase:true , size: 'medium' , letterSpacing: '1.8px'},
       paragraph('The exact cause of baby blues is not fully understood, but it is believed to be caused by a combination of hormonal changes, physical exhaustion, and the emotional adjustment to motherhood.'),
       paragraph('During pregnancy, the levels of estrogen and progesterone in a woman\'s body increase significantly, and after giving birth, these levels drop rapidly. This sudden hormonal shift can lead to mood swings and other emotional changes.'),
       paragraph('In addition to hormonal changes, the physical demands of childbirth and caring for a newborn can be exhausting, leading to fatigue and difficulty sleeping.'),
       paragraph('All these factors and the emotional adjustment to motherhood can also be challenging, as new mothers are faced with a range of new responsibilities, worries, and anxieties.'),
       quote('Food is only one part of the picture, but routine can make a hard week feel less chaotic.'),
-      heading('HOW LONG DOES BABY BLUES LAST?'),
+      {type: 'heading' , text:'How long does baby blues last?' , uppercase:true , size: 'medium' , letterSpacing: '1.8px'},
       paragraph('Baby blues typically begins within the first few days after giving birth and lasts for up to two weeks. During this time, new mothers may experience a range of emotional and physical symptoms that are generally mild and transient.'),
       paragraph('If the symptoms persist or worsen after two weeks, it may be a sign of postpartum depression and should be addressed with a healthcare provider.'),
 
-      heading('HOW TO MANAGE BABY BLUES?'),
+      {type: 'heading' , text:'How to manage baby blues?' , uppercase:true , size: 'medium' , letterSpacing: '1.8px'},
       paragraph('Fortunately, there are several things that new mothers can do to manage the symptoms of baby blues and help prevent them from developing into more serious forms of postpartum depression.'),
       list([
         'Here are some strategies that may be helpful:',
@@ -606,9 +606,6 @@ export const mockPosts: PostItemData[] = [
         
         ' Remember, you are not alone in this journey. Reach out to your support system, whether it\'s your partner, family, or friends, and don\'t hesitate to seek professional help if needed',
       ], 'none'),
-      paragraph(
-        'This piece takes its direction from the previous Chilli Padi article about baby blues and the emotional reality of postpartum adjustment. The message is that low mood, overwhelm, and mental fatigue can sit alongside physical recovery, and both deserve attention.'
-      ),
       quote('Give yourself grace, embrace the journey, and remember that you deserve love, rest, and healing, too.'),
       paragraph(
         'Our confinement meal packages offer a wide selection of confinement dishes that nourish and replenish body. Check out our confinement food packages to now!'
@@ -847,24 +844,28 @@ export const mockPosts: PostItemData[] = [
     reference:
       'https://chillipadiconfinement.com/blogs/confinement-tips/snacks-for-confinement-and-breastfeeding-munchies',
     blocks: [
-      heading('NUTRITIOUS SNACKS FOR CONFINEMENT MOTHERS'),
+      {type: 'heading' , text: 'Nutritious snacks for confinement mothers' , uppercase:true, letterSpacing: '2px'},
       paragraph(
         'If you\'re relying solely on confinement meals all the time to replenish your body nutrients, you might feel like snacking between meals. Here are some suggestions you could try to curb your cravings.'
       ),
       paragraph('Confinement and breastfeeding mothers require a nutrient-dense diet for energy and optimal healing. Snacks rich in iron, calcium, protein, and other essential nutrients are necessary to support the demands of breastfeeding. Nutritious snack options include fruits, nuts, yogurt, and whole-grain crackers. These food provide the necessary fuel to keep you going throughout the day without causing any energy crashes.'),
       paragraph('On the other hand, processed and sugary snacks should be avoided as they can cause inflammation in the body. It\'s advisable to prepare healthy snacks ahead of time so that you have them readily available when hunger strikes during the postpartum period.'),
 
-      heading('Baked Sweet Potato Fries'),
+      {type: 'heading' , text: 'Baked Sweet Potato Fries' , letterSpacing: '0.1px', size: 'small'},
       paragraph('Sweet potatoes are a rich source of vitamins, minerals, and fiber that can help with postpartum recovery. Baking the sweet potato fries instead of frying them makes them a healthier snack option, without sacrificing taste'),
       paragraph('Preparing sweet potato fries at home is also easy and can be seasoned with different herbs and spices for added flavor. Eating nutritious snacks like baked sweet potato fries can also help keep energy levels up during breastfeeding, making it an ideal snack choice for new mothers.'),
 
-      heading('Greek Yogurt with Berries and Honey'),
+      {type: 'heading' , text: 'Greek Yogurt with Berries and Honey' , letterSpacing: '0.1px', size: 'small'},
       paragraph('A nutritious snack for confinement mothers that is both satisfying and easy to prepare is Greek yogurt with berries and honey. Greek yogurt is packed with protein, which can help keep you feeling full and energized.'),
       paragraph('Berries are a great addition to any snack as they are loaded with antioxidants and vitamins. Drizzle some honey on top for sweetness while also taking advantage of its antibacterial properties that may boost your immune system.'),
 
-      image(ARTICLE_IMAGES.snacks[0], 'Simple, nourishing dishes work well when mothers need quick energy between meals.'),
+      image({
+        src: ARTICLE_IMAGES.snacks[0].src,
+        alt: 'Greek yogurt with berries and honey',
+        objectPosition: 'center 20%'
+      }),
       
-      heading('Boiled Edamame with Sea Salt'),
+      {type: 'heading' , text: 'Boiled Edamamae with Sea Salt' , letterSpacing: '0.1px', size: 'small'},
       paragraph('Boiled edamame with sea salt is another great option as it is high in protein and fiber, providing necessary nutrients. Edamame also contains essential vitamins and minerals that are important for postpartum recovery. Adding sea salt to the boiled edamame gives an extra burst of flavour.'),
       paragraph('This snack is easy to make and can be enjoyed hot or cold. Additionally, it\'s a great option for breastfeeding mothers as edamame can help increase milk production.'),
 
@@ -889,7 +890,11 @@ export const mockPosts: PostItemData[] = [
       paragraph('To make this snack even more nutritious, whole-grain crackers can be paired with other healthy toppings like avocado or hummus.'),
 
       heading("SNACKS TO AVOID DURING CONFINEMENT AND BREASTFEEDING"),
-      image(ARTICLE_IMAGES.snacks[1] , 'Snacks to avoid during Confinement and Breastfeeding'),
+      image({
+        src: ARTICLE_IMAGES.snacks[1].src,
+        alt: 'Snacks to avoid during confinement and breast feeding',
+        objectPosition: 'center 20%'
+      }),
       paragraph('Snacks high in sugar or salt, and excessive caffeine should be avoided as they may harm the baby\'s health. Spicy and greasy foods can cause digestive discomfort and are best avoided. Alcohol consumption during breastfeeding can also transfer harmful substances to the baby through breast milk.'),
       paragraph('Furthermore, food allergies and intolerances should be considered as they can affect both the mother and the baby. While it may be tempting to indulge in unhealthy snacks, choosing healthy alternatives such as fruits or nuts will provide necessary nutrients to help with recovery after childbirth.'),
 
@@ -906,7 +911,20 @@ export const mockPosts: PostItemData[] = [
 
       quote("Choosing what to avoid is just as important as choosing what to nourish — every mindful bite supports a mother’s recovery and her breastfeeding journey." ),
 
-      paragraph('Ready to order confinement meals? Order our confinement meal plans now to enjoy the discounted price!'),
+     image(
+        {
+          src: '/assets/articleImages/banner.png',
+          alt: 'https://www.chillipadiconfinement.com/product',
+          maxWidth: 650,
+          displayHeight: 57,
+        }
+      ),
+      {type: 'promoLink',
+        before: 'Ready to order confinement meals? Order our',
+        linkText: 'confinement meal plans',
+        after: 'now to enjoy the discounted price!',
+        url: 'https://www.chillipadiconfinement.com/product',
+      },
     ],
   },
   {
@@ -1141,7 +1159,7 @@ export const mockPosts: PostItemData[] = [
     createdAt: '2026-09-10T09:00:00+08:00',
     reference: 'https://chillipadiconfinement.com/blogs/confinement-tips/tips-to-lose-weight-safely-during-confinement',
     blocks:[
-      heading('BALANCING NUTRIENT INTAKE WHILE LOSING WEIGHT'),
+      {type: 'heading' , text: 'Balancing Nutrient Intake While Losing Weight' , size: 'small' , uppercase:true, letterSpacing: '3px'},
       paragraph('When trying to lose weight during confinement, it is important to balance your nutrient intake. Focus on consuming whole, nutrient-dense food that provide your body with necessary vitamins and minerals. Incorporate a variety of fruits and vegetables into your meals to increase fiber intake.'),
       paragraph('It\'s essential to stay hydrated by drinking plenty of water throughout the day as dehydration can slow down metabolism. Avoid extreme calorie restriction or crash diets as they can be harmful to your health, and it\'s difficult to maintain them in the long run.'),
       paragraph('**a. Choosing the Right Food for a Confinement Diet**'),
@@ -1149,7 +1167,7 @@ export const mockPosts: PostItemData[] = [
       paragraph('In addition to choosing nutrient-dense food, paying attention to portion sizes and practicing mindful eating can prevent overeating and support healthy weight loss.'),
       paragraph('Remember that portion control and mindful eating habits are also key when trying to lose weight. By focusing on a balanced nutrient intake, you can achieve safe weight loss during this challenging time.'),
 
-      heading('SAFE EXERCISE FOR POSTPARTUM MOTHERS'),
+      {type: 'heading' , text: 'Safe Exercise for Postpartum Mothers' , size: 'small' , uppercase:true, letterSpacing: '3px'},
       image(
         {
           src: ARTICLE_IMAGES.weightLoss[1].src,
@@ -1208,13 +1226,13 @@ export const mockPosts: PostItemData[] = [
       ], 'number' ),
 
       image ({
-        src: '/banners/PostNatal_Massage.png',
+        src: '/assets/articleImages/PostNatal_Massage.png',
         alt: 'Massage',
         objectPosition: 'center 30%'
       }),
 
       paragraph('In conclusion, while the journey of motherhood is rewarding, it comes with its challenges, especially during the postpartum period. Incorporating postnatal massage into a new mother’s routine can significantly ease the physical and emotional strains, promoting a quicker recovery and enabling mothers to fully enjoy their new role with confidence.'),
-      paragraph('For a relaxing confinement experience, choose our 28-Day Dual Meal X BMB package, which features freshly cooked confinement meals delivered to your doorstep along with postnatal massage sessions. We are currently offering a sale on this package, so don’t miss out. Find out more here.'),
+      paragraph('For a relaxing confinement experience, choose our 28-Day Dual Meal X BMB package, which features freshly cooked confinement meals delivered to your doorstep along with postnatal massage sessions. We are currently offering a sale on this package, so don’t miss out. Find out more ^^here^^.'),
       
     ],
   },
@@ -1298,7 +1316,7 @@ export const mockPosts: PostItemData[] = [
     createdAt: '2026-09-10T09:00:00+08:00',
     reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/10-tips-to-soothe-swelling-during-pregnancy', 'https://americanpregnancy.org/pregnancy-health/swelling-during-pregnancy/' , 'https://www.acog.org/womens-health/faqs/prenatal-nutrition' , 'https://www.nhs.uk/conditions/pregnancy-and-baby/swollen-ankles-feet-pregnant/'],
     blocks: [
-      heading('The Causes of Swelling During Pregnancy: Understanding the Bloat'),
+      {type: 'heading', text: 'The Causes of Swelling During Pregnancy: Understanding the Bloat', size: 'large', fontWeight: 800},
       paragraph('**Increased Blood Volume: More Fluids, More Swelling**'),
       paragraph('During pregnancy, your blood volume increases significantly to support your growing baby. This increased blood volume helps transport nutrients and oxygen to both you and your baby but can also lead to fluid retention, causing swelling in your legs, feet, and hands.'),
       paragraph('**Hormonal Changes: The Culprits Behind the Bloat**'),
@@ -1309,7 +1327,7 @@ export const mockPosts: PostItemData[] = [
       paragraph('Gravity is not your best friend when it comes to swelling. When you stand or sit for prolonged periods, gravity can make it harder for your body to return fluids to your heart. This can result in swelling, especially in your lower legs and feet.'),
       paragraph('Now that we\'ve explored the causes, let\'s dive into some expert tips to help you find relief from swelling during pregnancy.'),
 
-      heading('Tips to Reduce Swelling During Pregnancy'),
+      {type: 'heading', text: 'Tips to Reduce Swelling During Pregnancy', size: 'large', fontWeight: 800},
       paragraph('**Stay Hydrated: Guzzle that Water!**'),
       paragraph('First things first, hydration is key! Staying hydrated actually helps flush out excess fluids, reducing the risk of swelling. Aim for a minimum of eight glasses of water a day. If plain water doesn\'t tickle your taste buds, infuse it with a splash of lemon or cucumber for a refreshing twist.'),
       paragraph('**Kick Up Those Feet: Elevate and Relax**'),
@@ -1359,19 +1377,19 @@ export const mockPosts: PostItemData[] = [
       paragraph('Stretch marks can be a source of insecurity for many new moms, but the good news is that there are steps you can take to prevent them from appearing or reduce their appearance.'),
       {type: 'heading', text: 'Understanding Stretch Marks', size: 'large'}, 
       paragraph('Stretch marks, also known as striae gravidarum, occur when the skin\'s elastic fibers are stretched beyond their limit, causing the underlying collagen and elastin to rupture. They commonly appear as streaks or bands of discolored skin, ranging from pink to purple or silver. Stretch marks can occur on the abdomen, breasts, thighs, hips, and buttocks, areas most affected by pregnancy-related changes.'),
-      paragraph('**FACTORS INFLUENCING STRETCH MARK FORMATION**'),
+      {type: 'heading' , text: 'Factors Influencing stretch mark formation' , uppercase: true , size: 'small', letterSpacing: '2px'},
       paragraph('Various factors contribute to the development of stretch marks after childbirth. Understanding these factors can help you make informed decisions in preventing and managing them.'),
-      {type: 'heading', text: '1. Genetic Predisposition', size: 'small'},
+      {type: 'heading', text: '1. Genetic Predisposition', size: 'small' , letterSpacing: '0.5px'},
       list([
         ' Genetic factors play a role in determining your susceptibility to stretch marks. If your mother or other close relatives experienced them during pregnancy, you may have a higher likelihood of developing them too.',]),
-      {type: 'heading', text: '2. Weight Gain', size: 'small'},
+      {type: 'heading', text: '2. Weight Gain', size: 'small' , letterSpacing: '0.5px' },
       list([
         ' Rapid weight gain during pregnancy can strain the elasticity of your skin, leading to the formation of stretch marks. Gradual and healthy weight gain, guided by your healthcare provider, can help minimise the risk.',]),
-      {type: 'heading', text: '3. Hormonal Changes', size: 'small'},
+      {type: 'heading', text: '3. Hormonal Changes', size: 'small' , letterSpacing: '0.5px' },
       list([
         'Hormonal fluctuations during pregnancy can affect the production of collagen and elastin, essential proteins responsible for skin elasticity. Reduced levels of these proteins can make your skin more prone to stretch marks.'
       ]),
-      {type: 'heading', text: '4. Hydration', size: 'small'},
+      {type: 'heading', text: '4. Hydration', size: 'small' , letterSpacing: '0.5px' },
       list([
         'Proper hydration is crucial for maintaining skin elasticity. Adequate water intake can promote skin health and reduce the likelihood of stretch marks.'
       ]),
@@ -1435,9 +1453,9 @@ export const mockPosts: PostItemData[] = [
     createdAt: '2026-09-10T09:00:00+08:00',
     reference: [ 'https://www.apa.org/topics/postpartum-depression' , 'https://www.mayoclinic.org/diseases-conditions/postpartum-depression/symptoms-causes/syc-20376617'],
     blocks: [
-      heading('WHAT IS POSTPARTUM DEPRESSION (PPD)?'),
+      {type: 'heading' , text: 'What is Postpartum depression (PPD)?' , uppercase:true , size: 'medium', letterSpacing: '2.2px'},
       paragraph('Postpartum depression, also known as postnatal depression, is a type of mood disorder that can affect parents after the birth of a child. Unlike the commonly experienced baby blues, which usually last for a few days and are relatively mild, postpartum depression is more intense and persistent. It can cast a dark shadow over what should be a joyful time in a parent\'s life.'),
-      heading('SYMPTOMS OF POSTPARTUM DEPRESSION'),
+      {type: 'heading' , text: 'Symptoms of Postpartum depression' , uppercase:true , size: 'medium' , letterSpacing: '2.2px' },
       paragraph('Postpartum depression manifests in various ways and can vary from person to person. Here are some common symptoms to watch out for:'),
       list([
         '**Persistent Sadness:** Feeling an overwhelming sense of sadness or hopelessness that persists throughout the day, lasting for weeks or even months. It\'s as if a dark cloud is hanging over you, making it difficult to find joy in everyday activities.',
@@ -1449,7 +1467,7 @@ export const mockPosts: PostItemData[] = [
         '**Difficulty Bonding with the Baby:** Struggling to form a connection with the newborn or experiencing feelings of detachment or indifference. You may feel disconnected from your role as a parent, which can further contribute to feelings of guilt and inadequacy.'
       ], 'number'),
 
-      heading('WHAT CAUSES POSTPARTUM DEPRESSION?'),
+      {type: 'heading' , text: 'What causes postpartum depression?' , uppercase:true , size: 'medium' , letterSpacing: '2.2px' },
       paragraph('Postpartum depression is not caused by a single factor but rather results from a combination of physical, emotional, and environmental elements. Let\'s explore some of the common factors associated with this condition:'),
       list([
         '**Hormonal Imbalance:** After childbirth, there is a rapid decline in estrogen and progesterone levels, which can disrupt the delicate balance of brain chemicals and contribute to mood swings. It\'s like a roller coaster ride for your emotions, with sudden drops and unpredictable twists.',
@@ -1459,7 +1477,7 @@ export const mockPosts: PostItemData[] = [
         '**Life Stressors:** Significant life events, such as financial problems, relationship difficulties, or the loss of a loved one, can amplify the emotional challenges of adjusting to parenthood and increase the risk of postpartum depression. It\'s like carrying the weight of the world on your shoulders while trying to nurture and care for a newborn.'
       ]),
 
-      heading('HOW TO TREAT POSTPARTUM DEPRESSION?'),
+      {type: 'heading' , text: 'How to treat postpartum depression?' , uppercase:true , size: 'medium' , letterSpacing: '2.2px' },
       paragraph('The good news is that postpartum depression is a highly treatable condition. Seeking support and professional help is crucial in overcoming this challenging phase. Here are some effective treatment options:'),
       list([
         '**Therapy and Counseling:** Individual therapy or group counseling sessions can provide a safe space to express your emotions, learn coping strategies, and gain valuable insights from experienced professionals. It\'s like having a guiding light to help you navigate through the darkness and find your way back to yourself. Cognitive-behavioral therapy (CBT) has shown particular efficacy in treating postpartum depression.',
@@ -1469,7 +1487,7 @@ export const mockPosts: PostItemData[] = [
         '**Joining Support Groups:** Connecting with other parents who have experienced or are currently experiencing postpartum depression can be immensely helpful. Support groups offer a sense of community, validation, and the opportunity to exchange advice and coping strategies. It\'s like finding a tribe that understands your journey and provides unconditional support.'
       ], 'number'),
 
-      heading('CHALLENGES AND TRADEOFFS'),
+      {type: 'heading' , text: 'Challenges and tradeoffs' , uppercase:true , size: 'medium' , letterSpacing: '2.2px' },
       paragraph('It\'s important to acknowledge that the road to recovery from postpartum depression can be challenging and unique to each individual. Balancing the demands of caring for a newborn, seeking professional help, and implementing self-care practices may present certain tradeoffs. Here are a few challenges you may encounter:'),
       list([
         "**Time Constraints:** Juggling the responsibilities of parenthood alongside therapy sessions, support groups, and self-care practices can feel overwhelming. Finding a schedule that accommodates your needs and commitments may require creative time management. It's like trying to fit the pieces of a puzzle together, rearranging your daily routine to prioritize your well-being.",
@@ -1497,7 +1515,7 @@ export const mockPosts: PostItemData[] = [
     tags: [ 'mental health', 'pregnancy'],
     coverUrl: ARTICLE_IMAGES.essentials[0].src,
     createdAt: '2026-09-10T09:00:00+08:00',
-    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/' ],
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/10-must-have-essentials-for-expectant-moms-what-every-pregnant-woman-needs' ],
     blocks: [
       paragraph('So, whether you\'re seeking guidance on maternity clothing, prenatal vitamins, or baby essentials, keep reading as we unveil the must-haves for every expectant mother. Let\'s dive into the top 10 essentials to ensure your journey to motherhood is as smooth, enjoyable, and memorable as possible.'),
       {type: 'heading' , text: 'Maternity Clothing: Dressing for Comfort and Style', size: 'small', uppercase:true},
@@ -1512,7 +1530,7 @@ export const mockPosts: PostItemData[] = [
       paragraph('As your baby bump grows, finding a comfortable sleeping position can become challenging. Body pillows offer support and help alleviate discomfort, especially in the back, hips, and legs. Whether you choose a full-body pillow or a smaller one to place strategically, these pillows provide relief and promote better sleep quality. Experiment with different positions and pillow arrangements until you find what works best for you.'),
       {type: 'heading' , text: 'Pregnancy Books: Empowering Knowledge at Your Fingertips', size: 'small', uppercase:true},
       paragraph('Pregnancy is a journey full of questions and uncertainties. Pregnancy books can be a valuable resource, providing you with information, advice, and guidance. From understanding the stages of pregnancy to learning about labor and childbirth, these books empower you with knowledge.'),
-      paragraph('Look for reputable authors and seek recommendations from other moms or healthcare professionals to find the most informative and reliable pregnancy books. Some popular recommendations include "What to Expect When You\'re Expecting" by Heidi Murkoff, Ina May\'s Guide to Childbirth by Ina May Gaskin, and The Mayo Clinic Guide to a Healthy Pregnancy by the Mayo Clinic.'),
+      paragraph('Look for reputable authors and seek recommendations from other moms or healthcare professionals to find the most informative and reliable pregnancy books. Some popular recommendations include ^^"What to Expect When You\'re Expecting" by Heidi Murkoff^^, ^^Ina May\'s Guide to Childbirth by Ina May Gaskin^^, and ^^The Mayo Clinic Guide to a Healthy Pregnancy by the Mayo Clinic^^.'),
       {type: 'heading' , text: 'Belly Balms and Oils: Pampering Your Growing Bump', size: 'small', uppercase:true},
       paragraph('Taking care of your skin during pregnancy is not only important for your comfort but also for preventing stretch marks and maintaining elasticity. Belly balms and oils are specifically formulated to nourish and moisturize your growing belly.'),
       paragraph('They help soothe itching, promote skin elasticity, and create a bonding ritual between you and your baby bump. Look for products with natural ingredients like cocoa butter, shea butter, and vitamin E for the best results.'),
@@ -1612,7 +1630,7 @@ export const mockPosts: PostItemData[] = [
     tags: [ 'healthy eating', 'weight loss', 'confinement' , 'postpartum recovery'],
     coverUrl: ARTICLE_IMAGES.alchemyFibre[0].src,
     createdAt: '2026-09-10T09:00:00+08:00',
-    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/' ],
+    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/why-we-add-alchmey-fibre-for-rice-to-our-fragrant-white-rice' , 'https://www.alchemyfoodtech.com/alchemy-fibre-for-rice' , 'https://www.alchemyfoodtech.com/faq-b2c'],
     blocks: [
       {type: 'heading' , text: 'Benefits for Postnatal Mother:' , size: 'large'},
       paragraph('**Reduces Risk of Developing Type 2 Diabetes**'),
@@ -1667,7 +1685,6 @@ export const mockPosts: PostItemData[] = [
     tags: [ 'mental health', 'beauty and skincare', 'confinement' , 'postpartum recovery' , 'confinement period'],
     coverUrl: ARTICLE_IMAGES.skinCare[0].src,
     createdAt: '2026-09-10T09:00:00+08:00',
-    reference: [ 'https://chillipadiconfinement.com/blogs/confinement-tips/' ],
     blocks: [
       paragraph('That\'s why we\'re here to provide you with essential skincare tips to help you nurture your skin and restore its natural radiance.'),
       paragraph('From simple yet effective practices to targeted skincare routines, we\'ve got you covered. So, let\'s dive into the world of postpartum skincare and discover the secrets to embracing your glow from within.'),
@@ -1839,27 +1856,27 @@ export const mockPosts: PostItemData[] = [
       paragraph('In this comprehensive guide, we\'ll dive into the causes of postpartum acne and equip you with the knowledge and tools to tackle it head-on. Say goodbye to those unwelcome blemishes and hello to your radiant glow!'),
       {type: 'heading' , text: 'Understanding Postpartum Acne: Why Is It Happening?' , size: 'large'},
 
-      {type: 'heading' , text: 'Hormonal Rollercoaster: The Culprit Behind Postpartum Acne', size: 'small', uppercase:true},
+      {type: 'heading' , text: 'Hormonal Rollercoaster: The Culprit Behind Postpartum Acne', size: 'small', uppercase:true , letterSpacing: '1.9px' },
       paragraph('Postpartum acne is primarily caused by hormonal fluctuations. During pregnancy, your body experiences a surge in hormones, especially progesterone. These hormones work together to support the growth and development of your baby, but they can also lead to increased sebum production in your skin.'),
       paragraph('Excessive sebum, coupled with dead skin cells, can clog your pores, paving the way for acne breakouts. As your hormone levels gradually return to normal after giving birth, your skin may take some time to readjust, causing postpartum acne to rear its head.'),
 
-      {type: 'heading' , text: 'Stress and Lack of Sleep: Partners in Crime', size: 'small', uppercase:true},
+      {type: 'heading' , text: 'Stress and Lack of Sleep: Partners in Crime', size: 'small', uppercase:true , letterSpacing: '1.9px'},
       paragraph('Being a new mom comes with its fair share of stressors and sleepless nights. We all know that stress and lack of sleep are often intertwined during this phase. Unfortunately, they can wreak havoc on your skin.'),
       paragraph('Stress triggers the release of cortisol, a hormone that stimulates oil production, while sleep deprivation impairs your skin\'s natural healing process. Together, they create a perfect storm for postpartum acne.'),
       paragraph('So, mama, it\'s essential to take care of yourself and find ways to manage stress and catch up on those Zzz\'s.'),
 
       {type: 'heading' , text: 'Banishing Postpartum Acne: Practical Tips and Tricks' , size: 'large'},
 
-      {type: 'heading' , text: 'Establishing a Gentle Skincare Routine: Less Is More', size: 'small', uppercase:true},
+      {type: 'heading' , text: 'Establishing a Gentle Skincare Routine: Less Is More', size: 'small', uppercase:true , letterSpacing: '1.9px'},
       paragraph('When it comes to postpartum acne, the key is to be gentle with your skin. Harsh cleansers and aggressive exfoliation can further irritate your already sensitive complexion. Opt for mild, fragrance-free cleansers specifically formulated for acne-prone skin.'),
       paragraph('Wash your face twice a day with lukewarm water, using your fingertips in gentle circular motions. Pat your skin dry with a clean towel—no scrubbing, please! Remember, less is more, so resist the temptation to pile on multiple skincare products. Keep it simple and let your skin breathe.'),
 
-      {type: 'heading' , text: 'Hello, Hydration: The Power of Moisturising' , size: 'small', uppercase:true},
+      {type: 'heading' , text: 'Hello, Hydration: The Power of Moisturising' , size: 'small', uppercase:true , letterSpacing: '1.9px'},
       paragraph('Contrary to popular belief, moisturising is crucial even if you have oily skin or acne. Hydration helps maintain your skin\'s natural barrier, preventing excessive oil production and keeping acne at bay.'),
       paragraph('Look for oil-free, non-comedogenic moisturisers to lock in moisture without clogging your pores. Apply a pea-sized amount of moisturiser to your clean, dry face every morning and evening. Don\'t forget your neck and décolletage too!'),
       paragraph('Hydrated skin is happy skin, mama.'),
 
-      {type: 'heading' , text: 'Kick Acne to the Curb: Natural Remedies' , size: 'small', uppercase:true},
+      {type: 'heading' , text: 'Kick Acne to the Curb: Natural Remedies' , size: 'small', uppercase:true , letterSpacing: '1.9px'},
       paragraph('Nature has some fantastic remedies up her sleeve to combat postpartum acne. Here are a few tried-and-true favorites:'),
       list([
         '**Tea Tree Oil:** This essential oil has antibacterial properties that can help fight acne-causing bacteria. Dilute a few drops of tea tree oil with a carrier oil like jojoba or coconut oil and apply it to your acne-prone areas. Be cautious not to use undiluted tea tree oil directly on your skin, as it may cause irritation.',
@@ -2035,7 +2052,7 @@ export const mockPosts: PostItemData[] = [
         'Repeat a phrase such as "May I be happy, healthy, and at peace" or "May I be kind and compassionate to myself."',
         'After a few minutes, shift your focus to others, repeating similar phrases for loved ones, acquaintances, and even those who may be difficult to love.',
       ]),
-      {type: 'heading' , text: 'Other Mindfulness Practices That Can Help with Postpartum Anxiety' , size: 'small', uppercase:true},
+      {type: 'heading' , text: 'Other Mindfulness Practices That Can Help with Postpartum Anxiety' , size: 'medium', uppercase:true , letterSpacing: '2px'},
       list([
         '1. **Mindful Parenting**'
       ], 'none'),
@@ -2057,7 +2074,7 @@ export const mockPosts: PostItemData[] = [
       paragraph('To practice mindful self-compassion:'),
       paragraph('Acknowledge and validate your feelings without judgment. Speak to yourself in a kind and understanding tone. Practice self-care activities, such as taking a relaxing bath or going for a walk.'),
 
-      {type: 'heading' , text: 'Frequently Asked Questions about Mindfulness Techniques for Postpartum Anxiety' , size: 'large'},
+      {type: 'heading' , text: 'Frequently Asked Questions about Mindfulness Techniques for Postpartum Anxiety' , size: 'medium' , uppercase:true , letterSpacing: '2px'},
       list([
         '1. **What is the best mindfulness technique for postpartum anxiety?**'
       ], 'none'),
@@ -2854,7 +2871,7 @@ export const mockPosts: PostItemData[] = [
     title: 'Traditional Chinese Confinement Practices',
     excerpt: 'The tradition of Chinese confinement postpartum practices can be traced back to the early Qin Dynasty (221 B.C to 206 B.C) where it was recorded in 礼记内则 (Li Ji Nei Ze): a collection of records, over 2000 years old, detailing the rules regarding a women’s seclusion after delivering.',
     category: 'Traditions',
-    tags: [],
+    tags: ['confinement', 'traditional practices'],
     coverUrl: ARTICLE_IMAGES.chineseWine[1].src,
     createdAt: '2026-09-10T09:00:00+08:00',
     blocks: [

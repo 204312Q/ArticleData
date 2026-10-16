@@ -19,6 +19,7 @@ import Typography from '@mui/material/Typography';
 
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
+import { list } from '@/theme/core/components/list';
 
 
 // ----------------------------------------------------------------------
@@ -340,7 +341,7 @@ if (block.type === 'heading') {
         mt: 1,
         color: '#68727D',
         fontWeight: block.fontWeight ?? 700,
-        letterSpacing: '1.5px',
+        letterSpacing: block.letterSpacing ?? '1.5px',
         textTransform: block.uppercase ? 'uppercase' : 'none',
         ...(block.size === 'large' && {
           fontSize: { xs: '1rem', md: '2rem' },
@@ -364,6 +365,11 @@ if (block.type === 'paragraph') {
     'Chilli Padi Confinement' : 'https://www.chillipadiconfinement.com/',
     'Best Aquaculture Practice (BAP)' : 'https://bapcertification.org/WhoWeAre',
     'An article on the Ministry of Social and Family Development’s website' : 'https://www.babybonus.msf.gov.sg/parentingresources/web/Pregnancy/Nutrition/Supplements/Pregnancy_Confinement_Practices_Myths?_adf.ctrl-state=makh9awou_4&_afrLoop=4362227373891004&_afrWindowMode=0&_afrWindowId=null#%40%3F_afrWindowId%3Dnull%26_afrLoop%3D4362227373891004%26_afrWindowMode%3D0%26_adf.ctrl-state%3D193jv6t2y5_4',
+    'here' : 'https://www.chillipadiconfinement.com/product',
+    '"What to Expect When You\'re Expecting" by Heidi Murkoff' : 'https://www.goodreads.com/book/show/174703.What_to_Expect_When_You_re_Expecting',
+    'Ina May\'s Guide to Childbirth by Ina May Gaskin' : 'https://www.goodreads.com/book/show/32455660-summary-of-mayo-clinic-guide-to-a-healthy-pregnancy?from_search=true&from_srp=true&qid=KNEhvWzA3o&rank=1',
+    'The Mayo Clinic Guide to a Healthy Pregnancy by the Mayo Clinic' : 'https://www.goodreads.com/book/show/32455660-summary-of-mayo-clinic-guide-to-a-healthy-pregnancy?from_search=true&from_srp=true&qid=KNEhvWzA3o&rank=1'
+    
 
   };
 
@@ -577,7 +583,12 @@ if (block.type === 'list') {
           <Box
             key={itemIndex}
             component="li"
-            sx={{ lineHeight: 2.0 , '&::marker': {fontWeight: 800}, }}
+           sx={{ lineHeight: 2.0, 
+            ...(listStyle === 'bullet'
+              ? { '&::marker': { fontWeight: 800 } }
+              : {}),
+              }
+            }
           >
             
             {(match ? [match[1], match[3], match[5]] : [item]).map(
@@ -790,8 +801,8 @@ export function PostDetailsView({ post }: PostDetailsViewProps) {
 
         <Chip label={post.category} size="small" sx={{ ...categoryChipSx, mb: 4 }} />
 
-        <Box sx={{ position: 'relative', aspectRatio: '16 / 9', borderRadius: 4, overflow: 'hidden', mb: 4 }}>
-          <Image fill alt={post.title} src={post.coverUrl} style={{ objectFit: 'cover' }} />
+        <Box sx={{ position: 'relative', aspectRatio: '1.6 / 1', borderRadius: 4, overflow: 'hidden', mb: 4 }}>
+          <Image fill alt={post.title} src={post.coverUrl} style={{ objectFit: 'cover'}} />
         </Box>
 
         <Divider sx={{ mb: 4 }} />
