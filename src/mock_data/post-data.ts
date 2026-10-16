@@ -869,7 +869,7 @@ export const mockPosts: PostItemData[] = [
       paragraph('Boiled edamame with sea salt is another great option as it is high in protein and fiber, providing necessary nutrients. Edamame also contains essential vitamins and minerals that are important for postpartum recovery. Adding sea salt to the boiled edamame gives an extra burst of flavour.'),
       paragraph('This snack is easy to make and can be enjoyed hot or cold. Additionally, it\'s a great option for breastfeeding mothers as edamame can help increase milk production.'),
 
-      heading('Energy Bites with Oats and Dates'),
+      {type: 'heading' , text: 'Energy Bites with Oats and Dates' , letterSpacing: '0.1px', size: 'small'},
       paragraph('Energy bites made with oats and dates are a great choice as they provide a range of essential nutrients. Oats are a fantastic source of fiber that can help regulate digestion during the postpartum period. Dates are also packed with essential nutrients like iron and potassium, which can help boost energy levels.'),
       paragraph('Energy bites can be made ahead of time and stored in the fridge or freezer for quick and easy snacking. Other nutritious ingredients such as nuts, seeds, and dried fruits can be added to these bites to increase their nutritional value'),
 
@@ -877,19 +877,19 @@ export const mockPosts: PostItemData[] = [
         'The point is not to snack constantly. It is to make energy support more flexible on unpredictable days.'
       ),
 
-      heading('Trail Mix with Almonds and Dried Apricots'),
+      {type: 'heading' , text: 'Trail Mix with Almonds and Dried Apricots' , letterSpacing: '0.1px', size: 'small'},
       paragraph('Almonds provide a good source of protein, fiber, and healthy fats that can help keep you full and satisfied. Meanwhile, dried apricots are rich in essential vitamins and minerals such as iron and potassium which are important for postpartum recovery.'),
       paragraph('Trail mix is also customizable to your taste preferences, making it a versatile snack option.'),
 
-      heading('Baby Carrots with Peanut Butter'),
+      {type: 'heading' , text: 'Baby Carrots with Peanut Butter' , letterSpacing: '0.1px', size: 'small'},
       paragraph('For busy moms during the postpartum period, baby carrots with peanut butter make for an easy and nutritious snack. The combination of baby carrots and peanut butter is a good source of protein and healthy fats that can help boost milk production during breastfeeding. Additionally, the vitamins and fiber in carrots can aid in digestion and promote overall health.'),
       paragraph('It\'s important to choose natural peanut butter without added sugars or hydrogenated oils for optimal health benefits. This delicious snack provides sustained energy throughout the day, making it a perfect choice for new mothers looking for a convenient and healthy snack option.'),
 
-      heading('Whole-Grain Crackers with Cheese'),
+      {type: 'heading' , text: 'Whole-Grain Crackers with Cheese' , letterSpacing: '0.1px', size: 'small'},
       paragraph('It can be difficult to find healthy snack options that provide essential nutrients and fiber. Whole-grain crackers are a great option as they are easy to find at local stores and come in a variety of flavours. Pairing them with cheese adds protein and calcium to the snack, which is beneficial for breastfeeding mothers'),
       paragraph('To make this snack even more nutritious, whole-grain crackers can be paired with other healthy toppings like avocado or hummus.'),
 
-      heading("SNACKS TO AVOID DURING CONFINEMENT AND BREASTFEEDING"),
+      {type: 'heading' , text: 'Snacks to avoid during confinement and breastfeeding' , uppercase:true, letterSpacing: '2px'},
       image({
         src: ARTICLE_IMAGES.snacks[1].src,
         alt: 'Snacks to avoid during confinement and breast feeding',
@@ -898,14 +898,14 @@ export const mockPosts: PostItemData[] = [
       paragraph('Snacks high in sugar or salt, and excessive caffeine should be avoided as they may harm the baby\'s health. Spicy and greasy foods can cause digestive discomfort and are best avoided. Alcohol consumption during breastfeeding can also transfer harmful substances to the baby through breast milk.'),
       paragraph('Furthermore, food allergies and intolerances should be considered as they can affect both the mother and the baby. While it may be tempting to indulge in unhealthy snacks, choosing healthy alternatives such as fruits or nuts will provide necessary nutrients to help with recovery after childbirth.'),
 
-      heading('Processed Food'),
+      {type: 'heading' , text: 'Processed Food' , letterSpacing: '0.1px', size: 'small'},
       paragraph('Processed snacks are often high in sodium, sugar, and unhealthy fats, which can negatively affect the health of both mother and baby. Common examples of these include potato chips, candy bars, and packaged cookies.'),
      
-      heading('High Sugar Snacks'),
+      {type: 'heading' , text: 'High Sugar Snacks' , letterSpacing: '0.1px', size: 'small'},
       paragraph('High-sugar snacks, such as candy or sweet pastries, can lead to weight gain and may negatively impact milk production. In addition, these types of snacks can cause blood sugar spikes, leading to crashes and leaving you feeling more tired and lethargic.'),
       paragraph('Instead of sugary snacks, opt for whole foods like fresh fruit or veggies with hummus. These types of snacks provide sustained energy without the crash associated with high-sugar options.'),
 
-      heading('Caffeinated Beverages'),
+      {type: 'heading' , text: 'Caffeinated Beverages' , letterSpacing: '0.1px', size: 'small'},
       paragraph('Caffeinated beverages such as coffee and tea should be limited or avoided altogether, as they can interfere with sleep for both the mother and baby.Additionally, high caffeine intake can cause jitteriness, irritability, and even affect milk production.'),
       paragraph('Energy drinks should be avoided completely as they contain high levels of caffeine and other stimulants that can be harmful to both the mother and baby. Instead, opt for decaffeinated beverages or herbal teas that are safe during breastfeeding if you need a pick-me-up.'),
 
@@ -913,7 +913,7 @@ export const mockPosts: PostItemData[] = [
 
      image(
         {
-          src: '/assets/articleImages/banner.png',
+          src: '/banners/banner.png',
           alt: 'https://www.chillipadiconfinement.com/product',
           maxWidth: 650,
           displayHeight: 57,
