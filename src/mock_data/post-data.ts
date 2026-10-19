@@ -35,10 +35,10 @@ const ARTICLE_IMAGES = {
   ],
   snacks: [
     {
-      src: '/assets/popularDish/Snacks_for_Confinement_and_Breastfeeding_Munchies.png',
+      src: '/assets/articleImages/Snacks_for_Confinement_and_Breastfeeding_Munchies.png',
       alt: 'Snacks for Confinement and Breastfeeding',
     },
-    { src: '/assets/popularDish/Avoid_during_Confinement_and_Breastfeeding.png', 
+    { src: '/assets/articleImages/Avoid_during_Confinement_and_Breastfeeding.png', 
       alt: 'Snacks to Avoid during Confinement and Breastfeeding' 
     },
   ],
