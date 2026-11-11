@@ -14,6 +14,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${CONFIG.siteUrl}${paths.home}`, changeFrequency: 'weekly', priority: 1 },
     { url: `${CONFIG.siteUrl}${paths.menu}`, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${CONFIG.siteUrl}${paths.product.root}`, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${CONFIG.siteUrl}${paths.trialMeal}`, changeFrequency: 'monthly', priority: 0.8 },
+    {
+      url: `${CONFIG.siteUrl}${paths.comparePackages}`,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    { url: `${CONFIG.siteUrl}${paths.recoveryMeals}`, changeFrequency: 'monthly', priority: 0.8 },
+    {
+      url: `${CONFIG.siteUrl}${paths.confinementChecklist}`,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    { url: `${CONFIG.siteUrl}${paths.benefits}`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${CONFIG.siteUrl}${paths.about}`, changeFrequency: 'monthly', priority: 0.8 },
     {
       url: `${CONFIG.siteUrl}${paths.babyFullMonthGiftSet}`,
