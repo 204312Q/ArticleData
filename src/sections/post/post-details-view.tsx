@@ -582,28 +582,28 @@ if (block.type === 'list') {
         return (
           <Box
             key={itemIndex}
-            component="li"
-           sx={{ lineHeight: 2.0, 
-            ...(listStyle === 'bullet'
+             component="li"
+               sx={{ lineHeight: 2.0, 
+                 ...(listStyle === 'bullet'
               ? { '&::marker': { fontWeight: 800 } }
-              : {}),
-              }
+             : {}),
             }
-          >
+          }
+        >
             
             {(match ? [match[1], match[3], match[5]] : [item]).map(
-              (textPart, textIndex) => {
-            // Keep the existing bold heading
-            if (match && textIndex === 1) {
-            return (
-            <Typography
-            key={textIndex}
-            component="span"
-            sx={{ fontWeight: 800, color: '#68727D' }} >
-            {textPart}
-        </Typography>
-      );
-    }
+               (textPart, textIndex) => {
+                 // Keep the existing bold heading
+                   if (match && textIndex === 1) {
+                     return (
+                       <Typography
+                          key={textIndex}
+                       component="span"
+                     sx={{ fontWeight: 800, color: '#68727D' }} >
+                  {textPart}
+                </Typography>
+              );
+            }
 
     // Turn ^^text^^ into a pink clickable link
     return textPart.split(/(\^\^.*?\^\^)/g).map((part, partIndex) => {
