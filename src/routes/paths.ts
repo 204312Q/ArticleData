@@ -14,7 +14,12 @@ export const paths = {
   faqs: '/faqs',
   termsOfUse: '/terms-of-use',
   dataProtectionNotice: '/data-protection-notice',
-  babyFullMonthGiftSet: '/baby-full-month-gift-set',
+  babyFullMonthGiftSet: '/baby-full-month-gift-set',  
+  benefits: '/benefits',
+  comparePackages: '/compare-packages',
+  recoveryMeals: '/recovery-meals',
+  trialMeal: '/trial-meal',
+  confinementChecklist: '/confinement-checklist',
   post: {
     root: '/post',
     details: (slug: string) => `/post/${slug}`,
